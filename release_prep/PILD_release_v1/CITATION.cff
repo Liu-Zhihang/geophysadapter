@@ -1,0 +1,28 @@
+cff-version: 1.2.0
+message: "If you use this PILD release, please cite it using the metadata below after replacing the bracketed author placeholders."
+title: "Physics-Informed Landslide Dataset (PILD): Metadata, Protocols, and Release Assets for Cross-Domain Landslide Mapping"
+type: dataset
+version: "v1.0"
+date-released: 2026-03-14
+license: "CC-BY-4.0"
+authors:
+  - family-names: "[Author 1 Family Name]"
+    given-names: "[Author 1 Given Name]"
+    affiliation: "[Affiliation 1]"
+    orcid: "https://orcid.org/[Author 1 ORCID]"
+  - family-names: "[Author 2 Family Name]"
+    given-names: "[Author 2 Given Name]"
+    affiliation: "[Affiliation 2]"
+    orcid: "https://orcid.org/[Author 2 ORCID]"
+  - family-names: "[Author 3 Family Name]"
+    given-names: "[Author 3 Given Name]"
+    affiliation: "[Affiliation 3]"
+    orcid: "https://orcid.org/[Author 3 ORCID]"
+keywords:
+  - "landslide"
+  - "remote sensing"
+  - "cross-domain learning"
+  - "benchmark dataset"
+  - "physics-informed learning"
+  - "geospatial AI"
+abstract: "Paper-facing public release for cross-domain landslide mapping that provides event metadata, benchmark protocols, split definitions, source registries, and reproducibility assets without redistributing all upstream raw imagery."

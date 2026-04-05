@@ -1,0 +1,25 @@
+name: geophysadapter
+channels:
+  - pytorch
+  - conda-forge
+dependencies:
+  - python=3.11
+  - pip
+  - numpy
+  - pandas
+  - matplotlib
+  - scipy
+  - scikit-learn
+  - pillow
+  - pytorch
+  - torchvision
+  - geopandas
+  - pyogrio
+  - pyproj
+  - rasterio
+  - shapely
+  - h5py
+  - tifffile
+  - pip:
+      - timm
+      - transformers

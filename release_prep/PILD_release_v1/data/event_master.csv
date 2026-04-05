@@ -1,0 +1,225 @@
+event_uid,dataset_id,event_id,event_name,trigger_type,event_date,date_quality,lat,lon,min_lon,min_lat,max_lon,max_lat,has_bbox,aoi_source,download_group,n_samples,notes
+CAS_Hokkaido,CAS_Landslide,Hokkaido,Hokkaido,earthquake,2018-09-06,inferred_name,,,141.82550048828125,42.57427978515619,142.1229248046876,42.895446777343864,1,study_area_shapefile,core,1,CAS study area boundary
+CAS_Jiuzhai_valley,CAS_Landslide,Jiuzhai_valley,Jiuzhai_valley,earthquake,2017-08-08,inferred_name,,,103.86185057872399,33.12365515849237,103.94006843217753,33.2644155189731,1,study_area_shapefile,core,1,CAS study area boundary
+CAS_Lombokt,CAS_Landslide,Lombokt,Lombokt,earthquake,2018-08-05,inferred_name,,,116.16304306728591,-8.54267550066885,116.62735033212357,-8.234241904910107,1,study_area_shapefile,core,1,CAS study area boundary
+CAS_Longxi_River,CAS_Landslide,Longxi_River,Longxi_River,unknown,,missing,,,103.49586673865373,31.02184708837539,103.58440682760505,31.182100209833607,1,study_area_shapefile,core,1,CAS study area boundary
+CAS_Mengdong,CAS_Landslide,Mengdong,Mengdong,unknown,,missing,,,104.6751262500822,22.855282825362327,104.73693676891635,22.897558426090175,1,study_area_shapefile,core,1,CAS study area boundary
+CAS_Moxi_town,CAS_Landslide,Moxi_town,Moxi_town,unknown,,missing,,,102.09892525018219,29.60948885836986,102.14515540822472,29.665892754078055,1,study_area_shapefile,core,1,CAS study area boundary
+CAS_Moxitaidi,CAS_Landslide,Moxitaidi,Moxitaidi,unknown,,missing,,,102.05707175337092,29.584704024225584,102.19451075348029,29.733047010831978,1,study_area_shapefile,core,1,CAS study area boundary
+CAS_Palu,CAS_Landslide,Palu,Palu,earthquake,2018-09-28,inferred_name,,,119.73291015625,-1.47601318359375,120.12493896484375,-0.6097412109375,1,study_area_shapefile,core,1,CAS study area boundary
+CAS_Tiburon Peninsula (Planet),CAS_Landslide,Tiburon Peninsula (Planet),Tiburon Peninsula (Planet),earthquake,2021-08-14,inferred_name,,,-74.23722358043013,18.3526896600389,-73.38860239711585,18.567081904331168,1,study_area_shapefile,core,1,CAS study area boundary
+CAS_Tiburon_Peninsula_(Sentinel)t,CAS_Landslide,Tiburon_Peninsula_(Sentinel)t,Tiburon_Peninsula_(Sentinel)t,earthquake,2021-08-14,inferred_name,,,-74.25506591796875,18.216552734375,-73.32940673828125,18.5687255859375,1,study_area_shapefile,core,1,CAS study area boundary
+CAS_wenchuan,CAS_Landslide,wenchuan,wenchuan,earthquake,2008-05-12,inferred_name,,,103.07771462214843,30.788437699863284,103.68196266902343,31.310288285800784,1,study_area_shapefile,core,1,CAS study area boundary
+DLR_BR0001,DLR_Landslide_Ref_2025,BR0001,Brazil_Brumadinho,complex,2019-01-25,exact,,,-44.22636889183684,-20.220941599184748,-44.04712473733921,-20.05336288784226,1,event_dem_scene_bbox,core,1,country=Brazil; region=Brumadinho
+DLR_CA0001,DLR_Landslide_Ref_2025,CA0001,Canada_Quebec,snowmelt,2021-04-22,exact,,,-77.72203467876102,55.241328135839794,-77.53749297678603,55.333776266275656,1,event_dem_scene_bbox,core,1,country=Canada; region=Quebec
+DLR_CA0002,DLR_Landslide_Ref_2025,CA0002,Canada_British_Columbia,snowmelt,2019-05-16,exact,,,-122.50373603569517,50.30453327433119,-122.35339402158596,50.4157897493849,1,event_dem_scene_bbox,core,1,country=Canada; region=British Columbia
+DLR_CL0001,DLR_Landslide_Ref_2025,CL0001,Chile_Villa_Santa_Lucia,rainfall,2017-12-16,exact,,,-72.5493535511255,-43.50845592934765,-72.24097725882054,-43.273983898925025,1,event_dem_scene_bbox,core,1,country=Chile; region=Villa Santa Lucia
+DLR_CL0002,DLR_Landslide_Ref_2025,CL0002,Chile_Ministro_Hales,complex,2021-11-09,exact,,,-68.9353132299516,-22.40592757856842,-68.88545009495128,-22.360819662448343,1,event_dem_scene_bbox,core,1,country=Chile; region=Ministro Hales
+DLR_CN0001,DLR_Landslide_Ref_2025,CN0001,China_Sichuan,rainfall,2017-06-24,exact,,,103.61002685367637,32.03248928954894,103.70012721891578,32.1102774412521,1,event_dem_scene_bbox,core,1,country=China; region=Sichuan
+DLR_CN0002,DLR_Landslide_Ref_2025,CN0002,China_Hubei,rainfall,2020-07-20,exact,,,109.27377306880109,30.339704960442912,109.3265293680635,30.38953985217626,1,event_dem_scene_bbox,core,1,country=China; region=Hubei
+DLR_CO0001,DLR_Landslide_Ref_2025,CO0001,Columbia_San_Antonio_de_Prado,complex,2022-07-13,exact,,,-75.67966934763078,6.170138168031662,-75.63450829946964,6.217593262749447,1,event_dem_scene_bbox,core,1,country=Columbia; region=San Antonio de Prado
+DLR_GT0001,DLR_Landslide_Ref_2025,GT0001,Guatemala_San_Christobal_Verapaz,rainfall,2020-11-05,exact,,,-90.6541569657301,15.367543435735511,-90.60713320393587,15.417720752072182,1,event_dem_scene_bbox,core,1,country=Guatemala; region=San Christobal Verapaz
+DLR_IE0001,DLR_Landslide_Ref_2025,IE0001,Irland_Benbrack,rainfall,2021-07-04,exact,,,-7.921002964663536,54.10856701005672,-7.77611057669262,54.210926602511606,1,event_dem_scene_bbox,core,4,country=Irland; region=Benbrack
+DLR_IN0001,DLR_Landslide_Ref_2025,IN0001,India_Nalda,complex,2021-08-13,exact,,,76.81400060010499,32.61449153247826,76.8683085154692,32.66026562559028,1,event_dem_scene_bbox,core,1,country=India; region=Nalda
+DLR_IN0002,DLR_Landslide_Ref_2025,IN0002,India_Kerala,rainfall,2018-08-16,exact,,,76.37954858815378,11.02098490950775,76.42544692980073,11.06911516329988,1,event_dem_scene_bbox,core,2,country=India; region=Kerala
+DLR_IN0003,DLR_Landslide_Ref_2025,IN0003,India_Kerala,rainfall,2020-08-06,exact,,,76.98751113633844,10.13920952279596,77.03336851542008,10.192456812625254,1,event_dem_scene_bbox,core,1,country=India; region=Kerala
+DLR_IN0004,DLR_Landslide_Ref_2025,IN0004,India_Maripur,unknown,2022-06-30,exact,,,93.64754364074976,24.780199447418482,93.69814443562898,24.82548911562731,1,event_dem_scene_bbox,core,1,country=India; region=Maripur
+DLR_IR0001,DLR_Landslide_Ref_2025,IR0001,Iran_Golestan,unknown,2019-03-22,exact,,,55.40406768521478,37.12932955848825,55.471073233600215,37.17516494832017,1,event_dem_scene_bbox,core,2,country=Iran; region=Golestan
+DLR_IR0002,DLR_Landslide_Ref_2025,IR0002,Iran_Gilan,unknown,2018-06-16,exact,,,50.23745785075979,36.78208874551895,50.29384401704989,36.8295772663885,1,event_dem_scene_bbox,core,1,country=Iran; region=Gilan
+DLR_IS0001,DLR_Landslide_Ref_2025,IS0001,Iceland_Hitardalur,rainfall,2018-07-07,exact,,,-22.20057913386928,64.74863921807811,-22.02194735374004,64.82289084506004,1,event_dem_scene_bbox,core,1,country=Iceland; region=Hitardalur
+DLR_IT0001,DLR_Landslide_Ref_2025,IT0001,Italy_Pomarico,unknown,2019-01-29,exact,,,16.515428246504843,40.48896360594948,16.57539413376028,40.53703121239297,1,event_dem_scene_bbox,core,1,country=Italy; region=Pomarico
+DLR_JP0001,DLR_Landslide_Ref_2025,JP0001,Japan_Atomi_Izu,rainfall,2021-07-03,exact,,,139.04967247210914,35.09404124554735,139.10546890675417,35.140240804213704,1,event_dem_scene_bbox,core,1,country=Japan; region=Atomi Izu
+DLR_KG0001,DLR_Landslide_Ref_2025,KG0001,Kyrgyzstan_Kara-Keche,unknown,2020-09-14,exact,,,74.74767425146833,41.699737429574625,74.80782562377308,41.745879401916426,1,event_dem_scene_bbox,core,1,country=Kyrgyzstan; region=Kara-Keche
+DLR_KG0002,DLR_Landslide_Ref_2025,KG0002,Kyrgyzstan_Osh,rainfall,2017-04-19,exact,,,73.12976052286663,40.50717588583536,73.51533434352436,40.74159822812827,1,event_dem_scene_bbox,core,34,country=Kyrgyzstan; region=Osh
+DLR_KR0001,DLR_Landslide_Ref_2025,KR0001,South_Korea_Gokseong_County,rainfall,2020-08-07,exact,,,127.1067240734414,35.17311066520748,127.16259902495392,35.22154009654545,1,event_dem_scene_bbox,core,1,country=South Korea; region=Gokseong County
+DLR_NZ0001,DLR_Landslide_Ref_2025,NZ0001,New_Zealand_Mangapoike,unknown,2018-02-24,exact,,,177.63155439116517,-38.87423313716077,177.68948676204545,-38.82741126708116,1,event_dem_scene_bbox,core,1,country=New Zealand; region=Mangapoike
+DLR_PH0001,DLR_Landslide_Ref_2025,PH0001,Philippines_Baybay_City,rainfall,2022-04-10,exact,,,124.8224047093303,10.648409941589456,124.88335340708291,10.707435111598786,1,event_dem_scene_bbox,core,1,country=Philippines; region=Baybay City
+DLR_PH0003,DLR_Landslide_Ref_2025,PH0003,Philippines_Pilar,storm,2022-04-10,exact,,,125.02499454944208,10.688804297683745,125.07091384991239,10.735922790363444,1,event_dem_scene_bbox,core,1,country=Philippines; region=Pilar
+DLR_PH0004,DLR_Landslide_Ref_2025,PH0004,Philippines_Bunga,storm,2022-04-10,exact,,,124.7588086918358,10.761419903549987,124.80470649511878,10.808417891019444,1,event_dem_scene_bbox,core,1,country=Philippines; region=Bunga
+DLR_PK0001,DLR_Landslide_Ref_2025,PK0001,Pakistan_Naltar_Valley,unknown,2021-07-05,exact,,,74.06271454682432,36.19721985133354,74.1396288075454,36.24034237454111,1,event_dem_scene_bbox,core,1,country=Pakistan; region=Naltar Valley
+DLR_US0001,DLR_Landslide_Ref_2025,US0001,USA_California,rainfall,2017-05-20,exact,,,-121.45908189380356,35.8419092496916,-121.40292621000411,35.88850590546348,1,event_dem_scene_bbox,core,1,country=USA; region=California
+GDCLD_Hokkaido,GDCLD,Hokkaido,Hokkaido,earthquake,2018-09-06,exact,42.69,142.01,142.01,42.69,142.01,42.69,1,event_epicenter_point,core,1,from GDCLD manuscript event table
+GDCLD_Jiuzhaigou,GDCLD,Jiuzhaigou,Jiuzhaigou,earthquake,2017-08-08,exact,33.2,102.82,102.82,33.2,102.82,33.2,1,event_epicenter_point,core,1,from GDCLD manuscript event table
+GDCLD_Luding,GDCLD,Luding,Luding,earthquake,2022-09-05,exact,29.59,102.08,102.08,29.59,102.08,29.59,1,event_epicenter_point,core,1,from GDCLD manuscript event table
+GDCLD_Lushan,GDCLD,Lushan,Lushan,earthquake,2022-06-01,exact,30.37,102.94,105.77501448169764,30.339574463816795,105.8522017001567,30.40032521493086,1,test_raster_bbox,core,1,from GDCLD manuscript event table
+GDCLD_Mainling,GDCLD,Mainling,Mainling,earthquake,2017-11-18,exact,29.75,95.02,95.02,29.75,95.02,29.75,1,event_epicenter_point,core,1,from GDCLD manuscript event table
+GDCLD_Mesetas,GDCLD,Mesetas,Mesetas,earthquake,2019-12-24,exact,3.45,-76.19,-74.34511590897887,3.3374463600501727,-74.02413849055343,3.6701677283027783,1,test_raster_bbox,core,1,from GDCLD manuscript event table
+GDCLD_Nippes,GDCLD,Nippes,Nippes,earthquake,2021-08-14,exact,18.35,-73.45,-73.45,18.35,-73.45,18.35,1,event_epicenter_point,core,1,from GDCLD manuscript event table
+GDCLD_Palu,GDCLD,Palu,Palu,earthquake,2018-09-28,exact,-0.18,119.84,119.78718638420105,-1.3123726844787598,119.88717913627625,-1.1006712913513184,1,test_raster_bbox,core,1,from GDCLD manuscript event table
+GDCLD_Sumatra,GDCLD,Sumatra,Sumatra,earthquake,2022-02-25,exact,0.22,100.1,99.82000421023741,-0.07332996318628085,100.11003301658205,0.1882913652211719,1,test_raster_bbox,core,1,from GDCLD manuscript event table
+GLADV1_0001,GLaD4CD_v1,0001,glad_event_0001,unknown,2022-11-26,exact,40.73708,13.90127,13.90127,40.73708,13.90127,40.73708,1,event_point,core,1,source=EMS; category=mudslide
+GLADV1_0002,GLaD4CD_v1,0002,glad_event_0002,unknown,2017-04-22,exact,3.05599,101.78112,101.78112,3.05599,101.78112,3.05599,1,event_point,core,1,source=GLC; category=landslide
+GLADV1_0003,GLaD4CD_v1,0003,glad_event_0003,unknown,2017-05-20,exact,35.86431353,-121.4304994,-121.4304994,35.86431353,-121.4304994,35.86431353,1,event_point,core,1,source=GLC; category=landslide
+GLADV1_0004,GLaD4CD_v1,0004,glad_event_0004,unknown,2017-05-26,exact,6.514224,80.169071,80.169071,6.514224,80.169071,6.514224,1,event_point,core,1,source=GLC; category=landslide
+GLADV1_0005,GLaD4CD_v1,0005,glad_event_0005,unknown,2017-06-19,exact,51.97686189,-122.2792711,-122.2792711,51.97686189,-122.2792711,51.97686189,1,event_point,core,1,source=GLC; category=mudslide
+GLADV1_0006,GLaD4CD_v1,0006,glad_event_0006,unknown,2017-06-27,exact,32.08059703,103.6653085,103.6653085,32.08059703,103.6653085,32.08059703,1,event_point,core,1,source=GLC; category=landslide
+GLADV1_0007,GLaD4CD_v1,0007,glad_event_0007,unknown,2017-06-30,exact,27.04768643,93.61899644,93.61899644,27.04768643,93.61899644,27.04768643,1,event_point,core,1,source=GLC; category=landslide
+GLADV1_0008,GLaD4CD_v1,0008,glad_event_0008,unknown,2017-07-02,exact,28.5702,108.54288,108.54288,28.5702,108.54288,28.5702,1,event_point,core,1,source=GLC; category=landslide
+GLADV1_0009,GLaD4CD_v1,0009,glad_event_0009,unknown,2017-07-03,exact,-44.677579,167.955894,167.955894,-44.677579,167.955894,-44.677579,1,event_point,core,1,source=GLC; category=landslide
+GLADV1_0010,GLaD4CD_v1,0010,glad_event_0010,unknown,2017-07-06,exact,25.81233,91.88141,91.88141,25.81233,91.88141,25.81233,1,event_point,core,1,source=GLC; category=landslide
+GLADV1_0011,GLaD4CD_v1,0011,glad_event_0011,unknown,2017-07-06,exact,27.033383,88.273827,88.273827,27.033383,88.273827,27.033383,1,event_point,core,1,source=GLC; category=landslide
+GLADV1_0012,GLaD4CD_v1,0012,glad_event_0012,unknown,2017-07-06,exact,27.99983,112.038295,112.038295,27.99983,112.038295,27.99983,1,event_point,core,1,source=GLC; category=landslide
+GLADV1_0013,GLaD4CD_v1,0013,glad_event_0013,unknown,2017-07-11,exact,27.20938411,93.61539279,93.61539279,27.20938411,93.61539279,27.20938411,1,event_point,core,1,source=GLC; category=landslide
+GLADV1_0014,GLaD4CD_v1,0014,glad_event_0014,unknown,2017-08-13,exact,31.91422878,76.8929866,76.8929866,31.91422878,76.8929866,31.91422878,1,event_point,core,1,source=GLC; category=debris_flow
+GLADV1_0015,GLaD4CD_v1,0015,glad_event_0015,unknown,2017-08-14,exact,8.427079,-13.236669,-13.236669,8.427079,-13.236669,8.427079,1,event_point,core,1,source=GLC; category=debris_flow
+GLADV1_0016,GLaD4CD_v1,0016,glad_event_0016,unknown,2017-08-14,exact,8.43386,-13.230114,-13.230114,8.43386,-13.230114,8.43386,1,event_point,core,1,source=GLC; category=debris_flow
+GLADV1_0017,GLaD4CD_v1,0017,glad_event_0017,unknown,2017-11-22,exact,49.20767633,-121.7086913,-121.7086913,49.20767633,-121.7086913,49.20767633,1,event_point,core,1,source=GLC; category=debris_flow
+GLADV1_0018,GLaD4CD_v1,0018,glad_event_0018,unknown,2017-11-22,exact,49.227169,-121.679699,-121.679699,49.227169,-121.679699,49.227169,1,event_point,core,1,source=GLC; category=debris_flow
+GLADV1_0019,GLaD4CD_v1,0019,glad_event_0019,unknown,2017-11-28,exact,-36.81271364,174.7247477,174.7247477,-36.81271364,174.7247477,-36.81271364,1,event_point,core,1,source=GLC; category=landslide
+GLADV1_0020,GLaD4CD_v1,0020,glad_event_0020,unknown,2017-12-14,exact,35.425311,-83.744629,-83.744629,35.425311,-83.744629,35.425311,1,event_point,core,1,source=GLC; category=debris_flow
+GLADV1_0021,GLaD4CD_v1,0021,glad_event_0021,unknown,2017-12-25,exact,47.04682625,11.53637146,11.53637146,47.04682625,11.53637146,47.04682625,1,event_point,core,1,source=GLC; category=landslide
+GLADV1_0022,GLaD4CD_v1,0022,glad_event_0022,unknown,2018-01-29,exact,49.251254,-124.143189,-124.143189,49.251254,-124.143189,49.251254,1,event_point,core,1,source=GLC; category=mudslide
+GLADV1_0023,GLaD4CD_v1,0023,glad_event_0023,unknown,2018-02-12,exact,-14.04227859,-171.4637556,-171.4637556,-14.04227859,-171.4637556,-14.04227859,1,event_point,core,1,source=GLC; category=landslide
+GLADV1_0024,GLaD4CD_v1,0024,glad_event_0024,unknown,2018-02-24,exact,-38.85273237,177.6604503,177.6604503,-38.85273237,177.6604503,-38.85273237,1,event_point,core,1,source=GLC; category=landslide
+GLADV1_0025,GLaD4CD_v1,0025,glad_event_0025,unknown,2018-04-11,exact,33.407245,131.097981,131.097981,33.407245,131.097981,33.407245,1,event_point,core,1,source=GLC; category=rotational_translational_slide
+GLADV1_0026,GLaD4CD_v1,0026,glad_event_0026,unknown,2018-04-13,exact,49.33864856,-119.7503404,-119.7503404,49.33864856,-119.7503404,49.33864856,1,event_point,core,1,source=GLC; category=mudslide
+GLADV1_0027,GLaD4CD_v1,0027,glad_event_0027,unknown,2018-04-26,exact,14.852612,120.392218,120.392218,14.852612,120.392218,14.852612,1,event_point,core,1,source=GLC; category=landslide
+GLADV1_0028,GLaD4CD_v1,0028,glad_event_0028,unknown,2018-05-03,exact,6.76540542,80.86815571,80.86815571,6.76540542,80.86815571,6.76540542,1,event_point,core,1,source=GLC; category=debris_flow
+GLADV1_0029,GLaD4CD_v1,0029,glad_event_0029,unknown,2018-05-03,exact,1.224432,35.38503,35.38503,1.224432,35.38503,1.224432,1,event_point,core,1,source=GLC; category=landslide
+GLADV1_0030,GLaD4CD_v1,0030,glad_event_0030,unknown,2018-05-05,exact,7.127476,-75.661769,-75.661769,7.127476,-75.661769,7.127476,1,event_point,core,1,source=GLC; category=mudslide
+GLADV1_0031,GLaD4CD_v1,0031,glad_event_0031,unknown,2018-05-12,exact,26.0791,94.7132,94.7132,26.0791,94.7132,26.0791,1,event_point,core,1,source=GLC; category=landslide
+GLADV1_0032,GLaD4CD_v1,0032,glad_event_0032,unknown,2018-05-18,exact,37.37564,-80.806621,-80.806621,37.37564,-80.806621,37.37564,1,event_point,core,1,source=GLC; category=mudslide
+GLADV1_0033,GLaD4CD_v1,0033,glad_event_0033,unknown,2018-05-21,exact,38.7002,-119.54947,-119.54947,38.7002,-119.54947,38.7002,1,event_point,core,1,source=GLC; category=mudslide
+GLADV1_0034,GLaD4CD_v1,0034,glad_event_0034,unknown,2018-05-27,exact,35.448015,-82.25933,-82.25933,35.448015,-82.25933,35.448015,1,event_point,core,1,source=GLC; category=landslide
+GLADV1_0035,GLaD4CD_v1,0035,glad_event_0035,unknown,2018-05-27,exact,44.868538,-109.651419,-109.651419,44.868538,-109.651419,44.868538,1,event_point,core,1,source=GLC; category=mudslide
+GLADV1_0036,GLaD4CD_v1,0036,glad_event_0036,unknown,2018-06-01,exact,52.15339,-8.09785,-8.09785,52.15339,-8.09785,52.15339,1,event_point,core,1,source=GLC; category=debris_flow
+GLADV1_0037,GLaD4CD_v1,0037,glad_event_0037,unknown,2018-06-07,exact,35.46369,-82.28271,-82.28271,35.46369,-82.28271,35.46369,1,event_point,core,1,source=GLC; category=landslide
+GLADV1_0038,GLaD4CD_v1,0038,glad_event_0038,unknown,2018-07-07,exact,64.7881,-22.11308,-22.11308,64.7881,-22.11308,64.7881,1,event_point,core,1,source=GLC; category=debris_flow
+GLADV1_0039,GLaD4CD_v1,0039,glad_event_0039,unknown,2018-07-30,exact,12.53700193,99.072138,99.072138,12.53700193,99.072138,12.53700193,1,event_point,core,1,source=GLC; category=landslide
+GLADV1_0040,GLaD4CD_v1,0040,glad_event_0040,unknown,2018-08-08,exact,32.170037,76.425405,76.425405,32.170037,76.425405,32.170037,1,event_point,core,1,source=GLC; category=landslide
+GLADV1_0041,GLaD4CD_v1,0041,glad_event_0041,unknown,2018-08-16,exact,10.587004,76.613824,76.613824,10.587004,76.613824,10.587004,1,event_point,core,1,source=GLC; category=landslide
+GLADV1_0042,GLaD4CD_v1,0042,glad_event_0042,unknown,2018-08-16,exact,11.869482,75.891967,75.891967,11.869482,75.891967,11.869482,1,event_point,core,1,source=GLC; category=mudslide
+GLADV1_0043,GLaD4CD_v1,0043,glad_event_0043,unknown,2018-08-18,exact,9.767839,77.107458,77.107458,9.767839,77.107458,9.767839,1,event_point,core,1,source=GLC; category=landslide
+GLADV1_0044,GLaD4CD_v1,0044,glad_event_0044,unknown,2018-08-18,exact,12.82259873,75.62136484,75.62136484,12.82259873,75.62136484,12.82259873,1,event_point,core,1,source=GLC; category=landslide
+GLADV1_0045,GLaD4CD_v1,0045,glad_event_0045,unknown,2018-08-18,exact,33.669059,-116.682143,-116.682143,33.669059,-116.682143,33.669059,1,event_point,core,1,source=GLC; category=debris_flow
+GLADV1_0046,GLaD4CD_v1,0046,glad_event_0046,unknown,2018-09-02,exact,12.788711,75.591795,75.591795,12.788711,75.591795,12.788711,1,event_point,core,1,source=GLC; category=landslide
+GLADV1_0047,GLaD4CD_v1,0047,glad_event_0047,unknown,2018-09-28,exact,-0.93316104,119.9146315,119.9146315,-0.93316104,119.9146315,-0.93316104,1,event_point,core,1,source=GLC; category=landslide
+GLADV1_0048,GLaD4CD_v1,0048,glad_event_0048,unknown,2018-10-30,exact,46.324512,10.864652,10.864652,46.324512,10.864652,46.324512,1,event_point,core,1,source=GLC; category=debris_flow
+GLADV1_0049,GLaD4CD_v1,0049,glad_event_0049,unknown,2018-11-24,exact,12.25648567,125.2484758,125.2484758,12.25648567,125.2484758,12.25648567,1,event_point,core,1,source=GLC; category=landslide
+GLADV1_0050,GLaD4CD_v1,0050,glad_event_0050,unknown,2018-11-24,exact,12.27997971,125.2358959,125.2358959,12.27997971,125.2358959,12.27997971,1,event_point,core,1,source=GLC; category=landslide
+GLADV1_0051,GLaD4CD_v1,0051,glad_event_0051,unknown,2018-12-06,exact,34.03427,-118.8081,-118.8081,34.03427,-118.8081,34.03427,1,event_point,core,1,source=GLC; category=mudslide
+GLADV1_0052,GLaD4CD_v1,0052,glad_event_0052,unknown,2018-12-11,exact,35.536439,-82.228889,-82.228889,35.536439,-82.228889,35.536439,1,event_point,core,1,source=GLC; category=mudslide
+GLADV1_0053,GLaD4CD_v1,0053,glad_event_0053,unknown,2018-12-25,exact,38.30765,-81.72069,-81.72069,38.30765,-81.72069,38.30765,1,event_point,core,1,source=GLC; category=mudslide
+GLADV1_0054,GLaD4CD_v1,0054,glad_event_0054,unknown,2019-02-07,exact,-22.99768141,-43.25403571,-43.25403571,-22.99768141,-43.25403571,-22.99768141,1,event_point,core,1,source=GLC; category=landslide
+GLADV1_0055,GLaD4CD_v1,0055,glad_event_0055,unknown,2019-06-15,exact,4.22431624,-73.81577806,-73.81577806,4.22431624,-73.81577806,4.22431624,1,event_point,core,1,source=GLC; category=landslide
+GLADV1_0056,GLaD4CD_v1,0056,glad_event_0056,unknown,2019-07-01,exact,47.28574546,12.5620997,12.5620997,47.28574546,12.5620997,47.28574546,1,event_point,core,1,source=GLC; category=mudslide
+GLADV1_0057,GLaD4CD_v1,0057,glad_event_0057,unknown,2019-08-08,exact,11.40938,76.23604,76.23604,11.40938,76.23604,11.40938,1,event_point,core,1,source=GLC; category=landslide
+GLADV1_0058,GLaD4CD_v1,0058,glad_event_0058,unknown,2019-08-08,exact,11.50340214,76.13474585,76.13474585,11.50340214,76.13474585,11.50340214,1,event_point,core,1,source=GLC; category=landslide
+GLADV1_0059,GLaD4CD_v1,0059,glad_event_0059,unknown,2020-06-23,exact,56.21016268,-120.8428051,-120.8428051,56.21016268,-120.8428051,56.21016268,1,event_point,core,1,source=GLC; category=earth_flow
+GLADV1_0060,GLaD4CD_v1,0060,glad_event_0060,unknown,2022-11-26,exact,40.73823,13.902147,13.902147,40.73823,13.902147,40.73823,1,event_point,core,1,source=GLC; category=mudslide
+GLADV1_0061,GLaD4CD_v1,0061,glad_event_0061,unknown,2018-03-02,exact,44.22109,11.02684,11.02684,44.22109,11.02684,44.22109,1,event_point,core,1,source=IFFI; category=landslide
+GLADV1_0062,GLaD4CD_v1,0062,glad_event_0062,unknown,2018-03-13,exact,43.855129,12.270929,12.270929,43.855129,12.270929,43.855129,1,event_point,core,1,source=IFFI; category=landslide
+GLADV1_0063,GLaD4CD_v1,0063,glad_event_0063,unknown,2018-03-16,exact,43.963654,12.786551,12.786551,43.963654,12.786551,43.963654,1,event_point,core,1,source=IFFI; category=landslide
+GLADV1_0064,GLaD4CD_v1,0064,glad_event_0064,unknown,2018-05-29,exact,46.36235047,9.365791601,9.365791601,46.36235047,9.365791601,46.36235047,1,event_point,core,1,source=IFFI; category=landslide
+GLADV1_0065,GLaD4CD_v1,0065,glad_event_0065,unknown,2018-06-03,exact,46.063517,9.400359,9.400359,46.063517,9.400359,46.063517,1,event_point,core,1,source=IFFI; category=landslide
+GLADV1_0066,GLaD4CD_v1,0066,glad_event_0066,unknown,2018-06-07,exact,45.1442154,7.151622,7.151622,45.1442154,7.151622,45.1442154,1,event_point,core,1,source=IFFI; category=landslide
+GLADV1_0067,GLaD4CD_v1,0067,glad_event_0067,unknown,2018-06-16,exact,38.294981,15.839453,15.839453,38.294981,15.839453,38.294981,1,event_point,core,1,source=IFFI; category=landslide
+GLADV1_0068,GLaD4CD_v1,0068,glad_event_0068,unknown,2018-08-06,exact,45.834907,6.99371,6.99371,45.834907,6.99371,45.834907,1,event_point,core,1,source=IFFI; category=landslide
+GLADV1_0069,GLaD4CD_v1,0069,glad_event_0069,unknown,2018-10-08,exact,38.670115,16.279925,16.279925,38.670115,16.279925,38.670115,1,event_point,core,1,source=IFFI; category=landslide
+GLADV1_0070,GLaD4CD_v1,0070,glad_event_0070,unknown,2018-10-30,exact,46.56281677,13.00742803,13.00742803,46.56281677,13.00742803,46.56281677,1,event_point,core,1,source=IFFI; category=landslide
+GLADV1_0071,GLaD4CD_v1,0071,glad_event_0071,unknown,2018-11-06,exact,44.434508,8.238598,8.238598,44.434508,8.238598,44.434508,1,event_point,core,1,source=IFFI; category=landslide
+GLADV1_0072,GLaD4CD_v1,0072,glad_event_0072,unknown,2019-01-20,exact,38.31528,15.88943,15.88943,38.31528,15.88943,38.31528,1,event_point,core,1,source=IFFI; category=landslide
+GLADV1_0073,GLaD4CD_v1,0073,glad_event_0073,unknown,2019-01-29,exact,40.51556117,16.54804349,16.54804349,40.51556117,16.54804349,40.51556117,1,event_point,core,1,source=IFFI; category=landslide
+GLADV1_0074,GLaD4CD_v1,0074,glad_event_0074,unknown,2019-04-06,exact,46.426196,12.904816,12.904816,46.426196,12.904816,46.426196,1,event_point,core,1,source=IFFI; category=landslide
+GLADV1_0075,GLaD4CD_v1,0075,glad_event_0075,unknown,2019-05-12,exact,46.161394,12.376152,12.376152,46.161394,12.376152,46.161394,1,event_point,core,1,source=IFFI; category=landslide
+GLADV1_0076,GLaD4CD_v1,0076,glad_event_0076,unknown,2019-05-13,exact,43.79996374,11.98809831,11.98809831,43.79996374,11.98809831,43.79996374,1,event_point,core,1,source=IFFI; category=debris_flow
+GLADV1_0077,GLaD4CD_v1,0077,glad_event_0077,unknown,2019-05-15,exact,44.137508,11.038084,11.038084,44.137508,11.038084,44.137508,1,event_point,core,1,source=IFFI; category=landslide
+GLADV1_0078,GLaD4CD_v1,0078,glad_event_0078,unknown,2019-05-20,exact,44.26096201,11.58177579,11.58177579,44.26096201,11.58177579,44.26096201,1,event_point,core,1,source=IFFI; category=rotational_translational_slide
+GLADV1_0079,GLaD4CD_v1,0079,glad_event_0079,unknown,2019-05-28,exact,45.935039,12.269116,12.269116,45.935039,12.269116,45.935039,1,event_point,core,1,source=IFFI; category=landslide
+GLADV1_0080,GLaD4CD_v1,0080,glad_event_0080,unknown,2019-05-30,exact,44.41806471,10.64599487,10.64599487,44.41806471,10.64599487,44.41806471,1,event_point,core,1,source=IFFI; category=rotational_translational_slide
+GLADV1_0081,GLaD4CD_v1,0081,glad_event_0081,unknown,2019-06-12,exact,46.37305762,8.428150996,8.428150996,46.37305762,8.428150996,46.37305762,1,event_point,core,1,source=IFFI; category=debris_flow
+GLADV1_0082,GLaD4CD_v1,0082,glad_event_0082,unknown,2019-06-13,exact,45.892196,10.160648,10.160648,45.892196,10.160648,45.892196,1,event_point,core,1,source=IFFI; category=debris_flow
+GLADV1_0083,GLaD4CD_v1,0083,glad_event_0083,unknown,2019-10-22,exact,44.53292781,8.700716496,8.700716496,44.53292781,8.700716496,44.53292781,1,event_point,core,1,source=IFFI; category=landslide
+GLADV1_0084,GLaD4CD_v1,0084,glad_event_0084,unknown,2019-10-24,exact,44.68978551,8.805214037,8.805214037,44.68978551,8.805214037,44.68978551,1,event_point,core,1,source=IFFI; category=debris_flow
+GLADV1_0085,GLaD4CD_v1,0085,glad_event_0085,unknown,2019-11-01,exact,44.24324365,11.08049329,11.08049329,44.24324365,11.08049329,44.24324365,1,event_point,core,1,source=IFFI; category=rotational_translational_slide
+GLADV1_0086,GLaD4CD_v1,0086,glad_event_0086,unknown,2019-11-03,exact,44.497081,9.662223,9.662223,44.497081,9.662223,44.497081,1,event_point,core,1,source=IFFI; category=debris_flow
+GLADV1_0087,GLaD4CD_v1,0087,glad_event_0087,unknown,2019-11-18,exact,46.360153,12.141937,12.141937,46.360153,12.141937,46.360153,1,event_point,core,1,source=IFFI; category=debris_flow
+GLADV1_0088,GLaD4CD_v1,0088,glad_event_0088,unknown,2019-11-18,exact,46.80885334,11.68159949,11.68159949,46.80885334,11.68159949,46.80885334,1,event_point,core,1,source=IFFI; category=debris_flow
+GLADV1_0089,GLaD4CD_v1,0089,glad_event_0089,unknown,2019-11-19,exact,46.52695321,12.97613489,12.97613489,46.52695321,12.97613489,46.52695321,1,event_point,core,1,source=IFFI; category=landslide
+GLADV1_0090,GLaD4CD_v1,0090,glad_event_0090,unknown,2019-11-20,exact,45.87704466,10.86384857,10.86384857,45.87704466,10.86384857,45.87704466,1,event_point,core,1,source=IFFI; category=landslide
+GLADV1_0091,GLaD4CD_v1,0091,glad_event_0091,unknown,2019-11-24,exact,44.29732714,8.433547916,8.433547916,44.29732714,8.433547916,44.29732714,1,event_point,core,1,source=IFFI; category=debris_flow
+GLADV1_0092,GLaD4CD_v1,0092,glad_event_0092,unknown,2019-11-24,exact,44.859356,9.528896,9.528896,44.859356,9.528896,44.859356,1,event_point,core,1,source=IFFI; category=rotational_translational_slide
+GLADV1_0093,GLaD4CD_v1,0093,glad_event_0093,unknown,2019-11-25,exact,44.415417,8.705769,8.705769,44.415417,8.705769,44.415417,1,event_point,core,1,source=IFFI; category=landslide
+GLADV1_0094,GLaD4CD_v1,0094,glad_event_0094,unknown,2019-11-27,exact,44.03157647,7.895089164,7.895089164,44.03157647,7.895089164,44.03157647,1,event_point,core,1,source=IFFI; category=landslide
+GLADV1_0095,GLaD4CD_v1,0095,glad_event_0095,unknown,2019-12-20,exact,43.879273,7.782682,7.782682,43.879273,7.782682,43.879273,1,event_point,core,1,source=IFFI; category=debris_flow
+GLADV1_0096,GLaD4CD_v1,0096,glad_event_0096,unknown,2019-12-21,exact,46.15815807,9.678559131,9.678559131,46.15815807,9.678559131,46.15815807,1,event_point,core,1,source=IFFI; category=landslide
+GLADV1_0097,GLaD4CD_v1,0097,glad_event_0097,unknown,2020-08-12,exact,46.31752249,9.795859061,9.795859061,46.31752249,9.795859061,46.31752249,1,event_point,core,1,source=IFFI; category=debris_flow
+GLADV1_0098,GLaD4CD_v1,0098,glad_event_0098,unknown,2020-08-29,exact,46.076379,8.802066,8.802066,46.076379,8.802066,46.076379,1,event_point,core,1,source=IFFI; category=landslide
+GLADV1_0099,GLaD4CD_v1,0099,glad_event_0099,unknown,2020-08-30,exact,46.465321,12.231785,12.231785,46.465321,12.231785,46.465321,1,event_point,core,1,source=IFFI; category=landslide
+GLADV1_0100,GLaD4CD_v1,0100,glad_event_0100,unknown,2020-09-25,exact,45.928968,8.699804,8.699804,45.928968,8.699804,45.928968,1,event_point,core,1,source=IFFI; category=landslide
+GLADV1_0101,GLaD4CD_v1,0101,glad_event_0101,unknown,2020-10-02,exact,44.16976883,7.570797381,7.570797381,44.16976883,7.570797381,44.16976883,1,event_point,core,1,source=IFFI; category=debris_flow
+GLADV1_0102,GLaD4CD_v1,0102,glad_event_0102,unknown,2020-10-02,exact,45.655688,7.991019,7.991019,45.655688,7.991019,45.655688,1,event_point,core,1,source=IFFI; category=landslide
+GLADV1_0103,GLaD4CD_v1,0103,glad_event_0103,unknown,2020-10-02,exact,46.37357335,8.428208737,8.428208737,46.37357335,8.428208737,46.37357335,1,event_point,core,1,source=IFFI; category=debris_flow
+GLADV1_0104,GLaD4CD_v1,0104,glad_event_0104,unknown,2020-10-03,exact,46.0955017,9.553146887,9.553146887,46.0955017,9.553146887,46.0955017,1,event_point,core,1,source=IFFI; category=landslide
+GLADV1_0105,GLaD4CD_v1,0105,glad_event_0105,unknown,2020-10-04,exact,45.881991,8.158974,8.158974,45.881991,8.158974,45.881991,1,event_point,core,1,source=IFFI; category=landslide
+GLADV1_0106,GLaD4CD_v1,0106,glad_event_0106,unknown,2020-10-05,exact,45.993447,9.594921,9.594921,45.993447,9.594921,45.993447,1,event_point,core,1,source=IFFI; category=landslide
+GLADV1_0107,GLaD4CD_v1,0107,glad_event_0107,unknown,2020-10-15,exact,41.61796167,13.90041993,13.90041993,41.61796167,13.90041993,41.61796167,1,event_point,core,1,source=IFFI; category=debris_flow
+GLADV1_0108,GLaD4CD_v1,0108,glad_event_0108,unknown,2021-01-03,exact,44.587451,10.152875,10.152875,44.587451,10.152875,44.587451,1,event_point,core,1,source=IFFI; category=rotational_translational_slide
+GLADV1_0109,GLaD4CD_v1,0109,glad_event_0109,unknown,2021-01-04,exact,44.558019,10.017564,10.017564,44.558019,10.017564,44.558019,1,event_point,core,1,source=IFFI; category=rotational_translational_slide
+GLADV1_0110,GLaD4CD_v1,0110,glad_event_0110,unknown,2021-01-24,exact,43.98730337,10.55305107,10.55305107,43.98730337,10.55305107,43.98730337,1,event_point,core,1,source=IFFI; category=debris_flow
+GLADV1_0111,GLaD4CD_v1,0111,glad_event_0111,unknown,2021-02-07,exact,46.34283751,12.19944586,12.19944586,46.34283751,12.19944586,46.34283751,1,event_point,core,1,source=IFFI; category=landslide
+GLADV1_0112,GLaD4CD_v1,0112,glad_event_0112,unknown,2021-02-09,exact,46.301139,11.268293,11.268293,46.301139,11.268293,46.301139,1,event_point,core,1,source=IFFI; category=rotational_translational_slide
+GLADV1_0113,GLaD4CD_v1,0113,glad_event_0113,unknown,2021-02-10,exact,40.652989,14.616049,14.616049,40.652989,14.616049,40.652989,1,event_point,core,1,source=IFFI; category=landslide
+GLADV1_0114,GLaD4CD_v1,0114,glad_event_0114,unknown,2021-02-10,exact,40.71629684,14.76568453,14.76568453,40.71629684,14.76568453,40.71629684,1,event_point,core,1,source=IFFI; category=landslide
+GLADV1_0115,GLaD4CD_v1,0115,glad_event_0115,unknown,2021-02-27,exact,46.7629806,12.06658309,12.06658309,46.7629806,12.06658309,46.7629806,1,event_point,core,1,source=IFFI; category=rotational_translational_slide
+GLADV1_0116,GLaD4CD_v1,0116,glad_event_0116,unknown,2021-03-29,exact,46.47522838,11.49257748,11.49257748,46.47522838,11.49257748,46.47522838,1,event_point,core,1,source=IFFI; category=rotational_translational_slide
+GLADV1_0117,GLaD4CD_v1,0117,glad_event_0117,unknown,2021-05-28,exact,46.60366451,11.61364866,11.61364866,46.60366451,11.61364866,46.60366451,1,event_point,core,1,source=IFFI; category=rotational_translational_slide
+GLADV1_0118,GLaD4CD_v1,0118,glad_event_0118,unknown,2021-05-30,exact,46.89561724,11.86658447,11.86658447,46.89561724,11.86658447,46.89561724,1,event_point,core,1,source=IFFI; category=rotational_translational_slide
+GLADV1_0119,GLaD4CD_v1,0119,glad_event_0119,unknown,2021-06-18,exact,46.59973287,11.41972723,11.41972723,46.59973287,11.41972723,46.59973287,1,event_point,core,1,source=IFFI; category=rotational_translational_slide
+GLADV1_0120,GLaD4CD_v1,0120,glad_event_0120,unknown,2021-07-25,exact,46.32719007,9.412633705,9.412633705,46.32719007,9.412633705,46.32719007,1,event_point,core,1,source=IFFI; category=landslide
+GLADV1_0121,GLaD4CD_v1,0121,glad_event_0121,unknown,2021-07-27,exact,45.942925,9.109533,9.109533,45.942925,9.109533,45.942925,1,event_point,core,1,source=IFFI; category=landslide
+GLADV1_0122,GLaD4CD_v1,0122,glad_event_0122,unknown,2021-07-31,exact,44.30224347,7.117003828,7.117003828,44.30224347,7.117003828,44.30224347,1,event_point,core,1,source=IFFI; category=landslide
+GLADV1_0123,GLaD4CD_v1,0123,glad_event_0123,unknown,2017-08-22,exact,55.08077788,-7.370664384,-7.370664384,55.08077788,-7.370664384,55.08077788,1,event_point,core,1,source=Ireland; category=landslide
+GLADV1_0124,GLaD4CD_v1,0124,glad_event_0124,unknown,2017-08-22,exact,55.09309,-7.33687,-7.33687,55.09309,-7.33687,55.09309,1,event_point,core,1,source=Ireland; category=landslide
+GLADV1_0125,GLaD4CD_v1,0125,glad_event_0125,unknown,2017-08-22,exact,55.0931,-7.359099302,-7.359099302,55.0931,-7.359099302,55.0931,1,event_point,core,1,source=Ireland; category=landslide
+GLADV1_0126,GLaD4CD_v1,0126,glad_event_0126,unknown,2017-08-22,exact,55.10485375,-7.32245,-7.32245,55.10485375,-7.32245,55.10485375,1,event_point,core,1,source=Ireland; category=landslide
+GLADV1_0127,GLaD4CD_v1,0127,glad_event_0127,unknown,2017-08-22,exact,55.10685772,-7.300640623,-7.300640623,55.10685772,-7.300640623,55.10685772,1,event_point,core,1,source=Ireland; category=landslide
+GLADV1_0128,GLaD4CD_v1,0128,glad_event_0128,unknown,2017-08-22,exact,55.13081792,-7.281012432,-7.281012432,55.13081792,-7.281012432,55.13081792,1,event_point,core,1,source=Ireland; category=landslide
+GLADV1_0129,GLaD4CD_v1,0129,glad_event_0129,unknown,2017-08-22,exact,55.22796489,-7.446349237,-7.446349237,55.22796489,-7.446349237,55.22796489,1,event_point,core,1,source=Ireland; category=landslide
+GLADV1_0130,GLaD4CD_v1,0130,glad_event_0130,unknown,2018-06-11,exact,28.34155419,83.89824,83.89824,28.34155419,83.89824,28.34155419,1,event_point,core,1,source=Nepal; category=landslide
+GLADV1_0131,GLaD4CD_v1,0131,glad_event_0131,unknown,2018-07-09,exact,28.39968266,83.96512112,83.96512112,28.39968266,83.96512112,28.39968266,1,event_point,core,1,source=Nepal; category=landslide
+GLADV1_0132,GLaD4CD_v1,0132,glad_event_0132,unknown,2018-07-12,exact,28.22226758,84.48781127,84.48781127,28.22226758,84.48781127,28.22226758,1,event_point,core,1,source=Nepal; category=landslide
+GLADV1_0133,GLaD4CD_v1,0133,glad_event_0133,unknown,2018-07-13,exact,28.48989774,83.52613466,83.52613466,28.48989774,83.52613466,28.48989774,1,event_point,core,1,source=Nepal; category=landslide
+GLADV1_0134,GLaD4CD_v1,0134,glad_event_0134,unknown,2018-07-16,exact,28.42027084,83.53822356,83.53822356,28.42027084,83.53822356,28.42027084,1,event_point,core,1,source=Nepal; category=landslide
+GLADV1_0135,GLaD4CD_v1,0135,glad_event_0135,unknown,2018-07-21,exact,28.5727836,83.43735115,83.43735115,28.5727836,83.43735115,28.5727836,1,event_point,core,1,source=Nepal; category=landslide
+GLADV1_0136,GLaD4CD_v1,0136,glad_event_0136,unknown,2018-08-02,exact,28.26050296,84.45799126,84.45799126,28.26050296,84.45799126,28.26050296,1,event_point,core,1,source=Nepal; category=landslide
+GLADV1_0137,GLaD4CD_v1,0137,glad_event_0137,unknown,2018-08-07,exact,28.41476519,83.48548188,83.48548188,28.41476519,83.48548188,28.41476519,1,event_point,core,1,source=Nepal; category=landslide
+GLADV1_0138,GLaD4CD_v1,0138,glad_event_0138,unknown,2018-08-18,exact,28.62210599,83.64037365,83.64037365,28.62210599,83.64037365,28.62210599,1,event_point,core,1,source=Nepal; category=landslide
+GLADV1_0139,GLaD4CD_v1,0139,glad_event_0139,unknown,2018-08-25,exact,28.23350812,84.32049972,84.32049972,28.23350812,84.32049972,28.23350812,1,event_point,core,1,source=Nepal; category=landslide
+GLADV1_0140,GLaD4CD_v1,0140,glad_event_0140,unknown,2018-08-25,exact,28.55159365,83.40462446,83.40462446,28.55159365,83.40462446,28.55159365,1,event_point,core,1,source=Nepal; category=landslide
+GLADV1_0141,GLaD4CD_v1,0141,glad_event_0141,unknown,2018-09-02,exact,28.39666222,84.39402112,84.39402112,28.39666222,84.39402112,28.39666222,1,event_point,core,1,source=Nepal; category=landslide
+GLADV1_0142,GLaD4CD_v1,0142,glad_event_0142,unknown,2018-09-04,exact,28.35607673,84.38811196,84.38811196,28.35607673,84.38811196,28.35607673,1,event_point,core,1,source=Nepal; category=landslide
+GLADV1_0143,GLaD4CD_v1,0143,glad_event_0143,unknown,2018-09-07,exact,28.31096534,84.32492146,84.32492146,28.31096534,84.32492146,28.31096534,1,event_point,core,1,source=Nepal; category=landslide
+GLADV1_0144,GLaD4CD_v1,0144,glad_event_0144,unknown,2018-09-07,exact,28.43460597,84.11474581,84.11474581,28.43460597,84.11474581,28.43460597,1,event_point,core,1,source=Nepal; category=landslide
+GLADV1_0145,GLaD4CD_v1,0145,glad_event_0145,unknown,2018-09-10,exact,28.64218876,83.61204973,83.61204973,28.64218876,83.61204973,28.64218876,1,event_point,core,1,source=Nepal; category=landslide
+GLADV1_0146,GLaD4CD_v1,0146,glad_event_0146,unknown,2018-09-14,exact,28.60142001,83.64817815,83.64817815,28.60142001,83.64817815,28.60142001,1,event_point,core,1,source=Nepal; category=landslide
+GLADV1_0147,GLaD4CD_v1,0147,glad_event_0147,unknown,2018-09-15,exact,28.45083394,83.51632145,83.51632145,28.45083394,83.51632145,28.45083394,1,event_point,core,1,source=Nepal; category=landslide
+GLADV1_0148,GLaD4CD_v1,0148,glad_event_0148,unknown,2018-09-19,exact,28.47295909,83.61164405,83.61164405,28.47295909,83.61164405,28.47295909,1,event_point,core,1,source=Nepal; category=landslide
+GLADV1_0149,GLaD4CD_v1,0149,glad_event_0149,unknown,2019-07-10,exact,28.42300951,83.3963963,83.3963963,28.42300951,83.3963963,28.42300951,1,event_point,core,1,source=Nepal; category=landslide
+GLADV1_0150,GLaD4CD_v1,0150,glad_event_0150,unknown,2019-08-17,exact,28.29435687,83.05379217,83.05379217,28.29435687,83.05379217,28.29435687,1,event_point,core,1,source=Nepal; category=landslide
+GLADV1_0151,GLaD4CD_v1,0151,glad_event_0151,unknown,2019-09-10,exact,28.59405254,83.33237645,83.33237645,28.59405254,83.33237645,28.59405254,1,event_point,core,1,source=Nepal; category=landslide
+GLADV1_0152,GLaD4CD_v1,0152,glad_event_0152,unknown,2019-09-14,exact,28.49721597,83.48670325,83.48670325,28.49721597,83.48670325,28.49721597,1,event_point,core,1,source=Nepal; category=landslide
+GLADV1_0153,GLaD4CD_v1,0153,glad_event_0153,unknown,2017-08-02,exact,21.82688,104.0699,104.0699,21.82688,104.0699,21.82688,1,event_point,core,1,source=News_manual; category=landslide
+GLADV1_0154,GLaD4CD_v1,0154,glad_event_0154,unknown,2018-06-23,exact,22.28874,103.29655,103.29655,22.28874,103.29655,22.28874,1,event_point,core,1,source=News_manual; category=landslide
+GLADV1_0155,GLaD4CD_v1,0155,glad_event_0155,unknown,2018-08-03,exact,22.509356,103.278683,103.278683,22.509356,103.278683,22.509356,1,event_point,core,1,source=News_manual; category=landslide
+GLADV1_0156,GLaD4CD_v1,0156,glad_event_0156,unknown,2018-08-28,exact,20.53739,104.57208,104.57208,20.53739,104.57208,20.53739,1,event_point,core,1,source=News_manual; category=landslide
+GLADV1_0157,GLaD4CD_v1,0157,glad_event_0157,unknown,2018-08-30,exact,19.753951,102.187389,102.187389,19.753951,102.187389,19.753951,1,event_point,core,1,source=News_manual; category=landslide
+GLADV1_0158,GLaD4CD_v1,0158,glad_event_0158,unknown,2018-09-06,exact,42.72049,141.94484,141.94484,42.72049,141.94484,42.72049,1,event_point,core,1,source=News_manual; category=landslide
+GLADV1_0159,GLaD4CD_v1,0159,glad_event_0159,unknown,2023-05-17,exact,45.9852,9.295303,9.295303,45.9852,9.295303,45.9852,1,event_point,core,1,source=News_manual; category=landslide
+GLADV1_0160,GLaD4CD_v1,0160,glad_event_0160,unknown,2023-02-06,exact,36.60728,36.35949,36.35949,36.60728,36.35949,36.60728,1,event_point,core,1,source=Tukey; category=landslide
+GLADV1_0161,GLaD4CD_v1,0161,glad_event_0161,unknown,2023-02-06,exact,36.631216,36.372557,36.372557,36.631216,36.372557,36.631216,1,event_point,core,1,source=Tukey; category=landslide
+GLADV1_0162,GLaD4CD_v1,0162,glad_event_0162,unknown,2023-02-06,exact,36.664831,36.289225,36.289225,36.664831,36.289225,36.664831,1,event_point,core,1,source=Tukey; category=landslide
+GLADV1_0163,GLaD4CD_v1,0163,glad_event_0163,unknown,2023-02-06,exact,36.66708,36.428991,36.428991,36.66708,36.428991,36.66708,1,event_point,core,1,source=Tukey; category=landslide
+GLADV1_0164,GLaD4CD_v1,0164,glad_event_0164,unknown,2023-02-06,exact,36.668625,36.301664,36.301664,36.668625,36.301664,36.668625,1,event_point,core,1,source=Tukey; category=landslide
+GLADV1_0165,GLaD4CD_v1,0165,glad_event_0165,unknown,2023-02-06,exact,36.677,36.255,36.255,36.677,36.255,36.677,1,event_point,core,1,source=Tukey; category=landslide
+GLADV1_0166,GLaD4CD_v1,0166,glad_event_0166,unknown,2023-02-06,exact,36.678151,36.271511,36.271511,36.678151,36.271511,36.678151,1,event_point,core,1,source=Tukey; category=landslide
+GLADV1_0167,GLaD4CD_v1,0167,glad_event_0167,unknown,2023-02-06,exact,36.721099,36.475386,36.475386,36.721099,36.475386,36.721099,1,event_point,core,1,source=Tukey; category=landslide
+GLADV1_0168,GLaD4CD_v1,0168,glad_event_0168,unknown,2023-02-06,exact,36.72431,36.292407,36.292407,36.72431,36.292407,36.72431,1,event_point,core,1,source=Tukey; category=landslide
+GLADV1_0169,GLaD4CD_v1,0169,glad_event_0169,unknown,2023-02-06,exact,36.743269,36.282027,36.282027,36.743269,36.282027,36.743269,1,event_point,core,1,source=Tukey; category=landslide
+GLADV1_0170,GLaD4CD_v1,0170,glad_event_0170,unknown,2023-02-06,exact,36.750054,36.297924,36.297924,36.750054,36.297924,36.750054,1,event_point,core,1,source=Tukey; category=landslide
+GLADV1_0171,GLaD4CD_v1,0171,glad_event_0171,unknown,2023-02-06,exact,36.842,36.3235,36.3235,36.842,36.3235,36.842,1,event_point,core,1,source=Tukey; category=landslide
+GLADV1_0172,GLaD4CD_v1,0172,glad_event_0172,unknown,2023-02-06,exact,37.00437,36.59091,36.59091,37.00437,36.59091,37.00437,1,event_point,core,1,source=Tukey; category=landslide
+GLADV1_0173,GLaD4CD_v1,0173,glad_event_0173,unknown,2017-05-11,exact,5.85169,-75.92124,-75.92124,5.85169,-75.92124,5.85169,1,event_point,core,1,source=UT; category=landslide
+GLADV1_0174,GLaD4CD_v1,0174,glad_event_0174,unknown,2018-02-15,exact,5.53438,-75.22599,-75.22599,5.53438,-75.22599,5.53438,1,event_point,core,1,source=UT; category=landslide
+USGS_USGS_point_inventory,USGS_Inventory_v3,us_ls_v3_point.csv,USGS_point_inventory,mixed,,partial,,,-164.773123493,17.954294208,-65.632759283,70.205716549,1,inventory_bbox,usgs,310774,valid_date_min=130698; missing_date_min=180054; year_range=1901-2024
+USGS_USGS_poly_inventory,USGS_Inventory_v3,us_ls_v3_poly.csv,USGS_poly_inventory,mixed,,partial,,,-155.746352676583,17.9513479762715,-65.9337427552396,63.6663931061624,1,inventory_bbox,usgs,680497,valid_date_min=65158; missing_date_min=615329; year_range=1906-2023
