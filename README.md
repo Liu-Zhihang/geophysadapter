@@ -49,6 +49,10 @@ The curated public data package is prepared under:
 
 - `release_prep/PILD_release_v1/`
 
+Public release record:
+
+- Zenodo dataset: https://doi.org/10.5281/zenodo.19430714
+
 It contains:
 
 - event-level metadata
@@ -69,6 +73,10 @@ It contains:
 ### Figure 3. GeoPhysAdapter architecture
 
 ![Figure 3 method architecture](docs/assets/figure3_geophysadapter_architecture.png)
+
+### Figure 5. Regime-dependent qualitative comparison
+
+![Figure 5 protocol inversion](docs/assets/figure5_protocol_inversion.png)
 
 ## Reproducibility Scope
 
