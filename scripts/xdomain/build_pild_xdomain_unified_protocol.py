@@ -56,7 +56,7 @@ def load_event_map(candidates: pd.DataFrame, source_id: str) -> pd.DataFrame:
 def pild_rows(root: Path, candidates: pd.DataFrame) -> pd.DataFrame:
     registry_path = (
         root
-        / "physics_informed_landslide_dataset/processed/hybrid_pinn/"
+        / "processed/hybrid_pinn/"
         "pild_core_geo_v2_1_native30_raw/window_registry_v2.csv"
     )
     frame = pd.read_csv(registry_path, keep_default_na=False)
@@ -119,10 +119,10 @@ def pild_rows(root: Path, candidates: pd.DataFrame) -> pd.DataFrame:
 
 
 def sen12_rows(root: Path) -> pd.DataFrame:
-    metadata = root / "physics_informed_landslide_dataset/metadata/pild_xdomain_v1"
+    metadata = root / "metadata/pild_xdomain_v1"
     cache_dir = (
         root
-        / "physics_informed_landslide_dataset/processed/hybrid_pinn/sen12_s2_xdomain_v1"
+        / "processed/hybrid_pinn/sen12_s2_xdomain_v1"
     )
     registry_path = metadata / "sen12_s2_sample_registry_v1.csv"
     cache_index_path = cache_dir / "cache_index_v1.csv"
@@ -228,7 +228,7 @@ def main() -> int:
     parser.add_argument("--root", type=Path, default=Path(__file__).resolve().parents[3])
     args = parser.parse_args()
     root = args.root.resolve()
-    outdir = root / "physics_informed_landslide_dataset/metadata/pild_xdomain_v1"
+    outdir = root / "metadata/pild_xdomain_v1"
     candidate_path = outdir / "candidate_event_registry_v1.csv"
     candidates = pd.read_csv(candidate_path, keep_default_na=False)
     pild = pild_rows(root, candidates)
@@ -276,13 +276,13 @@ def main() -> int:
             "candidate_event_registry": sha256(candidate_path),
             "pild_window_registry": sha256(
                 root
-                / "physics_informed_landslide_dataset/processed/hybrid_pinn/"
+                / "processed/hybrid_pinn/"
                 "pild_core_geo_v2_1_native30_raw/window_registry_v2.csv"
             ),
             "sen12_sample_registry": sha256(outdir / "sen12_s2_sample_registry_v1.csv"),
             "sen12_cache_index": sha256(
                 root
-                / "physics_informed_landslide_dataset/processed/hybrid_pinn/"
+                / "processed/hybrid_pinn/"
                 "sen12_s2_xdomain_v1/cache_index_v1.csv"
             ),
         },

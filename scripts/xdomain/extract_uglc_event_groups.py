@@ -42,7 +42,7 @@ def main() -> int:
     parser.add_argument("--min-polygons", type=int, default=10)
     args = parser.parse_args()
     root = args.root.resolve()
-    out_dir = (args.out_dir or root / "physics_informed_landslide_dataset/metadata/pild_xdomain_v1").resolve()
+    out_dir = (args.out_dir or root / "metadata/pild_xdomain_v1").resolve()
     out_dir.mkdir(parents=True, exist_ok=True)
     source_path = root / "data_raw/10_UGLC/UGLC_poly.csv"
 

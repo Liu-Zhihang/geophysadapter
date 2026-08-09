@@ -78,7 +78,7 @@ def main() -> int:
     parser.add_argument("--max-events", type=int, default=0)
     args = parser.parse_args()
     root = args.root.resolve()
-    metadata = root / "physics_informed_landslide_dataset/metadata/pild_xdomain_v1"
+    metadata = root / "metadata/pild_xdomain_v1"
     source_path = metadata / "uglc_sentinel2_event_candidates_v1.csv"
     frame = pd.read_csv(source_path)
     if args.max_events:

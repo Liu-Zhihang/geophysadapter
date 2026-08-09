@@ -48,20 +48,13 @@ logs/
 *.tar
 *.gz
 
-# Release-generated local mirrors
-release_prep/assets/HYP_50M_SR_W.tif
-release_prep/assets/HYP_50M_SR_W.zip
-release_prep/assets/ne_110m_admin_0_countries.geojson
-
-# Internal paper workspace
-submission_package_jprs_v0_1/
-
-# Internal notes not intended for the first public push
-docs/CLEANUP_LOG_20260305.md
+# Local private workspaces / notes
+submission_package*/
+docs/CLEANUP_LOG_*.md
 docs/HYBRID_PINN_DATA_MAPPING.md
-release_prep/DATA_RELEASE_PLAN_20260314.md
-release_prep/ZENODO_CREATOR_FILLIN_20260314.md
-release_prep/ZENODO_METADATA_TEMPLATE_20260314.md
+release_prep/DATA_RELEASE_PLAN_*.md
+release_prep/ZENODO_*.md
+release_prep/assets/
 
 # Local secrets
 *token*.txt

@@ -51,7 +51,7 @@ def main() -> int:
     args = parser.parse_args()
     root = args.root.resolve()
     source_root = root / "data_raw/08_Sen12Landslides"
-    manifest_path = root / "physics_informed_landslide_dataset/metadata/pild_xdomain_v1/acquisition/sen12_harmonized_manifest.json"
+    manifest_path = root / "metadata/pild_xdomain_v1/acquisition/sen12_harmonized_manifest.json"
     if not manifest_path.is_file():
         raise SystemExit("Sen12 acquisition manifest is missing")
     manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
@@ -59,7 +59,7 @@ def main() -> int:
     if len(specs) != 28:
         raise SystemExit(f"Expected 28 S2 archives, found {len(specs)}")
     out_dir = source_root / "extracted"
-    receipt_dir = root / "physics_informed_landslide_dataset/metadata/pild_xdomain_v1/acquisition/sen12_s2_extract"
+    receipt_dir = root / "metadata/pild_xdomain_v1/acquisition/sen12_s2_extract"
     out_dir.mkdir(parents=True, exist_ok=True)
 
     results: list[dict] = []

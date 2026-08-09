@@ -103,7 +103,7 @@ def main() -> int:
     parser.add_argument(
         "--outdir",
         type=Path,
-        default=Path("physics_informed_landslide_dataset/metadata/pild_xdomain_v1/acquisition"),
+        default=Path("metadata/pild_xdomain_v1/acquisition"),
     )
     parser.add_argument("--full-checksum", action="store_true")
     args = parser.parse_args()
@@ -169,7 +169,7 @@ def main() -> int:
 
     sen12 = audit_sen12(
         root / "data_raw/08_Sen12Landslides",
-        root / "physics_informed_landslide_dataset/metadata/pild_xdomain_v1/acquisition/sen12_harmonized_manifest.json",
+        root / "metadata/pild_xdomain_v1/acquisition/sen12_harmonized_manifest.json",
     )
     report = {
         "generated_at_utc": datetime.now(timezone.utc).isoformat(),

@@ -238,7 +238,7 @@ def main() -> int:
                 failures.append(f"{path}: {error}")
             if position % 500 == 0:
                 print(f"[INDEX] {position}/{len(paths)} failures={len(failures)}", flush=True)
-    out_dir = root / "physics_informed_landslide_dataset/metadata/pild_xdomain_v1"
+    out_dir = root / "metadata/pild_xdomain_v1"
     if failures:
         (out_dir / "sen12_s2_index_failures.json").write_text(
             json.dumps(failures, indent=2) + "\n", encoding="utf-8"

@@ -65,7 +65,7 @@ def trigger_event_id(trigger: str, date: str, name: str) -> str:
 
 
 def read_existing_pild(root: Path) -> pd.DataFrame:
-    registry_path = root / "physics_informed_landslide_dataset/metadata/pild_core_v2/event_registry_v2.csv"
+    registry_path = root / "metadata/pild_core_v2/event_registry_v2.csv"
     master_path = root / "data_external/event_master.csv"
     registry = pd.read_csv(registry_path, dtype=str).fillna("")
     master = pd.read_csv(master_path, dtype=str).fillna("").set_index("event_uid", drop=False)
@@ -335,7 +335,7 @@ def read_usgs(root: Path) -> tuple[pd.DataFrame, pd.DataFrame]:
 
 
 def read_uglc(root: Path) -> pd.DataFrame:
-    path = root / "physics_informed_landslide_dataset/metadata/pild_xdomain_v1/uglc_event_groups_v1.csv"
+    path = root / "metadata/pild_xdomain_v1/uglc_event_groups_v1.csv"
     if not path.is_file():
         return pd.DataFrame()
     data = pd.read_csv(path)
@@ -523,7 +523,7 @@ def main() -> int:
     parser.add_argument("--out-dir", type=Path, default=None)
     args = parser.parse_args()
     root = args.root.resolve()
-    out_dir = (args.out_dir or root / "physics_informed_landslide_dataset/metadata/pild_xdomain_v1").resolve()
+    out_dir = (args.out_dir or root / "metadata/pild_xdomain_v1").resolve()
     out_dir.mkdir(parents=True, exist_ok=True)
 
     existing = read_existing_pild(root)

@@ -37,9 +37,9 @@ def main() -> int:
     upstream = root / "data_raw/08_Sen12Landslides/upstream_code"
     locations_path = upstream / "tasks/S12LS-LD/harmonized/s2/patch_locations.geojson"
     location_summary_path = (
-        root / "physics_informed_landslide_dataset/metadata/pild_xdomain_v1/sen12_location_summary_v1.csv"
+        root / "metadata/pild_xdomain_v1/sen12_location_summary_v1.csv"
     )
-    outdir = root / "physics_informed_landslide_dataset/metadata/pild_xdomain_v1"
+    outdir = root / "metadata/pild_xdomain_v1"
 
     patches = gpd.read_file(locations_path).drop(columns="geometry")
     patches["inventory"] = patches["inventory"].str.lower()

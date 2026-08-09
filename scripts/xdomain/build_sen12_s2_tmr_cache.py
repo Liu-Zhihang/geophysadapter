@@ -73,7 +73,7 @@ def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
         "--root",
         type=Path,
         default=Path(__file__).resolve().parents[3],
-        help="Workspace root containing data_raw/ and physics_informed_landslide_dataset/.",
+        help="Workspace root containing data_raw/, metadata/, processed/, and experiments/.",
     )
     parser.add_argument(
         "--registry",
@@ -700,7 +700,7 @@ def run(args: argparse.Namespace) -> int:
         raise ValueError("--flush-every must be positive")
 
     root = args.root.resolve()
-    metadata = root / "physics_informed_landslide_dataset/metadata/pild_xdomain_v1"
+    metadata = root / "metadata/pild_xdomain_v1"
     registry_path = require_file(
         args.registry or metadata / "sen12_s2_sample_registry_v1.csv", "sample registry"
     )
@@ -713,7 +713,7 @@ def run(args: argparse.Namespace) -> int:
     )
     default_base = (
         root
-        / "physics_informed_landslide_dataset/processed/hybrid_pinn/sen12_s2_xdomain_v1"
+        / "processed/hybrid_pinn/sen12_s2_xdomain_v1"
     )
     if args.outdir is not None:
         outdir = args.outdir.resolve()

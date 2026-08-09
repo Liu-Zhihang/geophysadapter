@@ -408,7 +408,7 @@
   "n_folds": 4,
   "n_samples": 7890,
   "protocol": "pild_geo4_source_stratified_v1",
-  "selection_is_outcome_blind": true,
+  "selection_is_label_independent": true,
   "shared_cross_source_events": [
     "CEV1_b332367aa8fc5c08"
   ],

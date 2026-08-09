@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build the four-source PILD-GEO manifest with outcome-blind DLR QC.
+"""Build the four-source PILD-GEO manifest with label-independent DLR QC.
 
 The source data are never deleted. CAS is excluded from this research manifest
 because its patches lack an audited patch-to-map transform. DLR hard exclusion
@@ -442,7 +442,7 @@ def main() -> None:
         ["source_scenes", "physical_event_id", "q_R_reason"],
     ]
     lines = [
-        "# PILD-GEO4 outcome-blind QC",
+        "# PILD-GEO4 label-independent QC",
         "",
         f"- Retained samples: `{len(primary):,}/{len(manifest):,}`.",
         f"- DLR retained events: `{int(audit['primary_event_included'].sum())}/{len(audit)}`.",

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build four outcome-blind source-covered event folds for PILD-GEO4-QC."""
+"""Build four label-independent source-covered event folds for PILD-GEO4-QC."""
 
 from __future__ import annotations
 
@@ -117,7 +117,7 @@ def main() -> int:
                     "heldout_dataset_id": "",
                     "role": role,
                     "role_reason": (
-                        f"outcome-blind canonical-event bucket={bucket}; "
+                        f"label-independent canonical-event bucket={bucket}; "
                         f"test={test_bucket}; val={val_bucket}"
                     ),
                 }

@@ -206,7 +206,7 @@
     "manifest": "$PILD_ROOT/metadata/pild_geo4_qc_v1/unified_sample_manifest_geo4_qc_v1.csv",
     "manifest_sha256": "70f2e73e9ebd84f27a21d4c8c81feccf8150415616f7451b6dd7171a5a5aac0f",
     "retained_samples": 7890,
-    "selection_is_outcome_blind": true
+    "selection_is_label_independent": true
   },
   "readiness": {
     "blockers": [],

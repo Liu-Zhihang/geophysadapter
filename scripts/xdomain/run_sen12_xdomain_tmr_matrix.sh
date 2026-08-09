@@ -2,7 +2,7 @@
 set -euo pipefail
 
 ROOT="${ROOT:-${WORKSPACE_ROOT:-$(pwd)}}"
-PROJECT="$ROOT/physics_informed_landslide_dataset"
+PROJECT="$ROOT"
 PYTHON="${PYTHON:-python}"
 TRAINER="$PROJECT/scripts/xdomain/train_sen12_xdomain_tmr.py"
 H5="${H5:-$PROJECT/processed/hybrid_pinn/sen12_s2_xdomain_v1/sen12_s2_tmr_p128.h5}"

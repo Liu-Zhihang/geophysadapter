@@ -2,7 +2,7 @@
 """Audit landslide label geometry against optical and Terrain support scales.
 
 This is a descriptive target-geometry audit. It is deliberately separate from
-the outcome-blind eligibility audit because it reads segmentation labels.
+the label-independent eligibility audit because it reads segmentation labels.
 """
 
 from __future__ import annotations
@@ -223,7 +223,7 @@ def main() -> None:
     }
     summary: dict[str, Any] = {
         "status": "complete",
-        "scientific_status": "descriptive label-geometry audit; not an outcome-blind filter",
+        "scientific_status": "descriptive label-geometry audit; not an label-independent filter",
         "generated_at_utc": datetime.now(timezone.utc).isoformat(),
         "pixel_size_m": PIXEL_SIZE_M,
         "pixel_area_m2": PIXEL_AREA_M2,
@@ -259,7 +259,7 @@ def main() -> None:
     lines = [
         "# PILD label geometry versus physical support scale v1",
         "",
-        "- This audit reads labels and is separate from the outcome-blind support filter.",
+        "- This audit reads labels and is separate from the label-independent support filter.",
         "- Pixel size: 10 m; one pixel = 100 m2.",
         "- Terrain native support: about 30 m; one Terrain cell = about 900 m2.",
         "- Resolution-derived largest-component strata: 100, 900, 3,600, and 8,100 m2.",

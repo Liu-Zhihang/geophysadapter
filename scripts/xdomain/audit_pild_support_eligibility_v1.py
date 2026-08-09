@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build outcome-blind PILD sample/event eligibility and support strata.
+"""Build label-independent PILD sample/event eligibility and support strata.
 
 This audit never reads labels, predictions, checkpoints, or evaluation metrics.
 It does not delete source data. It separates:
@@ -417,7 +417,7 @@ def summarize_flags(frame: pd.DataFrame) -> dict[str, Any]:
 
 def build_report(summary: dict[str, Any], frame: pd.DataFrame) -> str:
     lines = [
-        "# PILD outcome-blind support eligibility audit v1",
+        "# PILD label-independent support eligibility audit v1",
         "",
         f"- Generated: `{summary['generated_at_utc']}`",
         f"- Samples: **{summary['n_samples']}**",

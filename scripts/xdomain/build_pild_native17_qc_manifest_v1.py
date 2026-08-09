@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Restrict the native17 manifest to the frozen outcome-blind PILD-GEO4-QC cohort."""
+"""Restrict the native17 manifest to the frozen label-independent PILD-GEO4-QC cohort."""
 
 from __future__ import annotations
 
@@ -87,7 +87,7 @@ def main() -> int:
     summary["schema_version"] = "pild_geo4_qc_training_protocol.native17.v1"
     summary["created_at_utc"] = datetime.now(timezone.utc).isoformat()
     summary["mode"] = (
-        "native17 Terrain contract restricted to the frozen outcome-blind "
+        "native17 Terrain contract restricted to the frozen label-independent "
         "PILD-GEO4-QC cohort"
     )
     summary["outputs"]["manifest"] = {

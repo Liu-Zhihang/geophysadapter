@@ -39,7 +39,7 @@
     "SEN12LS_HARMONIZED": 4979
   },
   "retained_samples": 7890,
-  "selection_is_outcome_blind": true,
+  "selection_is_label_independent": true,
   "status": "complete",
   "thresholds": {
     "min_event_eligible_samples": 5,
