@@ -1,57 +1,52 @@
 # GeoPhysAdapter
 
-Code and release-safe metadata for **GeoPhysAdapter**, a scale-matched geophysical adapter for cross-domain landslide mapping with vision foundation models.
-
-Paper:
+Official code for:
 
 **GeoPhysAdapter: Scale-Matched Geophysical Adaptation for Cross-Domain Landslide Mapping with Vision Foundation Models**
 
 ## Overview
 
-GeoPhysAdapter keeps a vision foundation model frozen (primary anchor: Prithvi-EO-2.0-300M-TL) and applies a constrained physical update around its prediction:
+GeoPhysAdapter freezes a vision foundation model (primary anchor: Prithvi-EO-2.0-300M-TL) and updates its prediction with three geophysical priors:
 
-- Terrain provides a densely aligned correction direction
-- Material modulates regional amplitude within a bounded range
-- Trigger supplies an event-level intervention dose
+- Terrain: densely aligned correction direction
+- Material: bounded regional amplitude modulation
+- Trigger: event-level intervention dose
 
-Updates operate at the pixel scale and at the candidate landslide-body scale. When physical support is invalid or insufficient, the method returns the frozen visual prediction unchanged.
+The update runs at both the pixel scale and the candidate landslide-body scale. If physical support is missing or invalid, the frozen visual prediction is kept as is.
 
-## PILD metadata in this repository
+## Dataset (PILD)
 
-The public release includes metadata for the four-source PILD corpus used in the paper:
+This repository includes the metadata used by the paper for the four-source PILD corpus:
 
 - 7,890 samples
 - 55 canonical events
 - event-isolated splits and protocol summaries
 
-Main paths:
-
 - `metadata/pild_geo4_qc_v1/`
-- `metadata/pild_geo4_qc_native17_v1/` (protocol summary and hashes; see Supplement S6)
+- `metadata/pild_geo4_qc_native17_v1/` (protocol summary and hashes; Supplement S6)
 
-Raw imagery and mixed-license environmental rasters are **not** redistributed here. Obtain source data from the original providers; the Zenodo package lists download pointers and license notes.
+Raw imagery remains with the original data providers. Download pointers and license notes are in the Zenodo record below.
 
-## Repository layout
+## Repository structure
 
 | Path | Contents |
 |---|---|
-| `scripts/xdomain/` | Training, evaluation, and role-aware modules |
-| `scripts/` | Figure exporters and auxiliary analysis scripts |
-| `metadata/` | Manifests, splits, and protocol tables |
-| `experiments/revision2026/` | Lightweight numeric summaries (no checkpoints) |
-| `docs/assets/` | Paper figures shown below |
-| `release_prep/` | Zenodo packaging notes |
+| `scripts/xdomain/` | Training and evaluation code |
+| `scripts/` | Figure and analysis utilities |
+| `metadata/` | Sample manifests and splits |
+| `experiments/revision2026/` | Summary metrics reported in the paper |
+| `docs/assets/` | Figures |
 
-## Setup
+## Installation
 
 ```bash
 conda env create -f environment.yml
 conda activate geophysadapter
 ```
 
-## Reproduction entry points (Supplement S6)
+## Reproducing Supplement S6
 
-| Step | Script / artifact |
+| Step | Path |
 |---|---|
 | Four-source training | `scripts/xdomain/train_pild_sen12_roleaware_v1.py` |
 | Terrain encoding | `scripts/xdomain/sen12_terrain_v2.py` |
@@ -62,11 +57,11 @@ conda activate geophysadapter
 | Object-level summary | `experiments/revision2026/pild_object_veto_final_v1/summary.json` |
 | Protocol hashes | `metadata/pild_geo4_qc_native17_v1/protocol_summary_geo4_qc_native17_v1.json` |
 
-Checkpoints and large OOF tensors are not included. Rebuild local caches from the scripts above and the source imagery referenced in Zenodo.
+Model checkpoints are not shipped with the repository. Train or evaluate locally with the scripts above after preparing the source imagery listed on Zenodo.
 
-## Data package
+## Data
 
-- Zenodo: https://doi.org/10.5281/zenodo.19430714
+Zenodo: https://doi.org/10.5281/zenodo.19430714
 
 ## Figures
 
@@ -108,8 +103,8 @@ Checkpoints and large OOF tensors are not included. Rebuild local caches from th
 
 ## Citation
 
-Please cite the paper and the Zenodo record above if you use this repository or the PILD release assets.
+If you use this code or the PILD assets, please cite the paper and the Zenodo DOI above.
 
-## License and contact
+## Contact
 
-See the repository license file and the Zenodo record for release terms. Questions about the public release can be opened as GitHub issues.
+Please open a GitHub issue for questions about the code or data links.

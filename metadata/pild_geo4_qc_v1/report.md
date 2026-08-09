@@ -1,14 +1,14 @@
-# PILD-GEO4 outcome-blind QC
+# PILD-GEO4 QC summary
 
 - Retained samples: `7,890/7,916`.
 - DLR retained events: `22/23`.
-- CAS: excluded from this research manifest; source files remain untouched.
+- CAS is excluded from this training manifest; source files are unchanged.
 - DLR hard exclusion: `CA0002` only.
 - DLR role eligibility: Terrain `22`, Material `20`, Trigger `8`, Full-TMR `6` events.
 
 ## Hard exclusion
 
-`CA0002` has only `3/26` four-date-quality-pass samples and an event mean optical-valid fraction of approximately `0.284`. No labels, predictions, IoU, or model errors were used.
+`CA0002` has only `3/26` four-date-quality-pass samples and an event mean optical-valid fraction of approximately `0.284`. Labels, predictions, IoU, and model errors were not used for this decision.
 
 ## Role-specific abstention
 
@@ -34,4 +34,4 @@ Trigger abstention events:
 - `IN0001`: `mechanism_not_rainfall`.
 - `IN0004`: `mechanism_not_rainfall`.
 
-Role abstention does not remove an event from Terrain experiments. Unsupported branches must return the exact parent prediction.
+Role abstention does not remove an event from Terrain experiments. Unsupported branches return the parent prediction.

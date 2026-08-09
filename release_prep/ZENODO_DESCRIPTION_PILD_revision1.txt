@@ -1,6 +1,6 @@
-Physics-Informed Landslide Dataset (PILD): Metadata, Protocols, and Release Assets
+Physics-Informed Landslide Dataset (PILD)
 
-Release-safe metadata and protocol assets for GeoPhysAdapter / PILD.
+Metadata and protocol assets for GeoPhysAdapter / PILD.
 
 Primary corpus:
 - 7,890 samples
@@ -8,9 +8,9 @@ Primary corpus:
 - four public sources
 - event-isolated evaluation folds
 
-The package provides curated manifests, split definitions, protocol summaries and hashes, source-license notes, and download pointers. Upstream raw imagery and mixed-license environmental rasters are not redistributed.
+Contents include sample manifests, split definitions, protocol summaries and hashes, source-license notes, and download pointers. Raw imagery is not included; please obtain it from the original providers.
 
-Companion code repository:
+Code repository:
 https://github.com/Liu-Zhihang/geophysadapter
 
 DOI:
