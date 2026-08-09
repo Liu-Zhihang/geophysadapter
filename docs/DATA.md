@@ -1,154 +1,92 @@
-# Data access and usage
+# Data guide
 
-This page explains how to obtain the open datasets used by GeoPhysAdapter / PILD, how to cite them, and how to connect them to the metadata in this repository.
+This page has two parts:
 
-## What this repository provides
+1. **How to use our open PILD package** (metadata, splits, protocol tables)
+2. **Where the paper’s upstream open datasets come from** (download links and citations)
 
-| Asset | Location | Role |
+Raw satellite imagery is not redistributed in this repository or on Zenodo. PILD tells you *which* samples and events enter the paper experiments; imagery is obtained from the original providers.
+
+---
+
+## Part 1 — Our open dataset (PILD)
+
+### What you get
+
+| Item | Where | What it is |
 |---|---|---|
-| Sample manifest (7,890 samples) | `metadata/pild_geo4_qc_v1/unified_sample_manifest_geo4_qc_v1.csv` | Sample IDs, source IDs, event IDs, asset readiness flags |
-| Event-isolated split | `metadata/pild_geo4_qc_v1/event_isolated_split_geo4_qc_v1.csv` | Train / validation / test roles by fold |
-| Protocol summary | `metadata/pild_geo4_qc_v1/summary.json` | Retained counts and QC thresholds |
-| Native protocol hashes | `metadata/pild_geo4_qc_native17_v1/` | Supplement S6 checksums |
-| Object-level summary | `experiments/revision2026/pild_object_veto_final_v1/summary.json` | Reported object-scale metrics |
-| Zenodo package | https://doi.org/10.5281/zenodo.19430714 | Curated metadata, split tables, download notes |
+| Zenodo package | https://doi.org/10.5281/zenodo.19430714 | Same metadata family as this repo |
+| Unified sample manifest | `metadata/pild_geo4_qc_v1/unified_sample_manifest_geo4_qc_v1.csv` | 7,890 samples with IDs and readiness flags |
+| Event-isolated split | `metadata/pild_geo4_qc_v1/event_isolated_split_geo4_qc_v1.csv` | Fold roles for train / val / test |
+| LODO split | `metadata/pild_geo4_qc_v1/leave_one_dataset_out_split_geo4_qc_v1.csv` | Leave-one-dataset-out roles |
+| QC summary | `metadata/pild_geo4_qc_v1/summary.json` | Retained counts and thresholds |
+| Protocol hashes | `metadata/pild_geo4_qc_native17_v1/` | Checksums cited in Supplement S6 |
+| Object-level metrics | `experiments/revision2026/pild_object_veto_final_v1/summary.json` | Numbers reported for object-scale review |
 
-Raw satellite imagery is **not** redistributed here. Download it from the original providers below, then join it to the PILD manifests by `dataset_id`, `sample_id`, `source_sample_id`, and `canonical_event_id`.
+Paper corpus: **7,890 samples**, **55 canonical events**.
 
-Corpus size used in the paper: **7,890 samples / 55 canonical events**.
-
-| `dataset_id` | Samples | Events (source-level) |
+| `dataset_id` | Samples | Source-level events |
 |---|---:|---:|
 | `SEN12LS_HARMONIZED` | 4,979 | 15 |
 | `GDCLD` | 2,334 | 4 |
 | `DLR_Landslide_Ref_2025` | 509 | 22 |
 | `GLaD4CD_v1` | 68 | 15 |
 
-Source-level event counts sum to 56; one GDCLD–Sen12Landslides overlap is merged into a single canonical event, giving 55.
+Source-level events sum to 56; one GDCLD–Sen12Landslides overlap is merged into one canonical event (55).
 
-## 1. Upstream landslide datasets (required)
+### How to use PILD
 
-### 1.1 Sen12Landslides (harmonized)
-
-- Role in PILD: primary multi-temporal optical source (`SEN12LS_HARMONIZED`)
-- Paper: Höhn et al., 2025, *Scientific Data*  
-  https://doi.org/10.1038/s41597-025-06167-2
-- Dataset: https://huggingface.co/datasets/paulhoehn/Sen12Landslides
-- Code helpers: https://github.com/PaulH97/Sen12Landslides
-- Suggested download (harmonized only):
+**Step 1 — Get the package**
 
 ```bash
-pip install -U huggingface_hub
-hf download paulhoehn/Sen12Landslides \
-  --repo-type dataset \
-  --local-dir ./data_raw/Sen12Landslides \
-  --include "data_harmonized/**"
+git clone https://github.com/Liu-Zhihang/geophysadapter.git
+cd geophysadapter
+# or download the Zenodo zip: https://doi.org/10.5281/zenodo.19430714
 ```
 
-### 1.2 DLR Landslide Reference
+**Step 2 — Read the manifest**
 
-- Role in PILD: `DLR_Landslide_Ref_2025`
-- Paper: Orynbaikyzy / Martinis et al., 2025, *GIScience & Remote Sensing*  
-  https://doi.org/10.1080/15481603.2025.2502214
-- Dataset (Zenodo): https://zenodo.org/records/17007637  
-  DOI: https://doi.org/10.5281/zenodo.17007637
+```python
+import pandas as pd
 
-### 1.3 GDCLD
+manifest = pd.read_csv(
+    "metadata/pild_geo4_qc_v1/unified_sample_manifest_geo4_qc_v1.csv"
+)
+split = pd.read_csv(
+    "metadata/pild_geo4_qc_v1/event_isolated_split_geo4_qc_v1.csv"
+)
 
-- Role in PILD: `GDCLD`
-- Paper: Fang et al., 2024, *Earth System Science Data*  
-  https://doi.org/10.5194/essd-16-4817-2024  
-  https://essd.copernicus.org/articles/16/4817/2024/
-- Access: follow the article’s data-availability statement. Imagery mixes multiple commercial / agency sources; do not rehost raw tiles through this project.
+print(manifest["dataset_id"].value_counts())
+print(manifest[["sample_id", "canonical_event_id", "dataset_id"]].head())
+```
 
-### 1.4 GLaD4CD v1
+Important columns:
 
-- Role in PILD: `GLaD4CD_v1`
-- Dataset: Leonardi et al., 2024, Zenodo  
-  https://doi.org/10.5281/zenodo.14226448
-- Use the v1 package referenced by the paper.
+- `sample_id` / `source_sample_id`: join keys to upstream tiles
+- `canonical_event_id`: event identity used for event-isolated splits
+- `dataset_id`: upstream source family
+- `primary_qc_included`: kept in the paper corpus
+- terrain / material / trigger readiness flags
 
-### 1.5 CAS Landslide (registered, not in the geo4 spatial corpus)
+Path fields in the CSV use the placeholder `$PILD_ROOT/...`. After you build local caches, replace that prefix with your data root (or set `PILD_ROOT` in the environment).
 
-- Paper: Xu et al., 2024, *Scientific Data*  
-  https://doi.org/10.1038/s41597-023-02847-z
-- Dataset: https://doi.org/10.5281/zenodo.10463130
-- Note: kept in the broader PILD registry, but excluded from the 7,890-sample spatial attribution corpus because samples lack auditable CRS / affine transforms.
+**Step 3 — Join a split**
 
-## 2. Geophysical layers used by GeoPhysAdapter
+```python
+df = manifest.merge(split, on="sample_id", how="inner")
+train = df[df["role"] == "train"]  # column name follows the split file
+```
 
-These are fetched from their providers and aligned to sample footprints. They are not shipped as raw rasters in this repository.
+**Step 4 — Run the paper scripts**
 
-| Prior | Product | Official access | Typical use |
-|---|---|---|---|
-| Terrain (~30 m) | Copernicus DEM GLO-30 | https://dataspace.copernicus.eu/ | DEM / slope and dense spatial support |
-| Material (~250 m) | SoilGrids | https://www.isric.org/explore/soilgrids | Soil texture / chemistry amplitude |
-| Trigger (~5 km window) | CHIRPS daily rainfall | https://www.chc.ucsb.edu/data/chirps | Event rainfall dose |
-| Optional land cover | ESA WorldCover | https://esa-worldcover.org/en/data-access | Auxiliary context |
-| Optional moisture | SMAP / ERA5-Land | https://smap.jpl.nasa.gov/data/ ; https://www.ecmwf.int/en/forecasts/dataset/ecmwf-reanalysis-v5 | Hydrometeorological support |
-
-## 3. How to use the data with this code
-
-### Step A — Install
+Install once:
 
 ```bash
 conda env create -f environment.yml
 conda activate geophysadapter
 ```
 
-### Step B — Get PILD metadata
-
-Either clone this repository, or download the Zenodo package:
-
-https://doi.org/10.5281/zenodo.19430714
-
-Key file:
-
-```text
-metadata/pild_geo4_qc_v1/unified_sample_manifest_geo4_qc_v1.csv
-```
-
-Useful columns:
-
-- `dataset_id`: one of the four sources above
-- `sample_id` / `source_sample_id`: join keys to upstream tiles
-- `canonical_event_id`: event used for event-isolated splits
-- `primary_qc_included`: retained in the paper corpus
-- terrain / material / trigger readiness flags
-
-Path columns in the CSV are written as `$PILD_ROOT/...`. Set `PILD_ROOT` to your local data root after you rebuild caches.
-
-### Step C — Download upstream imagery
-
-1. Sen12Landslides harmonized (Hugging Face)
-2. DLR Landslide Reference (Zenodo)
-3. GDCLD (via Fang et al., 2024)
-4. GLaD4CD v1 (Zenodo)
-
-Keep each source in its own directory, for example:
-
-```text
-data_raw/
-  Sen12Landslides/
-  DLR_Landslide_Ref_2025/
-  GDCLD/
-  GLaD4CD_v1/
-```
-
-### Step D — Build local caches
-
-Use the scripts under `scripts/xdomain/` to build optical / terrain / material / trigger caches that match the manifest. Entry points for the paper protocol:
-
-| Task | Script |
-|---|---|
-| Four-source training | `scripts/xdomain/train_pild_sen12_roleaware_v1.py` |
-| Terrain encoding | `scripts/xdomain/sen12_terrain_v2.py` |
-| Material module | `scripts/xdomain/pild_roleaware_material.py` |
-| Trigger module | `scripts/xdomain/pild_roleaware_trigger.py` |
-| Pixel utility gate | `scripts/xdomain/evaluate_pild_benefit_gate_v1.py` |
-| Object-level review | `scripts/xdomain/evaluate_pild_object_veto_final_v1.py` |
-
-Example training call after caches exist:
+Then point the training / evaluation entry points at the PILD files, for example:
 
 ```bash
 python scripts/xdomain/train_pild_sen12_roleaware_v1.py \
@@ -159,31 +97,72 @@ python scripts/xdomain/train_pild_sen12_roleaware_v1.py \
   --outdir experiments/local_run
 ```
 
-Exact flags depend on the variant you reproduce (`terrain`, material/trigger roles, or full object review). See Supplement S6 of the paper for the protocol mapping.
+Object-level review:
 
-### Step E — Evaluate
-
-Pixel-scale and object-scale evaluators write summary JSON/CSV under your `--outdir`. The paper’s object-level numbers are archived at:
-
-```text
-experiments/revision2026/pild_object_veto_final_v1/summary.json
+```bash
+python scripts/xdomain/evaluate_pild_object_veto_final_v1.py --help
 ```
 
-## 4. Citation checklist
+Full entry-point list: README (Supplement S6 table).
 
-Please cite **all** of the following that you actually use:
+---
 
-1. The GeoPhysAdapter paper (this repository)
-2. The PILD Zenodo record: https://doi.org/10.5281/zenodo.19430714
-3. Upstream datasets used in your run:
-   - Höhn et al., 2025 (Sen12Landslides)
-   - Orynbaikyzy / Martinis et al., 2025 (DLR Landslide Reference)
-   - Fang et al., 2024 (GDCLD)
-   - Leonardi et al., 2024 (GLaD4CD)
-4. Any geophysical product you download (Copernicus DEM, SoilGrids, CHIRPS, etc.)
+## Part 2 — Upstream open datasets used in the paper
 
-## 5. License boundary
+Download these if you need the original imagery / labels behind PILD samples. Cite each source you use.
 
-- Metadata, splits, and code in this repository follow the repository license.
-- Raw imagery and environmental rasters remain under the license of each provider.
-- GDCLD in particular should be obtained through the authors’ published access route; do not mirror mixed-license commercial imagery.
+### Sen12Landslides (harmonized)
+
+- PILD id: `SEN12LS_HARMONIZED`
+- Paper: Höhn et al., 2025, *Scientific Data* — https://doi.org/10.1038/s41597-025-06167-2
+- Data: https://huggingface.co/datasets/paulhoehn/Sen12Landslides
+- Helpers: https://github.com/PaulH97/Sen12Landslides
+
+```bash
+pip install -U huggingface_hub
+hf download paulhoehn/Sen12Landslides \
+  --repo-type dataset \
+  --local-dir ./data_raw/Sen12Landslides \
+  --include "data_harmonized/**"
+```
+
+### DLR Landslide Reference
+
+- PILD id: `DLR_Landslide_Ref_2025`
+- Paper: Orynbaikyzy / Martinis et al., 2025, *GIScience & Remote Sensing* — https://doi.org/10.1080/15481603.2025.2502214
+- Data: https://doi.org/10.5281/zenodo.17007637
+
+### GDCLD
+
+- PILD id: `GDCLD`
+- Paper / data access: Fang et al., 2024, *Earth System Science Data* — https://doi.org/10.5194/essd-16-4817-2024
+- Follow the article’s data-availability statement. Do not rehost mixed-license commercial imagery.
+
+### GLaD4CD v1
+
+- PILD id: `GLaD4CD_v1`
+- Data: Leonardi et al., 2024 — https://doi.org/10.5281/zenodo.14226448
+
+### Geophysical products (aligned by us, not redistributed as raw stacks)
+
+| Prior | Product | Link |
+|---|---|---|
+| Terrain | Copernicus DEM GLO-30 | https://dataspace.copernicus.eu/ |
+| Material | SoilGrids | https://www.isric.org/explore/soilgrids |
+| Trigger | CHIRPS | https://www.chc.ucsb.edu/data/chirps |
+| Optional | ESA WorldCover | https://esa-worldcover.org/en/data-access |
+| Optional | SMAP / ERA5-Land | https://smap.jpl.nasa.gov/data/ ; ECMWF ERA5-Land page |
+
+### Note on CAS Landslide
+
+CAS Landslide (Xu et al., 2024; https://doi.org/10.1038/s41597-023-02847-z, https://doi.org/10.5281/zenodo.10463130) is registered in the broader PILD collection but is **not** part of the 7,890-sample spatial corpus in this paper (missing auditable sample-level CRS / affine transforms).
+
+---
+
+## Citation
+
+If you use PILD or this code, cite:
+
+1. the GeoPhysAdapter paper
+2. the PILD Zenodo DOI: https://doi.org/10.5281/zenodo.19430714
+3. every upstream dataset / product you download

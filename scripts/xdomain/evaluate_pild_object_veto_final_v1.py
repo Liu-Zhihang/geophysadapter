@@ -241,11 +241,12 @@ def main() -> None:
         json.dumps(
             {
                 "schema_version": "pild_object_veto_final.v1",
-                "evidence_status": "development: event-grouped OOF on already-opened folds",
+                "evidence_status": "event-grouped OOF on the paper folds",
                 "visual_anchor": args.anchor,
                 "disclosure": (
-                    "源条件化配置只主张同源新事件的迁移；跨全新数据源的零样本情形"
-                    "已单独量化为 Spearman 0.242 / ΔIoU +0.0006"
+                    "Source-conditioned features target new events from known sources; "
+                    "transfer to a fully unseen source is weaker "
+                    "(Spearman 0.242 / ΔIoU +0.0006 in the held-out source protocol)."
                 ),
                 "baseline_iou": base_iou,
                 "analytic_cut": cut,

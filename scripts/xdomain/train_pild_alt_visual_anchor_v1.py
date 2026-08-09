@@ -1,27 +1,12 @@
 #!/usr/bin/env python3
-"""替代视觉锚点：在统一 PILD 语料上训练非 Prithvi 骨干并导出 OOF 概率缓存。
+"""Train non-Prithvi visual anchors on the same PILD protocol and export OOF caches.
 
-动机（回应 R3.11 与 R3.2 在对象级证据上的延伸）：
-对象级物理审查目前只建立在单一视觉锚点 Prithvi-EO-2.0-300M-TL 上。若把它作为正文
-主结果，就在最强主张上重新制造了审稿人批评过的单骨干依赖。本脚本用同一份数据契约
-训练三个来自 L4S 八配置线的自监督骨干，使"对象级机制是否依赖特定视觉锚点"成为
-可判决的问题。
-
-匹配纪律：manifest、protocol summary、事件隔离划分、fold、seed、采样温度、优化预算、
-阈值选择规则全部与 Prithvi 锚点逐字一致，唯一变化是视觉编码器。因此任何差异都归因于
-锚点本身，而不是数据或协议。
-
-输入构造：光学张量为 (6 波段, 4 时相, 128, 128)。取前两时相均值为震前、后两时相均值为
-震后，拼成 12 通道，与既有 optical cache 的构造完全相同。逐通道标准化的均值/方差只在
-该折训练集上估计，不使用任何标签。
-
-编码器冻结，只训练匹配的 FPN 解码头（hidden=96），与 Phase 14 骨干矩阵同一解码器。
-阈值由验证集在 0.05–0.95 网格上最大化 IoU 选出，与 Prithvi 锚点同一函数。
-
-导出的缓存与 pild_object_physical_diagnostic_v1/oof_cache 的 schema 逐字段一致，
-因此全部对象级流水线可以不加修改地指向新目录。
+Uses the same manifest, splits, fold, seed, sampling temperatures, optimization
+budget, and threshold rule as the Prithvi anchor. Only the visual encoder changes.
+Optical tensors are (6 bands, 4 dates, 128, 128); the first two dates are averaged
+as pre-event and the last two as post-event to form a 12-channel input. Channel
+normalization statistics are estimated on the training fold only.
 """
-
 from __future__ import annotations
 
 import argparse
@@ -69,9 +54,7 @@ DEFAULT_SPLIT = PROJECT_ROOT / "metadata/pild_geo4_qc_v1/source_stratified_event
 FOLDS = tuple(f"source_stratified_{index}" for index in range(4))
 IN_CHANNELS = 12
 
-# Phase 14 的三个骨干之外，再加一个遥感自监督基础模型。三个 Phase 14 骨干都在通用自然
-# 影像上预训练，若对象级机制只在它们上成立，仍可能被质疑为"弱锚点效应"。DINOv3-SAT
-# 在 4.93 亿张卫星影像上预训练，是与 Prithvi 同类的遥感基础模型，能把锚点强度谱补齐。
+# Additional remote-sensing self-supervised anchors.
 EXTRA_BACKBONE_SPECS: dict[str, BackboneSpec] = {
     "dinov3_sat_l_fpn": BackboneSpec(
         slug="dinov3_sat_l_fpn",
@@ -91,7 +74,7 @@ def resolve_backbone_spec(slug: str) -> BackboneSpec:
 
 
 class AltVisualAnchor(nn.Module):
-    """冻结的 timm 编码器 + 与 Phase 14 一致的 FPN 解码头，接受 12 通道震前/震后堆叠。"""
+    """Frozen timm encoder with an FPN decoder for 12-channel pre/post stacks."""
 
     def __init__(self, slug: str, *, pretrained: bool = True) -> None:
         super().__init__()

@@ -1,22 +1,12 @@
 #!/usr/bin/env python3
-"""G9-c：母体上下文与粗到细级联。
+"""Parent-context and coarse-to-fine object review.
 
-G9-b 的读数是一对矛盾：切分把 oracle 从 +0.1135 抬到 +0.1327，说明决策单元确实更接近
-可分；但可部署值从 +0.0257 掉到 +0.0177，因为切碎之后每个子单元丢失了整块的重力几何证据
-（descent_consistency、slope_decline、elongation、downslope_alignment 都需要完整体）。
+Modes:
+    sub_with_parent  sub-object descriptors plus parent-body descriptors
+    cascade          whole-body veto first, then sub-object review on survivors
 
-因此本脚本检验两种修法：
-
-    sub_with_parent  子单元自身描述子 + 其母体的全部描述子。子单元负责"切在哪"，
-                     母体负责"这是不是一个重力驱动的物体"，两个尺度的证据同时进入。
-
-    cascade          粗到细两级审查。先在整块层面执行现行 veto，再只对存活的整块
-                     在子单元层面做第二次审查。整块清除仍由整块证据决定，子单元
-                     只处理"部分为真"的模糊体，从而不破坏已经可用的整块决策。
-
-两种修法都不改变像素账目，ΔIoU 与既有结果直接可比。
+Pixel accounting is unchanged so ΔIoU remains comparable to the main protocol.
 """
-
 from __future__ import annotations
 
 import argparse

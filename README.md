@@ -1,10 +1,6 @@
 # GeoPhysAdapter
 
-Official code for:
-
 **GeoPhysAdapter: Scale-Matched Geophysical Adaptation for Cross-Domain Landslide Mapping with Vision Foundation Models**
-
-## Overview
 
 GeoPhysAdapter freezes a vision foundation model (primary anchor: Prithvi-EO-2.0-300M-TL) and updates its prediction with three geophysical priors:
 
@@ -12,75 +8,39 @@ GeoPhysAdapter freezes a vision foundation model (primary anchor: Prithvi-EO-2.0
 - Material: bounded regional amplitude modulation
 - Trigger: event-level intervention dose
 
-The update runs at both the pixel scale and the candidate landslide-body scale. If physical support is missing or invalid, the frozen visual prediction is kept as is.
+Updates are applied at the pixel scale and at the candidate landslide-body scale. If physical support is missing or invalid, the frozen visual prediction is kept unchanged.
 
-## Dataset (PILD)
+## Data
 
-The paper uses a four-source PILD corpus of **7,890 samples** and **55 canonical events**.  
-This repository ships the manifests, splits, and protocol summaries. Raw imagery must be downloaded from the original providers.
+Two things are open:
 
-Full download links, citations, and a step-by-step usage guide: **[docs/DATA.md](docs/DATA.md)**
+1. **PILD** — our curated metadata package (manifests, splits, protocol tables) for the paper corpus (**7,890 samples / 55 events**)
+2. **Upstream sources** — the public landslide datasets from which PILD samples are drawn (imagery stays with those providers)
 
-### Upstream landslide sources
+How to download and use both: **[docs/DATA.md](docs/DATA.md)**
 
-| Source | Samples | Access | Citation |
-|---|---:|---|---|
-| Sen12Landslides (harmonized) | 4,979 | [Hugging Face](https://huggingface.co/datasets/paulhoehn/Sen12Landslides) | Höhn et al., 2025, [*Scientific Data*](https://doi.org/10.1038/s41597-025-06167-2) |
-| GDCLD | 2,334 | [ESSD article](https://doi.org/10.5194/essd-16-4817-2024) | Fang et al., 2024 |
-| DLR Landslide Reference | 509 | [Zenodo](https://doi.org/10.5281/zenodo.17007637) | Orynbaikyzy / Martinis et al., 2025, [*GIScience & Remote Sensing*](https://doi.org/10.1080/15481603.2025.2502214) |
-| GLaD4CD v1 | 68 | [Zenodo](https://doi.org/10.5281/zenodo.14226448) | Leonardi et al., 2024 |
+PILD package (Zenodo): https://doi.org/10.5281/zenodo.19430714
 
-PILD metadata in this repo:
+| Upstream source | Samples in PILD | Link |
+|---|---:|---|
+| Sen12Landslides (harmonized) | 4,979 | https://huggingface.co/datasets/paulhoehn/Sen12Landslides |
+| GDCLD | 2,334 | https://doi.org/10.5194/essd-16-4817-2024 |
+| DLR Landslide Reference | 509 | https://doi.org/10.5281/zenodo.17007637 |
+| GLaD4CD v1 | 68 | https://doi.org/10.5281/zenodo.14226448 |
 
-- `metadata/pild_geo4_qc_v1/` — unified manifest, event-isolated split, QC summary
-- `metadata/pild_geo4_qc_native17_v1/` — protocol hashes (Supplement S6)
-- Zenodo package: https://doi.org/10.5281/zenodo.19430714
+Local metadata used by the scripts:
 
-### Quick start with the data
+- `metadata/pild_geo4_qc_v1/`
+- `metadata/pild_geo4_qc_native17_v1/`
 
-```bash
-# 1) environment
-conda env create -f environment.yml
-conda activate geophysadapter
-
-# 2) download Sen12Landslides harmonized (example)
-hf download paulhoehn/Sen12Landslides \
-  --repo-type dataset \
-  --local-dir ./data_raw/Sen12Landslides \
-  --include "data_harmonized/**"
-
-# 3) download DLR / GLaD4CD from Zenodo, and GDCLD via Fang et al. (2024)
-#    see docs/DATA.md for links and citation notes
-
-# 4) train after local caches are built
-python scripts/xdomain/train_pild_sen12_roleaware_v1.py \
-  --manifest metadata/pild_geo4_qc_v1/unified_sample_manifest_geo4_qc_v1.csv \
-  --protocol-summary metadata/pild_geo4_qc_v1/summary.json \
-  --split metadata/pild_geo4_qc_v1/event_isolated_split_geo4_qc_v1.csv \
-  --variant full_tmr \
-  --outdir experiments/local_run
-```
-
-Geophysical layers (Copernicus DEM, SoilGrids, CHIRPS, etc.) are listed with access URLs in [docs/DATA.md](docs/DATA.md).
-
-## Repository structure
-
-| Path | Contents |
-|---|---|
-| `scripts/xdomain/` | Training and evaluation code |
-| `scripts/` | Figure and analysis utilities |
-| `metadata/` | Sample manifests and splits |
-| `experiments/revision2026/` | Summary metrics reported in the paper |
-| `docs/` | Data guide and figures |
-
-## Installation
+## Install
 
 ```bash
 conda env create -f environment.yml
 conda activate geophysadapter
 ```
 
-## Reproducing Supplement S6
+## Reproduce the main protocol (Supplement S6)
 
 | Step | Path |
 |---|---|
@@ -93,7 +53,26 @@ conda activate geophysadapter
 | Object-level summary | `experiments/revision2026/pild_object_veto_final_v1/summary.json` |
 | Protocol hashes | `metadata/pild_geo4_qc_native17_v1/protocol_summary_geo4_qc_native17_v1.json` |
 
-Model checkpoints are not shipped. Build local caches from the upstream datasets, then run the scripts above.
+Example after PILD metadata and local caches are ready:
+
+```bash
+python scripts/xdomain/train_pild_sen12_roleaware_v1.py \
+  --manifest metadata/pild_geo4_qc_v1/unified_sample_manifest_geo4_qc_v1.csv \
+  --protocol-summary metadata/pild_geo4_qc_v1/summary.json \
+  --split metadata/pild_geo4_qc_v1/event_isolated_split_geo4_qc_v1.csv \
+  --variant full_tmr \
+  --outdir experiments/local_run
+```
+
+## Repository layout
+
+| Path | Contents |
+|---|---|
+| `scripts/xdomain/` | Training and evaluation |
+| `scripts/` | Figure / table helpers |
+| `metadata/` | PILD manifests and splits |
+| `experiments/revision2026/` | Numeric summaries from the paper |
+| `docs/` | Data guide and figures |
 
 ## Figures
 
@@ -135,8 +114,8 @@ Model checkpoints are not shipped. Build local caches from the upstream datasets
 
 ## Citation
 
-If you use this code or the PILD assets, please cite the paper, the Zenodo DOI, and the upstream datasets listed in [docs/DATA.md](docs/DATA.md).
+Please cite the paper, the PILD Zenodo record, and any upstream datasets you download (see [docs/DATA.md](docs/DATA.md)).
 
 ## Contact
 
-Please open a GitHub issue for questions about the code or data links.
+Open a GitHub issue for questions about the code or data.

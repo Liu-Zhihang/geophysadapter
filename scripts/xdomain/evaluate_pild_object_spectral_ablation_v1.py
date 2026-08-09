@@ -1,23 +1,16 @@
 #!/usr/bin/env python3
-"""G8-b：光谱描述子与物理描述子的对象级消融。
+"""Object-level ablation of spectral versus physical descriptors.
 
-要回答审稿人必问的一个问题：对象级物理审查的收益，是否只是"更好的视觉后处理"？
-为此必须给视觉侧一个公平且强的对手——不是 3 个概率标量，而是完整的光谱与变化描述子。
+Arms:
+    confidence_only   three probability scalars
+    spectral_only     spectral / change descriptors
+    terrain_only      terrain geometry + probability scalars
+    terrain_spectral  combined
+    spectral_shift    spectral features shuffled within source by event
 
-同时这也是当前 ΔIoU 缺口的主攻方向。设计图（probe_pild_recall_first_cascade_v1）显示
-事件外排序 Spearman 从 0.374 提到 0.45 即可跨过 +0.03，而排序质量是唯一起作用的旋钮。
-
-臂：
-    confidence_only  仅 3 个概率标量（原视觉基线）
-    spectral_only    仅光谱与变化描述子
-    terrain_only     仅地形几何 + 概率标量（现行部署口径）
-    terrain_spectral 两者合并
-    spectral_shift   光谱描述子在数据源内按事件打乱（错配控制）
-
-一律事件分组 OOF，报告排序相关、事后最优截断的 ΔIoU（排序质量），以及用解析判据
-i/f < IoU_base 的可部署 ΔIoU。
+All arms use event-grouped OOF. Reports ranking correlation and ΔIoU under
+the analytic purity rule purity < IoU_base / (1 + IoU_base).
 """
-
 from __future__ import annotations
 
 import argparse

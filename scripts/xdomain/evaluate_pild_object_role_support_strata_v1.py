@@ -370,7 +370,7 @@ def main() -> int:
                 "schema_version": "pild_object_role_support_strata.v1",
                 "evidence_status": "development: event-grouped OOF on already-opened folds",
                 "prespecified_rules": [
-                    "分层由既有可用性掩膜定义，逐样本，非事后挑选",
+                    "Strata follow existing availability masks, sample-wise",
                     "每个分层使用自身基线 IoU 作参照系与解析判据",
                     "M/R 直接作为协变量，由同源内打乱 / 错时窗口裁决",
                     "采纳需同时胜过同一分层上的 T-only 与自身错配控制",

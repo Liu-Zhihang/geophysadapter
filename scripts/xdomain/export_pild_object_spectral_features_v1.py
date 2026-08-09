@@ -1,23 +1,5 @@
 #!/usr/bin/env python3
-"""G8-a：导出对象级光谱与变化描述子。
-
-现状：对象级 veto 使用的 31 个描述子里只有 3 个来自视觉侧，且都是概率标量
-（mean/max/p90 probability，单独 AUC 仅 0.596）。整个描述子集合没有任何光谱信息，
-而典型假阳性正是裸土、河床、道路、农田——这些在光谱变化上与滑坡疤面差异明显。
-
-本脚本在与对象诊断缓存完全一致的规则下（阈值 0.92、8 邻接、最小面积 4 px）重建连通
-分量，并为每个对象计算：
-    体内光谱     震后各波段均值、震前到震后的各波段差分
-    植被/裸土指数 NDVI、NBR、BSI、NDWI 的震前/震后/差分
-    体内异质性   dNDVI 的标准差
-    环带对比     对象与其外扩 5 px 环带在 dNDVI / NDVI / 亮度 / BSI 上的差值
-
-环带对比是关键：滑坡疤面相对其邻近坡面应有显著的植被损失落差，而整片农田或河床没有。
-
-波段顺序 (B02, B03, B04, B8A, B11, B12) = Blue, Green, Red, NIR, SWIR1, SWIR2。
-输出按 (sample_id, component_id) 与 veto_gate v2 的决策表对齐。
-"""
-
+"""Export object-level spectral and change descriptors for veto models."""
 from __future__ import annotations
 
 import argparse

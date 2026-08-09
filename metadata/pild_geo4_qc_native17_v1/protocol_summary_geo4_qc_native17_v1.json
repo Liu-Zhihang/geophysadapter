@@ -156,7 +156,7 @@
     "raw_source_events": 57,
     "split_key": "canonical_event_id"
   },
-  "mode": "native17 Terrain contract restricted to the frozen outcome-blind PILD-GEO4-QC cohort",
+  "mode": "native17 Terrain contract restricted to the PILD-GEO4-QC cohort",
   "native17_assets": {
     "DLR_Landslide_Ref_2025": {
       "path": "$PILD_ROOT/processed/hybrid_pinn/dlr_terrain_v3/dlr_copdem_native17_p128.h5",

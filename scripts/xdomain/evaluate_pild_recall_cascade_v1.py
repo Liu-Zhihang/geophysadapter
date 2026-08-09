@@ -1,17 +1,9 @@
 #!/usr/bin/env python3
-"""G9+L4：召回优先级联的判决评估。
+"""Recall-first cascade: lower the visual operating point, then apply object review.
 
-思路：视觉基线的 IoU 最优点在很高的掩膜阈值上（逐折 0.92/0.95/0.805），代价是漏检质量
-（2.59 M px）超过命中质量（1.82 M px）。如果物理对象审查能高精度地整块清除假阳性，
-就可以让视觉侧运行在更高召回的操作点，用审查买回精度。
-
-这与已关闭的"救援"方向机制不同：救援试图把邻接漏检区域重新加回来，排序太弱而失败；
-这里是让漏检区域在更低阈值下直接成为候选体，再接受同一套物理审查。
-
-参照系固定为视觉最优配置：IoU = 0.21819，总错误 = FP + FN = 6,534,746 px。
-所有 ΔIoU 与 RER 都相对该参照系计算，因此与既有全部结果直接可比。
+Keeps the visual optimum (IoU = 0.21819) as the reference baseline and reports
+ΔIoU / error reduction relative to that fixed baseline.
 """
-
 from __future__ import annotations
 
 import argparse

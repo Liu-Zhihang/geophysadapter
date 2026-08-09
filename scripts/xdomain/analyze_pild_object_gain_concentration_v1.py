@@ -1,41 +1,11 @@
 #!/usr/bin/env python3
-"""对象级增益为何集中：把"事后合理化"变成可证伪命题。
+"""Test whether event-level addressable false-positive structure predicts ΔIoU.
 
-问题
-----
-逐源 ΔIoU 极不均匀：GDCLD +0.2202、Sen12 +0.0347、DLR +0.00005、GLaD +0.0007。
-现有解释是"机制作用于视觉锚点产生大块虚假体的情形"。这句话若无数据支撑，
-就是事后合理化，审稿人一眼能看穿。
-
-可证伪推论
-----------
-如果该机制为真，则**逐事件的可寻址假阳性质量占比应当预测逐事件的 ΔIoU**，
-并且一旦控制住这个量，数据源身份就不应再有额外解释力。
-
-预先声明的定义（看到相关系数之前固定）
---------------------------------------
-对每个事件，在其全部候选体上计算：
-
-    addressable_share       purity <= 0.10 的候选体所承载的 FP 质量占该事件 FP 质量之比
-    large_share             area  >= 200 px 的候选体所承载的 FP 质量占比
-    large_pure_share        同时满足上两条的候选体所承载的 FP 质量占比
-    fp_to_tp_ratio          该事件 FP 质量与 TP 质量之比（视觉锚点有多"虚")
-
-阈值来源：`purity <= 0.10` 是 G0 诊断中"近纯假阳性"的既有定义；
-`area >= 200 px` 是光谱消融中"大体"的既有定义（承载 76.9% 的 TP 质量）。
-两者均非本次新选。
-
-这些量使用标签计算，因此本分析是**解释性诊断，不是可部署预测器**。
-
-裁决
-----
-1. 若 addressable_share 与逐事件 ΔIoU 的 Spearman 高且源内亦成立，则集中性是机制的
-   预测得到验证，可写入正文；
-2. 若加入数据源哑变量后 R² 几乎不再上升，则"数据源"不是解释变量，
-   可寻址误差结构才是——这是回应"跨域增益由一个源扛着"的正面答复；
-3. 若相关很低，则说明我们对机制的理解是错的，必须如实改写解释，不得保留原句。
+For each event, compute addressable_share, large_share, large_pure_share, and
+fp_to_tp_ratio from candidate-body purity/area statistics, then relate them to
+event-level ΔIoU. Thresholds follow the paper definitions (purity ≤ 0.10,
+area ≥ 200 px).
 """
-
 from __future__ import annotations
 
 import argparse

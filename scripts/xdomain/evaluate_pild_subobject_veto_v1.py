@@ -1,20 +1,10 @@
 #!/usr/bin/env python3
-"""G9-b：子对象决策单元下的物理审查评估。
+"""Object review under alternative unit partitions from export_pild_subobject_units_v1.
 
-对 export_pild_subobject_units_v1 产出的四种单元划分，在完全相同的协议下比较：
-    whole              现行连通分量（对照基准）
-    geomorphic         地貌单元切分，临界角固定 25 度
-    material           地貌单元切分，临界角由 Material 调制
-    material_shuffled  同上但 Material 源内按事件打乱（错配控制）
-
-由于四种模式只是对同一批预测像元的不同划分，整池 TP/FP/FN 不变，ΔIoU 直接可比。
-
-每种模式再跑三组特征臂，用以分离"单元改变"与"信息改变"的贡献：
-    terrain      地形几何 + 概率标量
-    spectral     光谱与变化描述子 + 概率标量
-    joint        全部
+Partitions: whole, geomorphic, material, material_shuffled.
+Feature arms: terrain, spectral, joint. Pixel-level TP/FP/FN mass is fixed across
+partitions, so ΔIoU is directly comparable.
 """
-
 from __future__ import annotations
 
 import argparse
@@ -57,7 +47,7 @@ def oof_scores(x, y, groups, n_splits, seed):
 
 
 def evaluate(score, frame, tp, fp, fn, base_iou):
-    """排序质量、事后最优截断、以及解析判据下的可部署结果。"""
+    """Ranking quality, oracle cutoffs, and analytic deployable outcomes."""
     i_px = frame.intersection_px.to_numpy(dtype=float)
     f_px = frame.false_px.to_numpy(dtype=float)
     denom = tp + fp + fn

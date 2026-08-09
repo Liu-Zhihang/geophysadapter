@@ -1,6 +1,7 @@
-# Data packaging
+# Zenodo note
 
-- Zenodo description: `ZENODO_DESCRIPTION_PILD_revision1.txt`
-- Package notes: `PILD_release_v1/`
+The public PILD package is published at:
 
-Paper metadata is under `../metadata/pild_geo4_qc_v1` and `../metadata/pild_geo4_qc_native17_v1`.
+https://doi.org/10.5281/zenodo.19430714
+
+For download links and usage, see [`docs/DATA.md`](../docs/DATA.md).
