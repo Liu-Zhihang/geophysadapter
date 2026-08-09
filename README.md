@@ -74,43 +74,24 @@ python scripts/xdomain/train_pild_sen12_roleaware_v1.py \
 | `experiments/revision2026/` | Numeric summaries from the paper |
 | `docs/` | Data guide and figures |
 
-## Figures
+## Example figures
 
-### Figure 1. Conceptual overview
+Three paper figures are included below for a quick look at the method, the corpus, and a qualitative result. The full figure set is in the manuscript.
+
+**Figure 1 — Method overview.**  
+Multi-source optical inputs and three geophysical priors enter a frozen vision foundation model; GeoPhysAdapter applies bounded pixel-scale correction and object-scale review, with exact fallback where physical support is invalid.
 
 ![Figure 1](docs/assets/figure1_scale_matched_overview.png)
 
-### Figure 2. Global distribution of the 55 canonical events
+**Figure 2 — PILD event map.**  
+Global distribution of the 55 canonical events used in the paper. Marker color is the upstream source; marker size scales with samples per event.
 
 ![Figure 2](docs/assets/figure2_global_source_distribution.png)
 
-### Figure 3. Technical framework
-
-![Figure 3](docs/assets/figure3_scale_matched_framework.png)
-
-### Figure 4. Object structure of cross-domain visual errors
-
-![Figure 4](docs/assets/figure4_visual_error_structure.png)
-
-### Figure 5. Pixel-scale adaptation and terrain-content controls
-
-![Figure 5](docs/assets/figure5_pixel_scale_capability.png)
-
-### Figure 6. Native-task evidence for the three priors
-
-![Figure 6](docs/assets/figure6_native_task_evidence.png)
-
-### Figure 7. Object-scale correction cases
+**Figure 7 — Object-scale correction cases.**  
+Post-event image, reference inventory, frozen visual prediction, and GeoPhysAdapter output on representative tiles. Teal / coral / pale gold mark TP / FP / missed pixels; slate outlines mark wholly vetoed candidates.
 
 ![Figure 7](docs/assets/figure7_object_scale_correction.png)
-
-### Figure 8. Cross-anchor reproduction and UGCoP landscape
-
-![Figure 8](docs/assets/figure8_attribution_and_reproduction.png)
-
-### Supplementary Figure S1. Object-scale behavior spectrum
-
-![Figure S1](docs/assets/figureS1_object_scale_behavior_spectrum.png)
 
 ## Citation
 
