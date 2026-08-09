@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-ROOT="${ROOT:-/mnt/data_hdd/滑坡检测}"
-PYTHON="${PYTHON:-/home/jinlin/miniconda3/envs/dpl/bin/python}"
+ROOT="${ROOT:-${WORKSPACE_ROOT:-$(pwd)}}"
+PYTHON="${PYTHON:-python}"
 META="$ROOT/physics_informed_landslide_dataset/metadata/pild_xdomain_v1"
 MANIFEST="$META/acquisition/sen12_s2_manifest.json"
 COMPLETE="${MANIFEST%.json}.complete"

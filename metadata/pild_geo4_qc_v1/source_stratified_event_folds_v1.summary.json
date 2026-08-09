@@ -402,7 +402,7 @@
       "CEV1_b332367aa8fc5c08"
     ]
   },
-  "manifest": "/mnt/data_hdd/\u6ed1\u5761\u68c0\u6d4b/physics_informed_landslide_dataset/metadata/pild_geo4_qc_v1/unified_sample_manifest_geo4_qc_v1.csv",
+  "manifest": "$PILD_ROOT/metadata/pild_geo4_qc_v1/unified_sample_manifest_geo4_qc_v1.csv",
   "manifest_sha256": "70f2e73e9ebd84f27a21d4c8c81feccf8150415616f7451b6dd7171a5a5aac0f",
   "n_canonical_events": 55,
   "n_folds": 4,
@@ -412,7 +412,7 @@
   "shared_cross_source_events": [
     "CEV1_b332367aa8fc5c08"
   ],
-  "split": "/mnt/data_hdd/\u6ed1\u5761\u68c0\u6d4b/physics_informed_landslide_dataset/metadata/pild_geo4_qc_v1/source_stratified_event_folds_v1.csv",
+  "split": "$PILD_ROOT/metadata/pild_geo4_qc_v1/source_stratified_event_folds_v1.csv",
   "split_sha256": "97c031b4514e4637aa2415864afdf4b22d6fdad45e327f5487317e3abb3eb159",
   "status": "PASS"
 }

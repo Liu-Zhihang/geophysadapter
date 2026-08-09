@@ -44,7 +44,7 @@ PROJECT_ROOT = SCRIPT_PATH.parents[1]
 EXP = PROJECT_ROOT / "experiments/revision2026"
 DEFAULT_OUTDIR = (
     PROJECT_ROOT.parent
-    / "submission_package_jprs_revision1/geophysadapter/revision1/figures_revision"
+    / "docs/assets"
 )
 
 PROBABILITY_PATH = (

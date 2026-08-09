@@ -3,7 +3,7 @@ set -euo pipefail
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 PROJECT_ROOT="$(cd "$SCRIPT_DIR/../.." && pwd)"
-PYTHON="${PYTHON:-/home/jinlin/miniconda3/envs/dpl/bin/python}"
+PYTHON="${PYTHON:-python}"
 AGGREGATOR="$SCRIPT_DIR/build_sen12_proposal_utility_gate_v3_manifests.py"
 TRAINER="$SCRIPT_DIR/train_sen12_proposal_utility_gate_v3.py"
 INPUT_ROOT="${INPUT_ROOT:-$PROJECT_ROOT/experiments/revision2026/sen12_nested_oof_proposer_cache_v1}"

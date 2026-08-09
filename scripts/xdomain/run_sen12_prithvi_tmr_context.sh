@@ -3,7 +3,7 @@ set -euo pipefail
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 PROJECT="$(cd "$SCRIPT_DIR/../.." && pwd)"
-PYTHON="${PYTHON:-/home/jinlin/miniconda3/envs/dpl/bin/python}"
+PYTHON="${PYTHON:-python}"
 OUTROOT="${OUTROOT:-$PROJECT/experiments/revision2026/sen12_prithvi_tmr_context_v1}"
 VISROOT="${VISROOT:-$PROJECT/experiments/revision2026/sen12_prithvi_terrain_v2_formal_v1}"
 TERROOT="${TERROOT:-$PROJECT/experiments/revision2026/sen12_terrain_expert_fusion_v1}"

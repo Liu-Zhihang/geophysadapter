@@ -1,23 +1,23 @@
 {
   "artifacts": {
     "dlr_event_support_audit_v1.csv": {
-      "path": "/mnt/data_hdd/\u6ed1\u5761\u68c0\u6d4b/physics_informed_landslide_dataset/metadata/pild_geo4_qc_v1/dlr_event_support_audit_v1.csv",
+      "path": "$PILD_ROOT/metadata/pild_geo4_qc_v1/dlr_event_support_audit_v1.csv",
       "sha256": "f654961dce46ebccad3b30cca2fd59ad3a7f580b30569f4438f2702c83aa240c"
     },
     "event_isolated_split_geo4_qc_v1.csv": {
-      "path": "/mnt/data_hdd/\u6ed1\u5761\u68c0\u6d4b/physics_informed_landslide_dataset/metadata/pild_geo4_qc_v1/event_isolated_split_geo4_qc_v1.csv",
+      "path": "$PILD_ROOT/metadata/pild_geo4_qc_v1/event_isolated_split_geo4_qc_v1.csv",
       "sha256": "2fd74da7b61bc99d1e63fbc646b4683e287a1af1feff120f2d428f65baddd0bc"
     },
     "exclusion_ledger_v1.csv": {
-      "path": "/mnt/data_hdd/\u6ed1\u5761\u68c0\u6d4b/physics_informed_landslide_dataset/metadata/pild_geo4_qc_v1/exclusion_ledger_v1.csv",
+      "path": "$PILD_ROOT/metadata/pild_geo4_qc_v1/exclusion_ledger_v1.csv",
       "sha256": "7104de6526716e832f0f2de9cb768bcb885311e4db29f9952f6e04d8c60e5d25"
     },
     "leave_one_dataset_out_split_geo4_qc_v1.csv": {
-      "path": "/mnt/data_hdd/\u6ed1\u5761\u68c0\u6d4b/physics_informed_landslide_dataset/metadata/pild_geo4_qc_v1/leave_one_dataset_out_split_geo4_qc_v1.csv",
+      "path": "$PILD_ROOT/metadata/pild_geo4_qc_v1/leave_one_dataset_out_split_geo4_qc_v1.csv",
       "sha256": "274ba193d9a33c4bf4ca992189acfa309a8d16f8cb15272d4c3adad9206d1c07"
     },
     "unified_sample_manifest_geo4_qc_v1.csv": {
-      "path": "/mnt/data_hdd/\u6ed1\u5761\u68c0\u6d4b/physics_informed_landslide_dataset/metadata/pild_geo4_qc_v1/unified_sample_manifest_geo4_qc_v1.csv",
+      "path": "$PILD_ROOT/metadata/pild_geo4_qc_v1/unified_sample_manifest_geo4_qc_v1.csv",
       "sha256": "70f2e73e9ebd84f27a21d4c8c81feccf8150415616f7451b6dd7171a5a5aac0f"
     }
   },

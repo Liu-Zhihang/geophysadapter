@@ -1,11 +1,8 @@
-"""对象级 veto 的收益上限拆账。
+"""Object-level veto headroom analysis (CPU only).
 
-目的：在不新增任何模型的前提下，回答三个问题：
-1. 当前排序 + 最优全局阈值能到多少 ΔIoU（阈值选择还有多少空间）；
-2. 完美排序（oracle purity）能到多少（排序质量还有多少空间）；
-3. 误删（wrong removal）质量集中在哪些体量区间（是否应做质量加权）。
-
-只读 pild_object_veto_gate_v2/aligned_component_decisions.csv，不触碰 GPU。
+Reports (i) best global-threshold ΔIoU under the current ranking,
+(ii) oracle-purity upper bound, and (iii) where wrong-removal mass concentrates.
+Reads aligned_component_decisions.csv; no GPU required.
 """
 
 from __future__ import annotations

@@ -2,7 +2,7 @@
 set -euo pipefail
 
 ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)"
-PYTHON="${PYTHON:-/home/jinlin/miniconda3/envs/dpl/bin/python}"
+PYTHON="${PYTHON:-python}"
 DATASET_ID="${DATASET_ID:?Set DATASET_ID}"
 CACHE_DIR="${CACHE_DIR:?Set CACHE_DIR}"
 RUNS_DIR="${RUNS_DIR:?Set RUNS_DIR}"

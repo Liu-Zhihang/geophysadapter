@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-ROOT="${ROOT:-/mnt/data_hdd/滑坡检测}"
-PYTHON="${PYTHON:-/home/jinlin/miniconda3/envs/dpl/bin/python}"
+ROOT="${ROOT:-${WORKSPACE_ROOT:-$(pwd)}}"
+PYTHON="${PYTHON:-python}"
 TRAINER="$ROOT/physics_informed_landslide_dataset/scripts/xdomain/train_sen12_xdomain_geophysadapter.py"
 H5="${H5:-$ROOT/physics_informed_landslide_dataset/processed/hybrid_pinn/sen12_s2_xdomain_v1/sen12_s2_tmr_p128.h5}"
 SPLIT="${SPLIT:-$ROOT/physics_informed_landslide_dataset/metadata/pild_xdomain_v1/sen12_s2_logo5_v1.csv}"

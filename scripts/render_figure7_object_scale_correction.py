@@ -47,7 +47,7 @@ PROJECT_ROOT = SCRIPT_PATH.parents[1]
 EXP = PROJECT_ROOT / "experiments/revision2026"
 DEFAULT_OUTDIR = (
     PROJECT_ROOT.parent
-    / "submission_package_jprs_revision1/geophysadapter/revision1/figures_revision"
+    / "docs/assets"
 )
 
 DECISIONS_PATH = EXP / "pild_object_veto_final_v1/component_decisions.parquet"

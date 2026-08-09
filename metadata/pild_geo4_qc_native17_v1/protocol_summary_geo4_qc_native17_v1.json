@@ -3,7 +3,7 @@
     {
       "exists": true,
       "mtime_ns": 1784653369270310270,
-      "path": "/mnt/data_hdd/\u6ed1\u5761\u68c0\u6d4b/physics_informed_landslide_dataset/processed/hybrid_pinn/pild_prithvi_integration_v1/pild_window_readiness.csv",
+      "path": "$PILD_ROOT/processed/hybrid_pinn/pild_prithvi_integration_v1/pild_window_readiness.csv",
       "role": "pild_readiness",
       "sha256": "56658a7961fa9979a62024e9366e138b9c9b8282255b10fe9bf02637cdf7c297",
       "size_bytes": 2767157
@@ -11,7 +11,7 @@
     {
       "exists": true,
       "mtime_ns": 1784656491259676520,
-      "path": "/mnt/data_hdd/\u6ed1\u5761\u68c0\u6d4b/physics_informed_landslide_dataset/processed/hybrid_pinn/pild_prithvi_integration_v1/pild_sen12_event_aliases_v1.csv",
+      "path": "$PILD_ROOT/processed/hybrid_pinn/pild_prithvi_integration_v1/pild_sen12_event_aliases_v1.csv",
       "role": "event_alias_registry",
       "sha256": "5f0c460085be385591e937c12e8da8b71b747eb7904dd348d17fb722d0d77cde",
       "size_bytes": 30201
@@ -19,7 +19,7 @@
     {
       "exists": true,
       "mtime_ns": 1784656491259676520,
-      "path": "/mnt/data_hdd/\u6ed1\u5761\u68c0\u6d4b/physics_informed_landslide_dataset/processed/hybrid_pinn/pild_prithvi_integration_v1/event_alias_summary_v1.json",
+      "path": "$PILD_ROOT/processed/hybrid_pinn/pild_prithvi_integration_v1/event_alias_summary_v1.json",
       "role": "event_alias_summary",
       "sha256": "d3264622efb171eddd658f6c8b98581ca50104a777c9c9e958de22d8f741b65a",
       "size_bytes": 1494
@@ -27,7 +27,7 @@
     {
       "exists": true,
       "mtime_ns": 1784584538873796058,
-      "path": "/mnt/data_hdd/\u6ed1\u5761\u68c0\u6d4b/physics_informed_landslide_dataset/processed/hybrid_pinn/sen12_s2_xdomain_v1/cache_index_v1.csv",
+      "path": "$PILD_ROOT/processed/hybrid_pinn/sen12_s2_xdomain_v1/cache_index_v1.csv",
       "role": "sen12_cache_index",
       "sha256": "37f823dbfa7bfdfaaf7182517f93d02cc999c8f92707dc6ab5a10aae888f8b80",
       "size_bytes": 1613058
@@ -35,7 +35,7 @@
     {
       "exists": true,
       "mtime_ns": 1784584537867792081,
-      "path": "/mnt/data_hdd/\u6ed1\u5761\u68c0\u6d4b/physics_informed_landslide_dataset/processed/hybrid_pinn/sen12_s2_xdomain_v1/sen12_s2_tmr_p128.h5",
+      "path": "$PILD_ROOT/processed/hybrid_pinn/sen12_s2_xdomain_v1/sen12_s2_tmr_p128.h5",
       "role": "sen12_base_h5",
       "sha256": "36b70bc917adaf507e8b3fc7bfeb44acf703cfb95832ca5f7d0814175583d978",
       "size_bytes": 1686833586
@@ -43,7 +43,7 @@
     {
       "exists": true,
       "mtime_ns": 1784603609921501396,
-      "path": "/mnt/data_hdd/\u6ed1\u5761\u68c0\u6d4b/physics_informed_landslide_dataset/processed/hybrid_pinn/sen12_s2_xdomain_v2/sen12_prithvi_4t6b_p128.h5",
+      "path": "$PILD_ROOT/processed/hybrid_pinn/sen12_s2_xdomain_v2/sen12_prithvi_4t6b_p128.h5",
       "role": "sen12_optical_h5",
       "sha256": "db88ce0cad48df88dac426b4418cf37e2a72341cf8eea130f021a4eb82e27cc2",
       "size_bytes": 3688934466
@@ -51,7 +51,7 @@
     {
       "exists": true,
       "mtime_ns": 1784601311672996840,
-      "path": "/mnt/data_hdd/\u6ed1\u5761\u68c0\u6d4b/physics_informed_landslide_dataset/processed/hybrid_pinn/sen12_s2_xdomain_v2/sen12_native_terrain_v2_p128.h5",
+      "path": "$PILD_ROOT/processed/hybrid_pinn/sen12_s2_xdomain_v2/sen12_native_terrain_v2_p128.h5",
       "role": "sen12_terrain_h5",
       "sha256": "fa5809eb76b49e87c85700646c6d8566f90a868c751ff1dbcba62b8c2ce26a26",
       "size_bytes": 2617542188
@@ -59,7 +59,7 @@
     {
       "exists": true,
       "mtime_ns": 1784653214641754743,
-      "path": "/mnt/data_hdd/\u6ed1\u5761\u68c0\u6d4b/physics_informed_landslide_dataset/processed/hybrid_pinn/sen12_context_v1/material_sample_registry.csv",
+      "path": "$PILD_ROOT/processed/hybrid_pinn/sen12_context_v1/material_sample_registry.csv",
       "role": "sen12_material_registry",
       "sha256": "609d91361d9b09d72bf9a51d0cd4a2bf0fbeca2d6eb0094a6d1fb6a22cd488f5",
       "size_bytes": 6654265
@@ -67,7 +67,7 @@
     {
       "exists": true,
       "mtime_ns": 1784652071098739596,
-      "path": "/mnt/data_hdd/\u6ed1\u5761\u68c0\u6d4b/physics_informed_landslide_dataset/processed/hybrid_pinn/sen12_context_v1/trigger_sample_registry_v1.csv",
+      "path": "$PILD_ROOT/processed/hybrid_pinn/sen12_context_v1/trigger_sample_registry_v1.csv",
       "role": "sen12_trigger_registry",
       "sha256": "e83007664b9b768bf14e9ee24fd1defca02d8fc78fee42e29850a7341c71a8a6",
       "size_bytes": 2260559
@@ -75,7 +75,7 @@
     {
       "exists": true,
       "mtime_ns": 1784736634184319596,
-      "path": "/mnt/data_hdd/\u6ed1\u5761\u68c0\u6d4b/physics_informed_landslide_dataset/processed/hybrid_pinn/pild_prithvi_integration_v1/pild_prithvi_4t6b_p128.h5",
+      "path": "$PILD_ROOT/processed/hybrid_pinn/pild_prithvi_integration_v1/pild_prithvi_4t6b_p128.h5",
       "role": "pild_optical_h5",
       "sha256": "ef1c27c7bb51a850e8a4602d2723a2fdfa0298c89a4c527ab36dbe99edb1baf8",
       "size_bytes": 2242871748
@@ -83,7 +83,7 @@
     {
       "exists": true,
       "mtime_ns": 1784736649322420999,
-      "path": "/mnt/data_hdd/\u6ed1\u5761\u68c0\u6d4b/physics_informed_landslide_dataset/processed/hybrid_pinn/pild_prithvi_integration_v1/pild_prithvi_4t6b_p128.h5.complete.json",
+      "path": "$PILD_ROOT/processed/hybrid_pinn/pild_prithvi_integration_v1/pild_prithvi_4t6b_p128.h5.complete.json",
       "role": "pild_optical_completion_marker",
       "sha256": "727703b620cc8c7777fd389f6c926951da89eab9f4f019d0dc34e8c30a556974",
       "size_bytes": 3328
@@ -91,7 +91,7 @@
     {
       "exists": true,
       "mtime_ns": 1784403421492311210,
-      "path": "/mnt/data_hdd/\u6ed1\u5761\u68c0\u6d4b/physics_informed_landslide_dataset/processed/hybrid_pinn/pild_core_geo_v2_1_native30_raw/dlr_postrgb_terrain_raw_p128.h5",
+      "path": "$PILD_ROOT/processed/hybrid_pinn/pild_core_geo_v2_1_native30_raw/dlr_postrgb_terrain_raw_p128.h5",
       "role": "pild_base_h5",
       "sha256": "e1d70cb9106d9ec0203ad82e3e82d6c2c85a704eb9eba48d5f9598f656a800e8",
       "size_bytes": 371791660
@@ -99,7 +99,7 @@
     {
       "exists": true,
       "mtime_ns": 1784403483687555065,
-      "path": "/mnt/data_hdd/\u6ed1\u5761\u68c0\u6d4b/physics_informed_landslide_dataset/processed/hybrid_pinn/pild_core_geo_v2_1_native30_raw/gdcld_postrgb_terrain_raw_p128.h5",
+      "path": "$PILD_ROOT/processed/hybrid_pinn/pild_core_geo_v2_1_native30_raw/gdcld_postrgb_terrain_raw_p128.h5",
       "role": "pild_base_h5",
       "sha256": "188a6a44a915322e340ff71a7afc790814ff5f0eed5aa6e1b947cd19fbe2aa9c",
       "size_bytes": 1756375857
@@ -107,7 +107,7 @@
     {
       "exists": true,
       "mtime_ns": 1784403361078062548,
-      "path": "/mnt/data_hdd/\u6ed1\u5761\u68c0\u6d4b/physics_informed_landslide_dataset/processed/hybrid_pinn/pild_core_geo_v2_1_native30_raw/glad_postrgb_terrain_raw_p128.h5",
+      "path": "$PILD_ROOT/processed/hybrid_pinn/pild_core_geo_v2_1_native30_raw/glad_postrgb_terrain_raw_p128.h5",
       "role": "pild_base_h5",
       "sha256": "fc22dcde36e0a31ccb9982f866a5072e2d965241b3712dded2dcbfb144e000fb",
       "size_bytes": 51721440
@@ -115,7 +115,7 @@
     {
       "exists": true,
       "mtime_ns": 1784660257821136588,
-      "path": "/mnt/data_hdd/\u6ed1\u5761\u68c0\u6d4b/physics_informed_landslide_dataset/processed/hybrid_pinn/pild_prithvi_integration_v1/material_sample_registry_v1.csv",
+      "path": "$PILD_ROOT/processed/hybrid_pinn/pild_prithvi_integration_v1/material_sample_registry_v1.csv",
       "role": "pild_material_registry",
       "sha256": "a7f1842e1f866430586c9048fe63645c7131a5a8087fdc6a2d5622e1d62528cc",
       "size_bytes": 3987920
@@ -123,7 +123,7 @@
     {
       "exists": true,
       "mtime_ns": 1784660527180955491,
-      "path": "/mnt/data_hdd/\u6ed1\u5761\u68c0\u6d4b/physics_informed_landslide_dataset/processed/hybrid_pinn/pild_prithvi_integration_v1/pild_trigger_sample_registry_v1.csv",
+      "path": "$PILD_ROOT/processed/hybrid_pinn/pild_prithvi_integration_v1/pild_trigger_sample_registry_v1.csv",
       "role": "pild_trigger_registry",
       "sha256": "f3428ada6cf81284b8d63b438db21cde8de23af75dfc4c37d516c90b3423aad4",
       "size_bytes": 1117143
@@ -159,41 +159,41 @@
   "mode": "native17 Terrain contract restricted to the frozen outcome-blind PILD-GEO4-QC cohort",
   "native17_assets": {
     "DLR_Landslide_Ref_2025": {
-      "path": "/mnt/data_hdd/\u6ed1\u5761\u68c0\u6d4b/physics_informed_landslide_dataset/processed/hybrid_pinn/dlr_terrain_v3/dlr_copdem_native17_p128.h5",
+      "path": "$PILD_ROOT/processed/hybrid_pinn/dlr_terrain_v3/dlr_copdem_native17_p128.h5",
       "samples": 535,
       "sha256": "e4d1176400aa4531591f71974af9f5f16ba91aa5a5192d1a11feef7c9bbe6f90"
     },
     "GDCLD": {
-      "path": "/mnt/data_hdd/\u6ed1\u5761\u68c0\u6d4b/physics_informed_landslide_dataset/processed/hybrid_pinn/pild_member_native17_v1/gdcld/native17_p128.h5",
+      "path": "$PILD_ROOT/processed/hybrid_pinn/pild_member_native17_v1/gdcld/native17_p128.h5",
       "samples": 2334,
       "sha256": "862b0940ddd5b340222b71dee58cefc89f85a79a8bed0972a2497f38e1e6993a"
     },
     "GLaD4CD_v1": {
-      "path": "/mnt/data_hdd/\u6ed1\u5761\u68c0\u6d4b/physics_informed_landslide_dataset/processed/hybrid_pinn/pild_member_native17_v1/glad/native17_p128.h5",
+      "path": "$PILD_ROOT/processed/hybrid_pinn/pild_member_native17_v1/glad/native17_p128.h5",
       "samples": 68,
       "sha256": "29f880dbbfa1acdcf05379053a0b5f4be8c2a824aa052a561ad9ac200d08e621"
     },
     "SEN12LS_HARMONIZED": {
-      "path": "/mnt/data_hdd/\u6ed1\u5761\u68c0\u6d4b/physics_informed_landslide_dataset/processed/hybrid_pinn/sen12_s2_xdomain_v2/sen12_native_terrain_v2_p128.h5",
+      "path": "$PILD_ROOT/processed/hybrid_pinn/sen12_s2_xdomain_v2/sen12_native_terrain_v2_p128.h5",
       "samples": 4979,
       "sha256": "fa5809eb76b49e87c85700646c6d8566f90a868c751ff1dbcba62b8c2ce26a26"
     }
   },
   "outputs": {
     "asset_inventory": {
-      "path": "/mnt/data_hdd/\u6ed1\u5761\u68c0\u6d4b/physics_informed_landslide_dataset/metadata/pild_sen12_training_v2/asset_inventory_v2.json",
+      "path": "$PILD_ROOT/metadata/pild_sen12_training_v2/asset_inventory_v2.json",
       "sha256": "712c981abd96e417039e24bd93cc8f3144634c941a75036b91ca673f35c09e0c"
     },
     "event_isolated_split": {
-      "path": "/mnt/data_hdd/\u6ed1\u5761\u68c0\u6d4b/physics_informed_landslide_dataset/metadata/pild_sen12_training_v2/event_isolated_split_v2.csv",
+      "path": "$PILD_ROOT/metadata/pild_sen12_training_v2/event_isolated_split_v2.csv",
       "sha256": "3fb72cb20a5ecbf767700d32a6c51541c0ad0ab4dd837cf9d958014eb66a9f35"
     },
     "leave_one_dataset_out_split": {
-      "path": "/mnt/data_hdd/\u6ed1\u5761\u68c0\u6d4b/physics_informed_landslide_dataset/metadata/pild_sen12_training_v2/leave_one_dataset_out_split_v2.csv",
+      "path": "$PILD_ROOT/metadata/pild_sen12_training_v2/leave_one_dataset_out_split_v2.csv",
       "sha256": "0ea8a202e95bbadcfc56088d54448b06d94c83c5670511da268bfeb1ac3851e9"
     },
     "manifest": {
-      "path": "/mnt/data_hdd/\u6ed1\u5761\u68c0\u6d4b/physics_informed_landslide_dataset/metadata/pild_geo4_qc_native17_v1/unified_sample_manifest_geo4_qc_native17_v1.csv",
+      "path": "$PILD_ROOT/metadata/pild_geo4_qc_native17_v1/unified_sample_manifest_geo4_qc_native17_v1.csv",
       "sha256": "073a72edcfb9648e29749f76257cc97fea014db09ea1eb8307f910afacbb19ca"
     }
   },
@@ -203,7 +203,7 @@
     },
     "excluded_samples": 26,
     "input_native17_samples": 7916,
-    "manifest": "/mnt/data_hdd/\u6ed1\u5761\u68c0\u6d4b/physics_informed_landslide_dataset/metadata/pild_geo4_qc_v1/unified_sample_manifest_geo4_qc_v1.csv",
+    "manifest": "$PILD_ROOT/metadata/pild_geo4_qc_v1/unified_sample_manifest_geo4_qc_v1.csv",
     "manifest_sha256": "70f2e73e9ebd84f27a21d4c8c81feccf8150415616f7451b6dd7171a5a5aac0f",
     "retained_samples": 7890,
     "selection_is_outcome_blind": true

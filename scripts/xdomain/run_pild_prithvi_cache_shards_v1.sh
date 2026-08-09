@@ -2,7 +2,7 @@
 set -euo pipefail
 
 ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)"
-PYTHON="${PYTHON:-/home/jinlin/miniconda3/envs/dpl/bin/python}"
+PYTHON="${PYTHON:-python}"
 BASE="${BASE:-$ROOT/processed/hybrid_pinn/pild_prithvi_integration_v1}"
 BUILDER="$ROOT/scripts/xdomain/build_pild_prithvi_temporal_cache_v1.py"
 MERGER="$ROOT/scripts/xdomain/merge_pild_prithvi_temporal_shards_v1.py"

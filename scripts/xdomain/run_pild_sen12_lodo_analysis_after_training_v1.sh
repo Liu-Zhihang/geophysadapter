@@ -2,7 +2,7 @@
 set -euo pipefail
 
 ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)"
-PYTHON="${PYTHON:-/home/jinlin/miniconda3/envs/dpl/bin/python}"
+PYTHON="${PYTHON:-python}"
 RUNS_ROOT="${RUNS_ROOT:-$ROOT/experiments/revision2026/pild_sen12_roleaware_lodo_v1}"
 SPLIT="${SPLIT:-$ROOT/metadata/pild_sen12_training_v2/leave_one_dataset_out_split_v2.csv}"
 OUTDIR="${OUTDIR:-$RUNS_ROOT/analysis_full_oof}"

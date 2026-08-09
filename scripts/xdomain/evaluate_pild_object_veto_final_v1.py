@@ -1,18 +1,15 @@
 #!/usr/bin/env python3
-"""对象级物理审查的当前最优配置与完整账目。
+"""Object-level physical review used in the paper (final configuration).
 
-配置由 2026-07-25 的一连串判决实验收敛得到（详见
-submission_package_jprs_revision1/response_materials/对象级增益上限拆账与MR角色重定位_攻坚方案_20260725.md）：
+Decision unit: connected components of the visual mask.
+Descriptor: terrain geometry, confidence, spectral change, and hydro-topology features.
+Source one-hot is included because the source identity is known at deployment time;
+events remain fully isolated by GroupKFold.
+Learner: HistGradientBoostingRegressor purity model with a five-seed ensemble.
+Rule: veto when predicted purity < IoU_base / (1 + IoU_base).
 
-    决策单元   视觉掩膜的连通分量（子对象切分单独证否，级联仅带来边际增益）
-    描述子     27 维地形几何 + 3 维置信度 + 39 维光谱变化 + 23 维水文拓扑
-    源条件化   加入数据源独热。部署时数据源已知，事件仍完全隔离
-    学习器     HistGradientBoostingRegressor 预测纯度，五种子集成
-    判据       解析阈值 purity < IoU_base /(1 + IoU_base)，无任何调参自由度
-
-必须随结果一并披露的边界：源条件化意味着本配置**不主张对全新数据源的零样本迁移**。
-该情形已单独量化——数据源分组分折时排序 Spearman 降至 0.242，ΔIoU 仅 +0.0006。
-本配置主张的是"同源新事件"的迁移，事件隔离由 GroupKFold 保证。
+This configuration targets transfer to new events from known sources. It does not claim
+zero-shot transfer to an entirely unseen data source.
 """
 
 from __future__ import annotations

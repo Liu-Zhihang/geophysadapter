@@ -2,7 +2,7 @@
 set -euo pipefail
 
 ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)"
-PYTHON="${PYTHON:-/home/jinlin/miniconda3/envs/dpl/bin/python}"
+PYTHON="${PYTHON:-python}"
 EVALUATOR="$ROOT/scripts/xdomain/evaluate_sen12_terrain_dual_threshold.py"
 ANALYZER="$ROOT/scripts/xdomain/analyze_dlr_validation_calibrated.py"
 PARENT="${PARENT:-$ROOT/experiments/revision2026/dlr_sen12_protocol_transfer_temporalvalid_v2}"

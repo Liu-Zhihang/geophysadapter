@@ -40,7 +40,7 @@ from run_support_adapter_timmfm import TimmSupportResidualAdapter
 from run_support_adapter_unet import H5SupportDataset, channel_indices_by_group, split_path
 
 
-ROOT = Path("/mnt/data_hdd/滑坡检测/physics_informed_landslide_dataset")
+ROOT = Path("${PILD_ROOT}")
 CACHE = ROOT / "processed/hybrid_pinn/landslide4sense_clean_multispectral_v1"
 RUN_ROOT = ROOT / "experiments/revision2026/r3_11_backbone_sensitivity"
 DEFAULT_OUTDIR = ROOT / "experiments/revision2026/l4s_fm_terrain_attribution_20260715"

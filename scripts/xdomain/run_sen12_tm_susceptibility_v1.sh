@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-ROOT="${ROOT:-/mnt/data_hdd/滑坡检测/physics_informed_landslide_dataset}"
-PYTHON="${PYTHON:-/home/jinlin/miniconda3/envs/dpl/bin/python}"
+ROOT="${ROOT:-${PILD_ROOT}}"
+PYTHON="${PYTHON:-python}"
 OUTROOT="${OUTROOT:-$ROOT/experiments/revision2026/sen12_tm_susceptibility_v1}"
 SEED="${SEED:-20260761}"
 TERRAIN_EPOCHS="${TERRAIN_EPOCHS:-12}"

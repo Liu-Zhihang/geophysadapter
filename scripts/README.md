@@ -1,5 +1,7 @@
 # Scripts
 
+Dataset download links and usage steps: [`docs/DATA.md`](../docs/DATA.md)
+
 Supplement S6 entry points are in `xdomain/`:
 
 - `xdomain/train_pild_sen12_roleaware_v1.py`

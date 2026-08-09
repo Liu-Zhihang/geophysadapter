@@ -1,29 +1,21 @@
 #!/usr/bin/env python3
-"""G9-a：把连通分量切成地貌一致的子对象。
+"""Split connected visual components into geomorphically consistent sub-objects.
 
-诊断依据（见 对象级增益上限拆账与MR角色重定位_攻坚方案_20260725.md §6bis）：
-纯度落在 0.05–0.60 的模糊体只占 11.0% 的对象，却承载 26.3% 的真阳性与 29.1% 的假阳性；
-面积 200–5000 px 的体中三分之一以上是模糊体。这些体整块保留或整块移除都必然大量出错。
-这不是排序问题，而是决策单元问题：视觉掩膜的连通分量不是地貌单元。
+Ambiguous moderate-purity bodies concentrate much of the TP/FP mass, so whole-body
+retain/remove decisions are often wrong. Boundary cues (after robust within-sample
+normalization) are:
 
-切分依据是三种边界证据的加权和（各自在样本内做鲁棒归一化后等权）：
-    divide       正的平面曲率，即分水线与坡面分隔
-    aspect_break 坡向单位矢量场的空间梯度，即坡面朝向的突变
-    slope_break  坡度穿越临界角处的带状响应 exp(-((slope - theta_c)/delta)^2)
+- divide: positive plan curvature
+- aspect_break: spatial gradient of the aspect unit-vector field
+- slope_break: band response around a critical slope angle
 
-其中 theta_c 是 Material 进入决策的第三种功能位置：不参与对象排序，也不设定移除阈值，
-而是决定"在哪里断开"。土力学上砂质、含砾越高内摩擦角越大，黏粒与持水量越高越弱，因此
+Critical angle with material support:
 
-    theta_c = 22 deg + 16 deg * rank01( z(sand) + 0.5 z(cfvo) - z(clay) - 0.5 z(awc) )
+    theta_c = 22 deg + 16 deg * rank01(z(sand) + 0.5 z(cfvo) - z(clay) - 0.5 z(awc))
 
-22–38 度是土体内摩擦角的常规区间，映射为先验固定、不看任何标签，因此不存在泄漏。
-无 Material 支持的样本回退到固定 25 度（与既有 STEEP_SLOPE_DEG 一致）。
+Without material support the angle falls back to 25 deg.
 
-三种切分模式一次导出：
-    whole              不切分，复现现有 62,203 个对象（对照基准）
-    geomorphic         切分，theta_c 固定 25 度（Material 不参与）
-    material           切分，theta_c 由 Material 调制
-    material_shuffled  切分，theta_c 由源内按事件打乱后的 Material 调制（错配控制）
+Export modes: whole, geomorphic, material, and material_shuffled (mismatch control).
 """
 
 from __future__ import annotations

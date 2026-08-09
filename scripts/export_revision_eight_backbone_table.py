@@ -14,7 +14,7 @@ from typing import Any
 ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_FM = ROOT / "experiments/revision2026/l4s_fm_terrain_attribution_20260715/summary.json"
 DEFAULT_MODERN = ROOT / "experiments/revision2026/l4s_modern_bn_frozen_attribution_20260715/summary.json"
-DEFAULT_OUTDIR = ROOT.parent / "submission_package_jprs_revision1/response_materials"
+DEFAULT_OUTDIR = ROOT.parent / "experiments/local_exports"
 
 
 def parse_args() -> argparse.Namespace:

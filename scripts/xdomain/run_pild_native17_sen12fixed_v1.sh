@@ -2,7 +2,7 @@
 set -euo pipefail
 
 ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)"
-PYTHON="${PYTHON:-/home/jinlin/miniconda3/envs/dpl/bin/python}"
+PYTHON="${PYTHON:-python}"
 TRAINER="$ROOT/scripts/xdomain/train_pild_support_only_terrain_v1.py"
 EVALUATOR="$ROOT/scripts/xdomain/evaluate_pild_prithvi_dualthreshold_v1.py"
 META="${META:-$ROOT/metadata/pild_sen12_training_native17_v1}"

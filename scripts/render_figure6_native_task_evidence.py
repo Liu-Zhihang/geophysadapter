@@ -36,7 +36,7 @@ PROJECT_ROOT = SCRIPT_PATH.parents[1]
 REPO_ROOT = PROJECT_ROOT.parent
 EXP = PROJECT_ROOT / "experiments/revision2026"
 PA = PROJECT_ROOT / "metadata/protocol_assets/pild_core_v2_1_phase14_physical_20260719"
-DEFAULT_OUTDIR = REPO_ROOT / "submission_package_jprs_revision1/geophysadapter/revision1/figures_revision"
+DEFAULT_OUTDIR = REPO_ROOT / "docs/assets"
 
 TERRAIN_DIR = PA / "external_terrain_ranker_spatial_exclusion_100km"
 TERRAIN_SUMMARY = TERRAIN_DIR / "summary.json"

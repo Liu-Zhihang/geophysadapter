@@ -12,7 +12,7 @@
 set -uo pipefail
 
 ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)"
-PYTHON="${PYTHON:-/home/jinlin/miniconda3/envs/dpl/bin/python}"
+PYTHON="${PYTHON:-python}"
 SCRIPT="$ROOT/scripts/xdomain/train_pild_object_purity_cnn_v1.py"
 OUT="${OUT:-$ROOT/experiments/revision2026/pild_object_purity_cnn_v1}"
 EPOCHS="${EPOCHS:-10}"

@@ -366,7 +366,7 @@ class AggregatorTests(unittest.TestCase):
         self.temporary.cleanup()
 
     def test_protocol_hash_accepts_non_ascii_paths_without_weakening_run_hashes(self) -> None:
-        payload = {"path": "/mnt/data_hdd/滑坡检测/protocol.csv", "status": "PASS"}
+        payload = {"path": "${WORKSPACE_ROOT}/protocol.csv", "status": "PASS"}
         protocol_manifest = {
             **payload,
             "manifest_payload_sha256": nested_protocol.hash_payload(payload),

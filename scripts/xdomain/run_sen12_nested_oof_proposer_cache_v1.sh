@@ -3,7 +3,7 @@ set -euo pipefail
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 PROJECT_ROOT="$(cd "$SCRIPT_DIR/../.." && pwd)"
-PYTHON="${PYTHON:-/home/jinlin/miniconda3/envs/dpl/bin/python}"
+PYTHON="${PYTHON:-python}"
 TRAINER="$SCRIPT_DIR/build_sen12_nested_oof_proposer_cache_v1.py"
 PROTOCOL_ROOT="${PROTOCOL_ROOT:-$PROJECT_ROOT/metadata/pild_xdomain_v1/sen12_nested_oof_protocol_v1}"
 OUT_ROOT="${OUT_ROOT:-$PROJECT_ROOT/experiments/revision2026/sen12_nested_oof_proposer_cache_v1}"

@@ -7,8 +7,8 @@
 # 权重已在本地 HuggingFace 缓存中，故强制离线，避免代理导致的失败。
 set -uo pipefail
 
-ROOT="/mnt/data_hdd/滑坡检测/physics_informed_landslide_dataset"
-PY="/home/jinlin/miniconda3/envs/dpl/bin/python"
+ROOT="${PILD_ROOT}"
+PY="python"
 SCRIPT="${ROOT}/scripts/xdomain/train_pild_alt_visual_anchor_v1.py"
 LOGDIR="${ROOT}/experiments/revision2026/pild_alt_anchor_runs_v1"
 mkdir -p "${LOGDIR}"

@@ -543,9 +543,9 @@
   ],
   "n_inner_folds_per_outer": 3,
   "n_total_folds": 12,
-  "outer_split": "/mnt/data_hdd/\u6ed1\u5761\u68c0\u6d4b/physics_informed_landslide_dataset/metadata/pild_geo4_qc_v1/source_stratified_event_folds_v1.csv",
+  "outer_split": "$PILD_ROOT/metadata/pild_geo4_qc_v1/source_stratified_event_folds_v1.csv",
   "outer_split_sha256": "97c031b4514e4637aa2415864afdf4b22d6fdad45e327f5487317e3abb3eb159",
   "schema_version": "pild_geo4_nested_oof_protocol.v1",
-  "split": "/mnt/data_hdd/\u6ed1\u5761\u68c0\u6d4b/physics_informed_landslide_dataset/metadata/pild_geo4_qc_v1/nested_oof_v1/pild_geo4_nested_oof_v1.csv",
+  "split": "$PILD_ROOT/metadata/pild_geo4_qc_v1/nested_oof_v1/pild_geo4_nested_oof_v1.csv",
   "split_sha256": "6550d40e22c294db356a5b6af2a86db1a52aff33529fdd729906c2eae6d5b85a"
 }

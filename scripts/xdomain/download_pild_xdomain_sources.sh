@@ -1,17 +1,18 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-ROOT="${ROOT:-/mnt/data_hdd/滑坡检测}"
-PYTHON="${PYTHON:-/home/jinlin/miniconda3/envs/dpl/bin/python}"
+# Set WORKSPACE_ROOT (or ROOT) to the directory that will hold data_raw/.
+ROOT="${ROOT:-${WORKSPACE_ROOT:-$(pwd)}}"
+PYTHON="${PYTHON:-python}"
 HF_HOME="${HF_HOME:-${ROOT}/.cache/huggingface}"
 MAX_WORKERS="${MAX_WORKERS:-12}"
 
 SEN12_REVISION="40af2dd6b4e568edb6640d6e14dc67ebd01038a4"
 SEN12_CODE_REVISION="d26a25edc8e0b69550696cfb97bb5a983eaa2fde"
-SEN12_DIR="${ROOT}/data_raw/08_Sen12Landslides"
-NASA_DIR="${ROOT}/data_raw/09_NASA_COOLR_Rainfall_Events"
-UGLC_DIR="${ROOT}/data_raw/10_UGLC"
-META_DIR="${ROOT}/physics_informed_landslide_dataset/metadata/pild_xdomain_v1/acquisition"
+SEN12_DIR="${ROOT}/data_raw/Sen12Landslides"
+NASA_DIR="${ROOT}/data_raw/NASA_COOLR_Rainfall_Events"
+UGLC_DIR="${ROOT}/data_raw/UGLC"
+META_DIR="${ROOT}/metadata/acquisition"
 
 mkdir -p "${SEN12_DIR}" "${NASA_DIR}" "${UGLC_DIR}" "${META_DIR}" "${HF_HOME}"
 
@@ -24,7 +25,7 @@ fi
 
 echo "[1/5] Downloading pinned Sen12Landslides harmonized archives."
 HF_HOME="${HF_HOME}" "${PYTHON}" \
-  "${ROOT}/physics_informed_landslide_dataset/scripts/xdomain/download_hf_dataset_files.py" \
+  "${ROOT}/scripts/xdomain/download_hf_dataset_files.py" \
   paulhoehn/Sen12Landslides \
   --revision "${SEN12_REVISION}" \
   --prefix data_harmonized \
@@ -100,9 +101,9 @@ root = pathlib.Path(sys.argv[1])
 sen12_revision = sys.argv[2]
 code_revision = sys.argv[3]
 sources = {
-    "sen12": root / "data_raw/08_Sen12Landslides",
-    "nasa_coolr": root / "data_raw/09_NASA_COOLR_Rainfall_Events",
-    "uglc": root / "data_raw/10_UGLC",
+    "sen12": root / "data_raw/Sen12Landslides",
+    "nasa_coolr": root / "data_raw/NASA_COOLR_Rainfall_Events",
+    "uglc": root / "data_raw/UGLC",
     "usgs": root / "data_raw/07_USGS_Inventory_v3",
     "hr_gldd": root / "data_raw/03_HR_GLDD",
 }
@@ -119,7 +120,7 @@ for source_id, source_root in sources.items():
         "n_files": len(files),
         "bytes": sum(path.stat().st_size for path in files),
     }
-target = root / "physics_informed_landslide_dataset/metadata/pild_xdomain_v1/acquisition/acquisition_receipt.json"
+target = root / "metadata/acquisition/acquisition_receipt.json"
 target.write_text(json.dumps(payload, indent=2, sort_keys=True) + "\n", encoding="utf-8")
 PY
 

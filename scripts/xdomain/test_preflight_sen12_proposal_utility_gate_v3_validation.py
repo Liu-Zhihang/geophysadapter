@@ -154,7 +154,7 @@ class ValidationPreflightTests(unittest.TestCase):
         output = self.root / "runner_preflight"
         environment = {
             **os.environ,
-            "PYTHON": os.environ.get("PYTHON", "/home/jinlin/miniconda3/envs/dpl/bin/python"),
+            "PYTHON": os.environ.get("PYTHON", "python"),
             "PROPOSER_ROOT": str(self.tree.input_root),
             "PROTOCOL_ROOT": str(self.tree.protocol_root),
             "FORMAL_INPUT_ROOT": str(formal),

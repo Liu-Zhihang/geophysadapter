@@ -53,7 +53,7 @@ from run_support_adapter_timmfm import TimmSupportResidualAdapter
 from run_support_adapter_unet import H5SupportDataset, split_path
 
 
-ROOT = Path("/mnt/data_hdd/滑坡检测/physics_informed_landslide_dataset")
+ROOT = Path("${PILD_ROOT}")
 CACHE = ROOT / "processed/hybrid_pinn/landslide4sense_clean_multispectral_v1"
 PROTOCOL_DIR = ROOT / "metadata/protocol_assets/l4s_terrain_same_threshold_audit_20260718"
 OUTDIR = ROOT / "experiments/revision2026/l4s_terrain_same_threshold_audit_20260718"

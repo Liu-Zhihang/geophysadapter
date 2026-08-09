@@ -18,7 +18,7 @@ DEFAULT_SEN12 = ROOT / "processed/hybrid_pinn/sen12_context_v1/trigger_sample_re
 DEFAULT_SEN12_CACHE = ROOT / "processed/hybrid_pinn/sen12_s2_xdomain_v1/cache_index_v1.csv"
 DEFAULT_TRIGGER_EVENTS = ROOT / "processed/hybrid_pinn/sen12_context_v1/trigger_event_registry_v1.csv"
 DEFAULT_OUTDIR = ROOT / "processed/hybrid_pinn/pild_prithvi_integration_v1"
-DEFAULT_REPORT = ROOT.parent / "submission_package_jprs_revision1/response_materials/PILD_Sen12事件别名审计_20260722.md"
+DEFAULT_REPORT = ROOT / "experiments/local_exports/event_alias_audit.md"
 
 PILD_METADATA_COLUMNS = [
     "sample_id", "physical_event_id", "dataset_id", "event_uid", "event_date",
