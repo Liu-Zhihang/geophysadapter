@@ -284,6 +284,8 @@ def write_integrity_report(root: Path, df: pd.DataFrame, split_dir: Path) -> Non
     lines = [
         "# Integrity Report v1",
         "",
+        "Updated: 2026-03-05",
+        "",
         "## 1. Event Index",
         f"- rows: {len(df)}",
         f"- unique event_uid: {df['event_uid'].nunique()}",

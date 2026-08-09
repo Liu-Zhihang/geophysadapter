@@ -1,0 +1,102 @@
+{
+  "schema_version": "pild_geo4_role_context_audit.v2",
+  "n_samples": 7890,
+  "n_events": 55,
+  "fold_partition_used_for_exhaustive_scan": "source_stratified_0",
+  "sources": [
+    {
+      "dataset_id": "DLR_Landslide_Ref_2025",
+      "n_samples": 509,
+      "n_events": 22,
+      "material_supported_samples": 509,
+      "material_supported_fraction": 1.0,
+      "material_supported_events": 22,
+      "material_variable_features": 21,
+      "trigger_supported_samples": 306,
+      "trigger_supported_fraction": 0.6011787819253438,
+      "trigger_supported_events": 8,
+      "trigger_variable_features": 3
+    },
+    {
+      "dataset_id": "GDCLD",
+      "n_samples": 2334,
+      "n_events": 4,
+      "material_supported_samples": 283,
+      "material_supported_fraction": 0.12125107112253641,
+      "material_supported_events": 1,
+      "material_variable_features": 21,
+      "trigger_supported_samples": 0,
+      "trigger_supported_fraction": 0.0,
+      "trigger_supported_events": 0,
+      "trigger_variable_features": 0
+    },
+    {
+      "dataset_id": "GLaD4CD_v1",
+      "n_samples": 68,
+      "n_events": 15,
+      "material_supported_samples": 12,
+      "material_supported_fraction": 0.17647058823529413,
+      "material_supported_events": 3,
+      "material_variable_features": 21,
+      "trigger_supported_samples": 4,
+      "trigger_supported_fraction": 0.058823529411764705,
+      "trigger_supported_events": 1,
+      "trigger_variable_features": 0
+    },
+    {
+      "dataset_id": "SEN12LS_HARMONIZED",
+      "n_samples": 4979,
+      "n_events": 15,
+      "material_supported_samples": 4905,
+      "material_supported_fraction": 0.9851375778268728,
+      "material_supported_events": 15,
+      "material_variable_features": 21,
+      "trigger_supported_samples": 3090,
+      "trigger_supported_fraction": 0.6206065474994978,
+      "trigger_supported_events": 6,
+      "trigger_variable_features": 3
+    }
+  ],
+  "material": {
+    "feature_count": 21,
+    "supported_events": 40,
+    "events_with_within_event_spatial_variation": 40
+  },
+  "trigger": {
+    "feature_count": 3,
+    "contract": "event-time by sample-location contextual dose",
+    "within_event_spatial_variation_is_expected": true,
+    "events_with_spatial_variation": [
+      {
+        "event_id": "CEV1_UNMERGED_2147ac6d43588462",
+        "n_supported_samples": 322,
+        "max_range": 108.69669342041016
+      },
+      {
+        "event_id": "CEV1_UNMERGED_2bdc4c6842685072",
+        "n_supported_samples": 82,
+        "max_range": 108.59700012207031
+      },
+      {
+        "event_id": "CEV1_UNMERGED_372144aab2c49d3b",
+        "n_supported_samples": 349,
+        "max_range": 13.735244750976562
+      },
+      {
+        "event_id": "CEV1_UNMERGED_5583802cb9191925",
+        "n_supported_samples": 349,
+        "max_range": 38.713149070739746
+      },
+      {
+        "event_id": "CEV1_UNMERGED_5ce5967654ff1074",
+        "n_supported_samples": 186,
+        "max_range": 292.11065673828125
+      },
+      {
+        "event_id": "CEV1_UNMERGED_e146c4bbe79fcc94",
+        "n_supported_samples": 1802,
+        "max_range": 57.43646240234375
+      }
+    ]
+  }
+}

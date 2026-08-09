@@ -1,6 +1,4 @@
 # Metadata
 
-- `whitelists/`: event/sample allow-lists
-- `splits/`: train/val/test and protocol splits
-- `reports/`: integrity and quality reports
-- `manifests/`: release manifests and summary docs
+- `pild_geo4_qc_v1/`: sample manifest, event-isolated splits, nested-OOF tables, and QC summaries for the 7,890-sample / 55-event corpus
+- `pild_geo4_qc_native17_v1/`: protocol summary and hashes cited in Supplement S6

@@ -111,8 +111,8 @@ def iter_rings(geometry: dict) -> list[list[tuple[float, float]]]:
 
 
 def load_t2_events() -> list[dict[str, object]]:
-    event_index = DATASET_ROOT / "metadata" / "manifests" / "event_index_v1_strict_t2.csv"
-    event_master = DATASET_ROOT / "release_prep" / "PILD_release_v1" / "data" / "event_master.csv"
+    event_index = DATASET_ROOT / "metadata/manifests/event_index_v1_strict_t2.csv"
+    event_master = DATASET_ROOT / "raw_fullcopy/indexes/event_master.csv"
 
     master_by_uid: dict[str, dict[str, str]] = {}
     with event_master.open("r", encoding="utf-8") as f:
@@ -288,12 +288,12 @@ def render() -> None:
             [
                 "# pild_global_event_coverage_t2",
                 "",
-                "- output: `release_prep/assets/pild_global_event_coverage_t2.png`",
-                "- mirror: `docs/assets/figure2_global_source_distribution.png`",
+                "- output: `physics_informed_landslide_dataset/release_prep/assets/pild_global_event_coverage_t2.png`",
+                "- mirror: `physics_informed_landslide_dataset/docs/assets/figure2_global_source_distribution.png`",
                 "- style: shaded-relief earth basemap, no in-panel title, no graticules, enlarged legend at lower-left",
                 f"- extent: lon=[{extent[0]:.1f}, {extent[2]:.1f}], lat=[{extent[1]:.1f}, {extent[3]:.1f}]",
-                "- event source: `release_prep/PILD_release_v1/data/event_master.csv`",
-                "- protocol source: `metadata/manifests/event_index_v1_strict_t2.csv`",
+                "- event source: `physics_informed_landslide_dataset/raw_fullcopy/indexes/event_master.csv`",
+                "- protocol source: `physics_informed_landslide_dataset/metadata/manifests/event_index_v1_strict_t2.csv`",
                 "- basemap source: Natural Earth cross-blended hypsometric tints with shaded relief (`HYP_50M_SR_W.tif`) plus Natural Earth admin-0 outlines",
                 "",
                 "Counts:",

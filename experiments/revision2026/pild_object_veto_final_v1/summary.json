@@ -1,0 +1,84 @@
+{
+  "schema_version": "pild_object_veto_final.v1",
+  "evidence_status": "development: event-grouped OOF on already-opened folds",
+  "disclosure": "源条件化配置只主张同源新事件的迁移；跨全新数据源的零样本情形已单独量化为 Spearman 0.242 / ΔIoU +0.0006",
+  "baseline_iou": 0.21819164482792633,
+  "analytic_cut": 0.17911109943521786,
+  "seeds": [
+    0,
+    7,
+    101,
+    2029,
+    55555
+  ],
+  "feature_groups": {
+    "terrain": 27,
+    "confidence": 3,
+    "spectral": 39,
+    "hydrology": 23
+  },
+  "results": {
+    "source_conditioned": {
+      "n_units": 62203,
+      "n_removed": 36126,
+      "delta_iou": 0.030945958957676045,
+      "iou_after": 0.24913760378560237,
+      "rer": 0.23992869647937162,
+      "lost_tp": 175737.0,
+      "cleared_fp": 1743610.0,
+      "fp_mass_captured": 0.44223755294595074,
+      "tp_mass_lost": 0.0963599825634474,
+      "corrected_to_harmed": 9.921701178465549,
+      "removal_precision": 0.8912140840391961,
+      "spearman": 0.4633340131206018,
+      "event_macro_delta_iou": 0.010860296497405716,
+      "event_macro_delta_ci": [
+        -0.004546330588576374,
+        0.027695300796668595
+      ],
+      "event_macro_rer": 0.12292719625703634,
+      "event_macro_rer_ci": [
+        0.07084277128892054,
+        0.17992477922281885
+      ],
+      "events_positive": 37,
+      "n_events": 54,
+      "source_macro_delta_iou": 0.06391265145316073
+    },
+    "source_blind": {
+      "n_units": 62203,
+      "n_removed": 36931,
+      "delta_iou": 0.026667555571846163,
+      "iou_after": 0.2448592003997725,
+      "rer": 0.23355048340391193,
+      "lost_tp": 199700.0,
+      "cleared_fp": 1725893.0,
+      "fp_mass_captured": 0.4377439318233698,
+      "tp_mass_lost": 0.10949935709566253,
+      "corrected_to_harmed": 8.642428642964447,
+      "removal_precision": 0.8824023178359643,
+      "spearman": 0.44364001524138125,
+      "event_macro_delta_iou": 0.011962085531946788,
+      "event_macro_delta_ci": [
+        0.0002009075212049655,
+        0.026320682984527412
+      ],
+      "event_macro_rer": 0.13274333446831235,
+      "event_macro_rer_ci": [
+        0.08311090298787756,
+        0.18956417422347113
+      ],
+      "events_positive": 32,
+      "n_events": 54,
+      "source_macro_delta_iou": 0.05921377462260119
+    }
+  },
+  "verdict": {
+    "delta_iou": 0.030945958957676045,
+    "rer": 0.23992869647937162,
+    "source_conditioning_gain": 0.004278403385829882,
+    "reaches_target_delta_iou": true,
+    "reaches_target_rer": true
+  },
+  "elapsed_seconds": 101.09
+}

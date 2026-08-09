@@ -1,0 +1,3 @@
+scope,dataset_id,physical_event_id,n_samples,decision,reason,outcome_used,raw_data_deleted
+source,CAS_Landslide,*,11091,exclude_from_research,CAS patches lack audited patch-level CRS/affine transform; event-region coordinates cannot support dense Terrain alignment,0,0
+physical_event,DLR_Landslide_Ref_2025,PEV1_2019-05-16_3ce3e7c0cc5e,26,exclude_from_primary_manifest,"CA0002: four-date quality pass 3/26 and mean optical-valid fraction 0.284, below frozen event-level thresholds",0,0

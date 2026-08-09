@@ -1,14 +1,12 @@
 # Scripts
 
-This directory contains the public script subset required to reproduce the
-released paper results.
+Main reproduction scripts used in the paper (Supplement S6) are under `xdomain/`:
 
-Included categories:
+- `xdomain/train_pild_sen12_roleaware_v1.py`
+- `xdomain/sen12_terrain_v2.py`
+- `xdomain/pild_roleaware_material.py`
+- `xdomain/pild_roleaware_trigger.py`
+- `xdomain/evaluate_pild_benefit_gate_v1.py`
+- `xdomain/evaluate_pild_object_veto_final_v1.py`
 
-- training scripts for the DLR and heterogeneous benchmark settings
-- evaluation and paired-analysis scripts used in the reported tables
-- figure-rendering scripts for the main paper and supplementary material
-- release-preparation utilities for the public PILD data package
-
-Exploratory notebooks, internal candidate-mining scripts, and heavyweight local
-workflow helpers are intentionally excluded from the public repository.
+Figure and table helpers used for the manuscript live in this directory (`render_figure*.py`, `export_revision_eight_backbone_table.py`, and related utilities).

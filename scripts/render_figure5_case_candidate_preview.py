@@ -11,17 +11,29 @@ import rasterio
 from PIL import Image, ImageDraw, ImageFont
 
 
+import platform
 import re
 
-ROOT = Path(__file__).resolve().parents[1]
-IS_WINDOWS = False
-META_CSV = ROOT / "metadata" / "manifests" / "strict_t2_supervised_ready_test_index_v1.csv"
-PAIRED_CSV = ROOT / "experiments" / "strict_t2_postrgb_v4_vs_visual_paired_v1" / "paired_sample_mean_diff.csv"
-OUT_PNG = ROOT / "docs" / "assets" / "figure5_case_candidate_preview.png"
+# 自动适配Windows和Linux路径
+IS_WINDOWS = platform.system() == "Windows"
+if IS_WINDOWS:
+    ROOT = Path(r"D:\Project\滑坡检测")
+else:
+    ROOT = Path("/mnt/d/project/滑坡检测")
+META_CSV = ROOT / "physics_informed_landslide_dataset/metadata/manifests/strict_t2_supervised_ready_test_index_v1.csv"
+PAIRED_CSV = ROOT / "physics_informed_landslide_dataset/experiments/strict_t2_postrgb_v4_vs_visual_paired_v1/paired_sample_mean_diff.csv"
+OUT_PNG = ROOT / "submission_package_jprs_v0_1/figures/figure5_case_candidate_preview.png"
 
 
 def convert_path(path_str: str) -> Path:
-    """Convert a serialized path string into a usable local path."""
+    """将Linux路径转换为当前系统的路径格式"""
+    if IS_WINDOWS and path_str.startswith("/mnt/"):
+        # 转换 /mnt/d/... 为 D:\...
+        match = re.match(r"/mnt/([a-z])/(.+)", path_str)
+        if match:
+            drive = match.group(1).upper()
+            rest = match.group(2).replace("/", "\\")
+            return Path(f"{drive}:\\{rest}")
     return Path(path_str)
 
 CANDIDATES = [

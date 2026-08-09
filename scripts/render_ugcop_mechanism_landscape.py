@@ -4,14 +4,20 @@
 from __future__ import annotations
 
 import math
+import platform
 from pathlib import Path
 
 import numpy as np
 import pandas as pd
 from PIL import Image, ImageDraw, ImageFont
 
-ROOT = Path(__file__).resolve().parents[1]
-PKG_FIG_DIR = ROOT / "docs" / "assets"
+
+if platform.system() == "Windows":
+    ROOT = Path(r"D:\Project\滑坡检测")
+else:
+    ROOT = Path("/mnt/d/project/滑坡检测")
+
+PKG_FIG_DIR = ROOT / "submission_package_jprs_v0_1" / "figures"
 
 WHITE = (251, 251, 249)
 INK = (25, 30, 36)
@@ -247,9 +253,9 @@ def save(canvas: Image.Image, stem: str, report_lines: list[str]) -> None:
 
 
 def render() -> None:
-    case_csv = ROOT / "experiments" / "strict_t2_postrgb_case_panels_v1" / "merged_case_metrics.csv"
-    mech_csv = ROOT / "experiments" / "strict_t2_postrgb_v4_support_uncertainty_summary_v1" / "per_sample_support_uncertainty.csv"
-    uq_csv = ROOT / "experiments" / "strict_t2_postrgb_v4_support_uncertainty_summary_v1" / "uncertainty_quartiles.csv"
+    case_csv = ROOT / "physics_informed_landslide_dataset" / "experiments" / "strict_t2_postrgb_case_panels_v1" / "merged_case_metrics.csv"
+    mech_csv = ROOT / "physics_informed_landslide_dataset" / "experiments" / "strict_t2_postrgb_v4_support_uncertainty_summary_v1" / "per_sample_support_uncertainty.csv"
+    uq_csv = ROOT / "physics_informed_landslide_dataset" / "experiments" / "strict_t2_postrgb_v4_support_uncertainty_summary_v1" / "uncertainty_quartiles.csv"
 
     case_df = pd.read_csv(case_csv)
     mech_df = pd.read_csv(mech_csv)
@@ -279,21 +285,24 @@ def render() -> None:
     dy = mech_df["mean_delta"].to_numpy()
     d_lo = float(np.quantile(dy, 0.01) - 0.01)
     d_hi = float(np.quantile(dy, 0.99) + 0.01)
+
+    # 压缩底部空白：画布高度从 1400 缩至 1240，内容正好填满
     canvas = Image.new("RGBA", (2300, 1240), WHITE + (255,))
     draw = ImageDraw.Draw(canvas)
 
     panel_font  = load_font(38, bold=True)
-    axis_font   = load_font(28, bold=True)   
-    tick_font   = load_font(24)              
-    tick_bold   = load_font(24, bold=True)   
+    axis_font   = load_font(28, bold=True)   # 横纵坐标标题
+    tick_font   = load_font(24)              # 刻度标签
+    tick_bold   = load_font(24, bold=True)   # 百分比标注等加粗
     body_font   = load_font(22)
     small_font  = load_font(22)
     value_font  = load_font(26, bold=True)
-    quad_body_font = load_font(24)           
-    cb_font        = load_font(22, bold=True)  
+    quad_body_font = load_font(24)           # 四角标注说明文字（再放大，确保可读）
+    cb_font        = load_font(22, bold=True)  # colorbar 数值标注专用
 
-    margin = 56          
+    margin = 56          # 左右留更多给 y 轴标题
     gutter = 40
+    # 子图整体往下移动更多，标题与边框之间留出充裕空间
     panel_top = 120
     panel_h   = 1050
     panel_w   = (2300 - 2 * margin - gutter) // 2
@@ -304,15 +313,18 @@ def render() -> None:
         draw.rounded_rectangle(rect, radius=20, fill=WHITE, outline=LINE, width=2)
 
     # Panel A
+    # 标题明确放在外框上方，避免与边框重叠
     title_a = "(a) Component-correction mechanism space"
     ta_box = draw.textbbox((0, 0), title_a, font=panel_font)
     title_a_h = ta_box[3] - ta_box[1]
+    # 标题上移更多，与边框保持 24px 间距
     draw.text(
         (panel_a[0], panel_a[1] - title_a_h - 24),
         title_a,
         font=panel_font,
         fill=INK,
     )
+    # a_plot：左边留 110px（y 轴刻度 + y 轴标题都在此区域），底部留 180px
     a_plot = (panel_a[0] + 110, panel_a[1] + 48, panel_a[2] - 20, panel_a[3] - 180)
 
     # quadrant background
@@ -343,6 +355,7 @@ def render() -> None:
         draw.line((xx, a_plot[1], xx, a_plot[3]), fill=LINE if abs(t) < 1e-9 else GRID, width=2 if abs(t) < 1e-9 else 1)
         label = "0" if abs(t) < 1e-9 else f"{t:+.2f}".replace("+", "")
         lb = draw.textbbox((0, 0), label, font=tick_font)
+        # x 轴刻度下拉，避免与散点重叠
         draw.text((xx - (lb[2] - lb[0]) // 2, a_plot[3] + 16), label, font=tick_font, fill=MUTED)
     for t in yticks:
         yy = ay(t)
@@ -359,6 +372,7 @@ def render() -> None:
     for xv, yv, sv, fam in zip(x, y, s, family):
         px, py = ax(float(xv)), ay(float(yv))
         r = 5 + 18 * math.sqrt((float(sv) - s_min) / max(1e-6, (s_max - s_min)))
+        # 限制半径，保证散点不会超出图幅和四大色块边界
         max_rx = max(1.0, min(px - a_plot[0], a_plot[2] - px))
         max_ry = max(1.0, min(py - a_plot[1], a_plot[3] - py))
         r = min(r, max_rx, max_ry)
@@ -366,7 +380,15 @@ def render() -> None:
         od.ellipse((px - r, py - r, px + r, py + r), fill=c + (145,), outline=(255, 255, 255, 210), width=2)
     canvas = Image.alpha_composite(canvas, overlay)
     draw = ImageDraw.Draw(canvas)
+
+    # axis labels（只保留一处绘制，避免重复）
+    # x 轴标题放在图例下方（稍后绘制），y 轴标题此处绘制
+
+    # quadrant annotations：字号放大，右上角标注推向角落避免遮挡散点
     quad_font = load_font(26, bold=True)
+
+    # 四角标注：背景用 alpha_composite 正确叠加，才能实现真正的半透明效果
+    # alpha=70 ≈ 27% 不透明，70% 透明，可透过背景看到色块
     QUAD_BG_RGBA = (210, 212, 216, 150)
 
     quad_labels = [
@@ -375,6 +397,8 @@ def render() -> None:
         ((a_plot[0] + 12,        a_plot[3] - 82), f"{q_bl:.1f}%", "visual-led regime",            SLATE),
         ((a_plot[2] - 280,       a_plot[3] - 82), f"{q_br:.1f}%", "material enough",              AMBER),
     ]
+
+    # 第一步：在独立透明层上画所有背景框，再一次性 alpha_composite
     quad_bg_layer = Image.new("RGBA", canvas.size, (0, 0, 0, 0))
     qbd = ImageDraw.Draw(quad_bg_layer)
     for (xy, pct, label, color) in quad_labels:
@@ -386,9 +410,14 @@ def render() -> None:
                                radius=12, fill=QUAD_BG_RGBA, outline=None)
     canvas = Image.alpha_composite(canvas, quad_bg_layer)
     draw = ImageDraw.Draw(canvas)
+
+    # 第二步：在合成后的画布上叠加文字（文字本身不需要透明）
     for (xy, pct, label, color) in quad_labels:
         draw.text((xy[0] + 10, xy[1] + 4),  pct,   font=quad_font,      fill=color)
         draw.text((xy[0] + 10, xy[1] + 34), label, font=quad_body_font, fill=MUTED)
+
+    # 图例：在 x 轴刻度下方更大距离处，横向并排居中
+    # 中间项 "CAS_Palu" 改为 "CAS Palu"（去掉下划线）
     legend_font = load_font(24, bold=True)
     legend_items = [("DLR", BLUE), ("CAS Palu", TEAL), ("GLaD4CD", AMBER)]
     dot_r = 13
@@ -398,6 +427,7 @@ def render() -> None:
         box = draw.textbbox((0, 0), name, font=legend_font)
         item_widths.append((box[2] - box[0]) + dot_r * 2 + 12)
     total_width = sum(item_widths) + item_gaps * (len(legend_items) - 1)
+    # 图例整体下移，与 x 轴刻度间距拉大
     legend_y = a_plot[3] + 56
     legend_x_start = a_plot[0] + (a_plot[2] - a_plot[0] - total_width) / 2
 
@@ -407,13 +437,17 @@ def render() -> None:
         draw.ellipse((x_cursor, cy, x_cursor + dot_r * 2, cy + dot_r * 2), fill=col, outline=WHITE, width=2)
         draw.text((x_cursor + dot_r * 2 + 8, cy - 2), name, font=legend_font, fill=INK)
         x_cursor += item_w + item_gaps
+
+    # x 轴标题：图例下方居中；y 轴标题：旋转放左侧（离刻度更远）
     xtitle = "ΔIoU(material − visual)"
     xtb = draw.textbbox((0, 0), xtitle, font=axis_font)
     xtitle_x = a_plot[0] + (a_plot[2] - a_plot[0] - (xtb[2] - xtb[0])) // 2
     draw.text((xtitle_x, a_plot[3] + 114), xtitle, font=axis_font, fill=INK)
+    # y 轴标题再向左移，与刻度拉开距离
     draw_rotated_text(canvas, (a_plot[0] - 104, a_plot[1] + 160), "ΔIoU(full physics − material)", axis_font, INK, angle=90)
 
     # Panel B
+    # 标题放在框外上方，与边框保持 24px 间距（与 panel_a 一致）
     title_b = "(b) Residual gain landscape under uncertainty"
     tb_box = draw.textbbox((0, 0), title_b, font=panel_font)
     title_b_h = tb_box[3] - tb_box[1]
@@ -423,7 +457,10 @@ def render() -> None:
         font=panel_font,
         fill=INK,
     )
+    # 右侧留出 80px 放竖直 colorbar，底部留足空间给刻度和 x 轴标题
+    # 左侧和上下内边距加大，确保刻度标签不与圆角边框重叠
     b_plot = (panel_b[0] + 90, panel_b[1] + 55, panel_b[2] - 100, panel_b[3] - 130)
+    # 竖直 colorbar 区域（紧贴 b_plot 右侧）
     cb_x1 = panel_b[2] - 82
     cb_x2 = panel_b[2] - 46
 
@@ -440,10 +477,12 @@ def render() -> None:
     y_ticks = [0, 25, 50, 75, 100]
     for t in x_ticks:
         xx = bx(t)
+        # 极端值的格线与边框重合，只画内部格线，避免双线叠加
         if t not in (0, 100):
             draw.line((xx, b_plot[1], xx, b_plot[3]), fill=GRID, width=1)
         label = f"{t}"
         lb = draw.textbbox((0, 0), label, font=tick_font)
+        # 刻度标签下拉，与 b_plot 底边拉开距离不重叠
         draw.text((xx - (lb[2] - lb[0]) // 2, b_plot[3] + 14), label, font=tick_font, fill=MUTED)
     for t in y_ticks:
         yy = by(t)
@@ -451,12 +490,17 @@ def render() -> None:
             draw.line((b_plot[0], yy, b_plot[2], yy), fill=GRID, width=1)
         label = f"{t}"
         lb = draw.textbbox((0, 0), label, font=tick_font)
+        # 刻度标签左移，与 b_plot 左边拉开距离不重叠
         draw.text((b_plot[0] - (lb[2] - lb[0]) - 12, yy - (lb[3] - lb[1]) // 2), label, font=tick_font, fill=MUTED)
+
+    # 轴标题：x 轴在 b_plot 下方居中，y 轴旋转放左侧
     bxtitle = "Uncertainty percentile (low → high)"
     bxtb = draw.textbbox((0, 0), bxtitle, font=axis_font)
     bxtitle_x = b_plot[0] + (b_plot[2] - b_plot[0] - (bxtb[2] - bxtb[0])) // 2
     draw.text((bxtitle_x, b_plot[3] + 54), bxtitle, font=axis_font, fill=INK)
     draw_rotated_text(canvas, (b_plot[0] - 78, b_plot[1] + 130), "Visual-baseline percentile (weak → strong)", axis_font, INK, angle=90)
+
+    # 2D gain landscape: density defines the terrain relief, while local mean ΔIoU defines terrain color.
     nx, ny = 56, 56
     x_edges = np.linspace(0, 100, nx + 1)
     y_edges = np.linspace(0, 100, ny + 1)
@@ -483,6 +527,7 @@ def render() -> None:
     fine_h = max(plot_h, 460)
     field_norm = np.clip((field - color_lo) / max(1e-6, (color_hi - color_lo)), 0.0, 1.0)
     dens_norm = np.clip(den_norm, 0.0, 1.0)
+    # 修复 Pillow DeprecationWarning：Image.fromarray 不传 mode，改用 .convert("L")
     field_big = np.asarray(
         Image.fromarray((field_norm * 255).astype(np.uint8)).convert("L").resize((fine_w, fine_h), resample=Image.Resampling.BICUBIC),
         dtype=float,
@@ -575,6 +620,7 @@ def render() -> None:
 
     # quartile trajectory
     q_colors = [TEAL, (112, 196, 180), AMBER, ROSE]
+    # 顶部百分比标注：与背景色相近导致看不清，改用深色文字 + 白色阴影底
     q_text_colors = [INK, INK, INK, INK]
     pts = []
     quartile_bins = pd.cut(ux_rank, bins=[0.0, 25.0, 50.0, 75.0, 100.0], labels=[1, 2, 3, 4], include_lowest=True)
@@ -588,6 +634,7 @@ def render() -> None:
         tb = draw.textbbox((0, 0), pr_text, font=tick_bold)
         tx = int(px - (tb[2] - tb[0]) / 2)
         ty = b_plot[1] + 10
+        # 白色半透明底衬加大，完整包裹数字，确保与背景地形形成清晰对比
         draw.rounded_rectangle((tx - 9, ty - 5, tx + (tb[2] - tb[0]) + 9, ty + (tb[3] - tb[1]) + 5),
                                 radius=7, fill=(255, 255, 255, 220))
         draw.text((tx, ty), pr_text, font=tick_bold, fill=q_colors[i])
@@ -595,6 +642,10 @@ def render() -> None:
         draw.line((p0[0], p0[1], p1[0], p1[1]), fill=blend(col, INK, 0.15), width=5)
     for pt, col in zip(pts, q_colors):
         draw.ellipse((pt[0] - 9, pt[1] - 9, pt[0] + 9, pt[1] + 9), fill=col, outline=WHITE, width=2)
+
+    # 按用户要求，取消左上角和右下角的备注框
+
+    # 竖直 colorbar：缩短为 b_plot 高度的 65%，垂直居中
     cb_full_h = b_plot[3] - b_plot[1]
     cb_short_h = int(cb_full_h * 0.65)
     cb_y1 = b_plot[1] + (cb_full_h - cb_short_h) // 2
@@ -604,19 +655,26 @@ def render() -> None:
         val = color_lo + frac * (color_hi - color_lo)
         draw.line((cb_x1, j, cb_x2, j), fill=gain_color(val, color_lo, color_hi), width=1)
     draw.rounded_rectangle((cb_x1, cb_y1, cb_x2, cb_y2), radius=6, outline=LINE, width=1)
+    # colorbar 数值：使用更大加粗字号
     hi_label = f"{color_hi:+.02f}"
     lo_label = f"{color_lo:+.02f}"
     hi_b = draw.textbbox((0, 0), hi_label, font=cb_font)
     lo_b = draw.textbbox((0, 0), lo_label, font=cb_font)
     draw.text((cb_x1, cb_y1 - (hi_b[3] - hi_b[1]) - 8), hi_label, font=cb_font, fill=INK)
     draw.text((cb_x1, cb_y2 + 8), lo_label, font=cb_font, fill=INK)
+    # colorbar 标题：旋转 90°，精确定位于 colorbar 纵向中央
+    # draw_rotated_text 的 xy 参数是文字旋转后的左上角，
+    # 将 y 定位在 colorbar 中点处，文字从中央向两侧延伸
     cb_mid_y = (cb_y1 + cb_y2) // 2
     draw_rotated_text(canvas, (cb_x2 + 10, cb_mid_y), "local mean ΔIoU", cb_font, MUTED, angle=90)
+
+    # 样本量描述：字号加大，居中对齐到 panel_b 宽度
     note = "n = 909 shared post-event samples"
     note_font = load_font(28, bold=True)
     nb = draw.textbbox((0, 0), note, font=note_font)
     note_w = nb[2] - nb[0]
     note_x = panel_b[0] + (panel_b[2] - panel_b[0] - note_w) // 2
+    # 样本量文字往上移，离图上边框更远
     draw.text((note_x, panel_b[1] + 15), note, font=note_font, fill=MUTED)
 
     save(
@@ -626,6 +684,7 @@ def render() -> None:
             "# figure8_ugcop_gain_landscape_preview",
             "",
             "- status: exploratory mechanism-landscape preview",
+            "- generated by: physics_informed_landslide_dataset/scripts/render_ugcop_mechanism_landscape.py",
             "- purpose: sample-level explanation candidate for Figure 8 redesign",
             "",
             "Panel (a): component-correction mechanism landscape",
@@ -808,6 +867,7 @@ def render_3d_preview(ux_rank: np.ndarray, vy_rank: np.ndarray, dy: np.ndarray) 
             "# figure8_ugcop_gain_landscape_3d_preview",
             "",
             "- status: exploratory pseudo-3D mechanism preview",
+            "- generated by: physics_informed_landslide_dataset/scripts/render_ugcop_mechanism_landscape.py",
             "- purpose: test a more striking but still quantitative mechanism landscape",
             "",
             "Panel (b) surface:",

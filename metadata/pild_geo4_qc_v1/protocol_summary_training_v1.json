@@ -1,0 +1,84 @@
+{
+  "counts": {
+    "by_dataset": {
+      "DLR_Landslide_Ref_2025": 509,
+      "GDCLD": 2334,
+      "GLaD4CD_v1": 68,
+      "SEN12LS_HARMONIZED": 4979
+    },
+    "canonical_events": 55,
+    "datasets": 4,
+    "samples": 7890
+  },
+  "created_at_utc": "2026-07-23T23:22:18.375616+00:00",
+  "identity_contract": {
+    "canonical_events": 55,
+    "fields": [
+      "dataset_id",
+      "source_id",
+      "source_event_id",
+      "canonical_event_id",
+      "sample_id"
+    ],
+    "split_key": "canonical_event_id"
+  },
+  "outputs": {
+    "manifest": {
+      "path": "/mnt/data_hdd/\u6ed1\u5761\u68c0\u6d4b/physics_informed_landslide_dataset/metadata/pild_geo4_qc_v1/unified_sample_manifest_geo4_qc_v1.csv",
+      "sha256": "70f2e73e9ebd84f27a21d4c8c81feccf8150415616f7451b6dd7171a5a5aac0f"
+    },
+    "split": {
+      "path": "/mnt/data_hdd/\u6ed1\u5761\u68c0\u6d4b/physics_informed_landslide_dataset/metadata/pild_geo4_qc_v1/event_isolated_split_geo4_qc_v1.csv",
+      "sha256": "2fd74da7b61bc99d1e63fbc646b4683e287a1af1feff120f2d428f65baddd0bc"
+    }
+  },
+  "protocol": "PILD-GEO4-QC-v1 natural-proportion training probe",
+  "readiness": {
+    "blockers": [],
+    "core_training_ready": true,
+    "full_tmr_training_ready": true,
+    "manifest_ready": true,
+    "training_ready": true
+  },
+  "sampling_contract": "run-controlled: natural mode emits shuffled manifest rows in observed patch proportions; no source or event reweighting",
+  "schema_version": 2,
+  "split_by_dataset": {
+    "test": {
+      "DLR_Landslide_Ref_2025": 264,
+      "GDCLD": 2051,
+      "GLaD4CD_v1": 8,
+      "SEN12LS_HARMONIZED": 186
+    },
+    "train": {
+      "DLR_Landslide_Ref_2025": 207,
+      "GDCLD": 283,
+      "GLaD4CD_v1": 48,
+      "SEN12LS_HARMONIZED": 4300
+    },
+    "val": {
+      "DLR_Landslide_Ref_2025": 38,
+      "GLaD4CD_v1": 12,
+      "SEN12LS_HARMONIZED": 493
+    }
+  },
+  "split_counts": {
+    "test": 2509,
+    "train": 4838,
+    "val": 543
+  },
+  "terrain_contract": {
+    "names": [
+      "elevation",
+      "slope_deg",
+      "aspect_sin",
+      "aspect_cos",
+      "laplacian_curvature",
+      "tpi_90m",
+      "tpi_300m",
+      "ruggedness_90m",
+      "local_relief_300m"
+    ],
+    "schema_id": "pild_sen12_common_terrain9_v2"
+  },
+  "validation_status": "PASS"
+}
