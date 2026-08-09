@@ -53,7 +53,7 @@ DEFAULT_OUTDIR = (
 DEFAULT_PUBLISH_PATH = (
     PROJECT_ROOT.parent
     / "docs/assets/"
-    "figure8_revision_attribution_and_reproduction.png"
+    "figure8_attribution_and_reproduction.png"
 )
 
 MISMATCH_PATH = EXP / "pild_object_veto_mismatch_v1/conditions.csv"
@@ -635,7 +635,7 @@ def render(
     )
 
     outdir.mkdir(parents=True, exist_ok=True)
-    output = outdir / "figure8_revision_attribution_and_reproduction.png"
+    output = outdir / "figure8_attribution_and_reproduction.png"
     fig.savefig(output, dpi=dpi, facecolor="white")
 
     panel_dir = outdir / "panels" / "figure8"

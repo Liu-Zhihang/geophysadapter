@@ -10,11 +10,10 @@ Four panels, diagnostic rather than performance-oriented:
       support scale of every geophysical prior.
 
 The pooled error budget and per-source near-pure shares are reported in the
-manuscript text rather than as figure panels.
+paper text rather than as figure panels.
 
-Layout targets the ISPRS JPRS double-column width (176 mm). Only a 600 dpi PNG
-is written, following the revision package image policy.
-"""
+Layout targets a double-column journal width (176 mm). Only a 600 dpi PNG
+is written, PNG output only. """
 
 from __future__ import annotations
 
@@ -154,7 +153,7 @@ RULE = {
 
 
 def configure_style() -> None:
-    """Type sizes are final printed sizes on the 176 mm manuscript canvas."""
+    """Type sizes are final printed sizes on the 176 mm figure canvas."""
 
     mpl.rcParams.update(
         {
@@ -904,7 +903,7 @@ def draw_scale_bridge(ax, decisions: pd.DataFrame) -> dict[str, float]:
 
 
 def per_source_near_pure(decisions: pd.DataFrame) -> pd.DataFrame:
-    """Kept for the report / manuscript numbers; not drawn as a panel."""
+    """Kept for the report / paper numbers; not drawn as a panel."""
 
     rows = []
     for source in ALL_SOURCES:
@@ -1064,7 +1063,7 @@ def render_figure(
     )
 
     outdir.mkdir(parents=True, exist_ok=True)
-    output = outdir / "figure4_revision_visual_error_structure.png"
+    output = outdir / "figure4_visual_error_structure.png"
     fig.canvas.draw()
     tight = fig.get_tightbbox(fig.canvas.get_renderer())
     tolerance_in = 0.02

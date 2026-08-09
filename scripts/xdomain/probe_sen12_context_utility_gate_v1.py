@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Probe whether Material/Trigger predict when a Terrain correction is useful.
 
-This is a validation-first diagnostic, not a manuscript model.  The frozen
+This is a validation-first diagnostic, not the main trained model.  The frozen
 visual and Terrain models produce two candidate predictions for each sample.
 Only outer-train labels are used to learn sample-level correction utility.
 The inference features are label-free Terrain summaries, visual uncertainty,

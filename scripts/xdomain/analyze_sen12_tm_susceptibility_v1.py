@@ -156,7 +156,7 @@ def main() -> None:
     )
     pooled_gain = float(pooled_metrics["aligned"]["iou"] - pooled_metrics["zero"]["iou"])
     control_gap = float(pooled_metrics["aligned"]["iou"] - pooled_metrics["shuffle"]["iou"])
-    manuscript_gate = bool(
+    paper_gate = bool(
         n_gate_pass >= 3
         and pooled_gain > 0
         and control_gap > 0
@@ -193,8 +193,8 @@ def main() -> None:
         "pooled_aligned_minus_zero_iou": pooled_gain,
         "pooled_aligned_minus_shuffle_iou": control_gap,
         "all_abstain_exact_identity": bool(n_gate_pass == 0 and identity_exact),
-        "manuscript_material_gate": manuscript_gate,
-        "decision": "retain_material_modulation" if manuscript_gate else "abstain_material_in_full_tmr",
+        "paper_material_gate": paper_gate,
+        "decision": "retain_material_modulation" if paper_gate else "abstain_material_in_full_tmr",
         "inputs": inputs,
     })
 

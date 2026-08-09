@@ -1,7 +1,7 @@
-# Zenodo note
+# Data archive note
 
-The public PILD package is published at:
+PILD metadata package:
 
 https://doi.org/10.5281/zenodo.19430714
 
-For download links and usage, see [`docs/DATA.md`](../docs/DATA.md).
+Usage guide: [`docs/DATA.md`](../docs/DATA.md)

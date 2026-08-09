@@ -13,8 +13,7 @@ Post-review state is reconstructed exactly: `component_id` in the frozen
 decision table is the SciPy label of the baseline prediction, verified here by
 re-deriving area, true-positive and false-positive counts for every body.
 
-Only a 600 dpi PNG is written, following the revision package image policy.
-"""
+Only a 600 dpi PNG is written, PNG output only. """
 
 from __future__ import annotations
 
@@ -440,7 +439,7 @@ def render(gallery: pd.DataFrame, tiles: dict[str, dict], outdir: Path, dpi: int
     )
 
     outdir.mkdir(parents=True, exist_ok=True)
-    output = outdir / "figure8_revision_object_veto_gallery.png"
+    output = outdir / "figure8_object_veto_gallery.png"
     fig.savefig(output, dpi=dpi, facecolor="white")
     plt.close(fig)
     return output, assert_canvas_clear(output)

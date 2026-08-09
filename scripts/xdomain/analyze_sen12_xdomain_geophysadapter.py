@@ -3,7 +3,7 @@
 
 The analyzer accepts only artifact-complete matched visual/adapter runs.  It
 verifies dataset, split, checkpoint, sample-order, exact-fallback, and spatial
-control identities before writing any manuscript-facing result.  Statistical
+control identities before writing any final reported result.  Statistical
 resampling uses spatial folds, physical events, or regions as independent
 units; pixels are never treated as independent replicates.
 """

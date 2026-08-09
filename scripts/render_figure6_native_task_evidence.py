@@ -536,7 +536,7 @@ def render(outdir: Path) -> Path:
     draw_material_row(fig, sections[1][1], material)
     draw_trigger_row(fig, sections[2][1], trigger)
 
-    output = outdir / "figure6_revision_native_task_evidence.png"
+    output = outdir / "figure6_native_task_evidence.png"
     fig.savefig(output, dpi=600, facecolor=WHITE, bbox_inches="tight", pad_inches=0.025)
     plt.close(fig)
     write_source_data(outdir, terrain, material, trigger)

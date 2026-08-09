@@ -17,8 +17,7 @@ The analytic criterion and gain-concentration statistics remain in the frozen
 report and source tables, but are not repeated in the main figure because the
 main-text equations and tables already carry those quantitative claims.
 
-Only a 600 dpi PNG is written, following the revision package image policy.
-"""
+Only a 600 dpi PNG is written, PNG output only. """
 
 from __future__ import annotations
 
@@ -862,7 +861,7 @@ def main() -> int:
         tiles,
         args.outdir,
         args.dpi,
-        output_name="figure7_revision_object_scale_correction.png",
+        output_name="figure7_object_scale_correction.png",
         panel_stem="main_high_effect",
         display_mode="effect",
     )

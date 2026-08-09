@@ -677,7 +677,7 @@ def render(
     )
 
     outdir.mkdir(parents=True, exist_ok=True)
-    output = outdir / "figure5_revision_pixel_scale_capability.png"
+    output = outdir / "figure5_pixel_scale_capability.png"
     fig.savefig(output, dpi=dpi, facecolor="white")
 
     panel_dir = outdir / "panels" / "figure5"
