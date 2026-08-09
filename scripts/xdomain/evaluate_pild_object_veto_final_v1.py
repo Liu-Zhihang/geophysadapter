@@ -169,7 +169,6 @@ def main() -> None:
         f"spectral={len(spec_cols)} / hydro={len(hyd_cols)})"
     )
     print(f"pooled TP={tp:,.0f} FP={fp:,.0f} FN={fn:,.0f}  baseline IoU={base_iou:.5f}  cut={cut:.5f}\n")
-")
 
     results = {}
     for name, x in (("source_conditioned", x_source), ("source_blind", x_plain)):

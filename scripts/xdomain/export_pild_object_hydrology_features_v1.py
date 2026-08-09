@@ -34,7 +34,7 @@ NEIGHBOUR_DIST = np.asarray(
 
 
 def d8_receivers(elevation: np.ndarray) -> np.ndarray:
-    """text"""
+    """; (/). """
     height, width = elevation.shape
     flat = elevation.ravel()
     index = np.arange(flat.size).reshape(height, width)
@@ -56,9 +56,9 @@ def d8_receivers(elevation: np.ndarray) -> np.ndarray:
 
 
 def topological_levels(receiver: np.ndarray) -> list[np.ndarray]:
-    """Kahn ： 0 ，。
+    """Kahn :  0 , . 
 
-    ，（ O()），
+    , ( O()), 
     Vectorize within each layer to avoid per-cell Python loops.
     """
     size = receiver.size
@@ -81,7 +81,7 @@ def topological_levels(receiver: np.ndarray) -> list[np.ndarray]:
 
 
 def flow_accumulation(receiver: np.ndarray, levels: list[np.ndarray]) -> np.ndarray:
-    """text"""
+    """, . """
     accumulation = np.ones(receiver.size, dtype=np.float32)
     for level in levels:
         moving = level[receiver[level] != level]
@@ -96,9 +96,9 @@ def height_above_drainage(
     channel_flat: np.ndarray,
     levels: list[np.ndarray],
 ) -> np.ndarray:
-    """， HAND。
+    """,  HAND. 
 
-    ：，。
+    : , . 
     """
     drain = np.where(channel_flat, elevation_flat, np.nan).astype(np.float32)
     for level in reversed(levels):
@@ -116,7 +116,7 @@ def height_above_drainage(
 
 
 def hydrology_stack(elevation: np.ndarray, valid: np.ndarray) -> dict[str, np.ndarray]:
-    """text"""
+    """. """
     surface = elevation.astype(np.float32).copy()
     if valid.any():
         surface[~valid] = float(surface[valid].max()) + 1.0
@@ -150,7 +150,7 @@ def component_hydrology(
     mask: np.ndarray, window: tuple[slice, slice], stack: dict[str, np.ndarray],
     valid: np.ndarray, ring_radius: int,
 ) -> dict[str, float]:
-    """text"""
+    """, . """
     row_slice, col_slice = window
     r0 = max(row_slice.start - ring_radius, 0)
     r1 = min(row_slice.stop + ring_radius, valid.shape[0])
@@ -238,7 +238,7 @@ def main() -> None:
     frames = []
     for fold_id in FOLD_IDS:
         rows = process_fold(args.cache, fold_id, args.min_area, args.ring_radius)
-        print(f"text")
+        print(f"{fold_id}: {len(rows):,} ")
         frames.append(pd.DataFrame(rows))
     table = pd.concat(frames, ignore_index=True)
 
@@ -262,8 +262,8 @@ def main() -> None:
         ),
         encoding="utf-8",
     )
-    print(f"text")
-    print(f"wrote {args.outdir}")
+    print(f"\n {len(table):,} , {len(feature_cols)} ")
+    print(f" {args.outdir}")
 
 
 if __name__ == "__main__":

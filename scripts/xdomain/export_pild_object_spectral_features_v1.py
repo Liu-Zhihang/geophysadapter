@@ -111,10 +111,10 @@ def component_spectral_features(
 def process_fold(
     cache_dir: Path, fold_id: str, threshold: float | None, min_area: int, ring_radius: int
 ) -> list[dict]:
-    """。
+    """. 
 
-    （0.92 / 0.95 / 0.805 / 0.92）， receipt ，
-    。
+    (0.92 / 0.95 / 0.805 / 0.92),  receipt , 
+    . 
     """
     if threshold is None:
         receipt = json.loads(
@@ -130,7 +130,7 @@ def process_fold(
         pre_all = handle["optical_pre"]
         post_all = handle["optical_post"]
     if optical_ids != sample_id:
-        raise RuntimeError(f"text")
+        raise RuntimeError(f"{fold_id}: ")
 
     structure = ndimage.generate_binary_structure(2, 2)
     rows: list[dict] = []
@@ -166,7 +166,7 @@ def main() -> None:
     parser.add_argument("--cache", type=Path, default=DEFAULT_CACHE)
     parser.add_argument(
         "--threshold", type=float, default=None,
-        help="text",
+        help=" receipt ()",
     )
     parser.add_argument("--min-area", type=int, default=4)
     parser.add_argument("--ring-radius", type=int, default=5)
@@ -187,7 +187,7 @@ def main() -> None:
         rows = process_fold(
             args.cache, fold_id, args.threshold, args.min_area, args.ring_radius
         )
-        print(f"text")
+        print(f"{fold_id}:  {thresholds[fold_id]:.3f}, {len(rows):,} ")
         frames.append(pd.DataFrame(rows))
     table = pd.concat(frames, ignore_index=True)
 
@@ -208,8 +208,8 @@ def main() -> None:
     (args.outdir / "receipt.json").write_text(
         json.dumps(receipt, ensure_ascii=False, indent=2), encoding="utf-8"
     )
-    print(f"text")
-    print(f"wrote {args.outdir}")
+    print(f"\n {len(table):,} , {len(feature_cols)} ")
+    print(f" {args.outdir}")
 
 
 if __name__ == "__main__":

@@ -100,7 +100,7 @@ def boundary_strength(
 
 
 def absorb_small_units(labels: np.ndarray, mask: np.ndarray, min_area: int) -> np.ndarray:
-    """text"""
+    """, . """
     if labels.max() <= 1:
         return labels
     sizes = np.bincount(labels.ravel())
@@ -119,7 +119,7 @@ def absorb_small_units(labels: np.ndarray, mask: np.ndarray, min_area: int) -> n
 def split_component(
     local_mask: np.ndarray, local_boundary: np.ndarray, min_area: int
 ) -> np.ndarray:
-    """text"""
+    """,  1 . """
     if int(local_mask.sum()) < 2 * min_area:
         return local_mask.astype(np.int32)
     inside = local_boundary[local_mask]
@@ -145,10 +145,10 @@ def process_fold(
     ring_radius: int,
     threshold_override: float | None = None,
 ) -> dict[str, list[dict]]:
-    """，。
+    """, . 
 
-    threshold_override ：，
-    。 receipt 。
+    threshold_override : , 
+    .  receipt . 
     """
     receipt = json.loads(
         (cache_dir / f"{fold_id}_oof_cache_receipt.json").read_text(encoding="utf-8")
@@ -250,11 +250,11 @@ def main() -> None:
     parser.add_argument("--seed", type=int, default=20260725)
     parser.add_argument(
         "--modes", nargs="+", default=["whole", "geomorphic", "material", "material_shuffled"],
-        help="text",
+        help="",
     )
     parser.add_argument(
         "--threshold-override", type=float, default=None,
-        help="text",
+        help=": ",
     )
     parser.add_argument(
         "--outdir", type=Path,
@@ -295,9 +295,9 @@ def main() -> None:
     theta_shuffled = theta[donor]
 
     print(
-        f"text"
+        f":  {np.median(theta):.1f}°  "
         f"IQR [{np.percentile(theta, 25):.1f}°, {np.percentile(theta, 75):.1f}°]  "
-        f"text"
+        f" Material  {float((q_material > 0).mean()):.1%}"
     )
 
     offset = 0
@@ -342,8 +342,8 @@ def main() -> None:
             "fp_total": float(table.false_px.sum()),
         }
         print(
-            f"text"
-            f"text"
+            f"{mode:18s}  {len(table):7,}   {table.area_px.median():6.1f}  "
+            f" {mixed.mean():.1%}   TP {stats[mode]['mixed_tp_share']:.1%} / "
             f"FP {stats[mode]['mixed_fp_share']:.1%}"
         )
 
@@ -366,7 +366,7 @@ def main() -> None:
         ),
         encoding="utf-8",
     )
-    print(f"\nwrote {args.outdir}")
+    print(f"\n {args.outdir}")
 
 
 if __name__ == "__main__":
